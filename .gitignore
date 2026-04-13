@@ -40,8 +40,8 @@ workflows/n8n/kit-daily-content.json
 workflows/clients/
 remotion/templates/BsideVinyl.tsx
 remotion/examples/bsidevinyl-daily.json
-# Current production SOP contains client-specific references; engineer must
-# create a generic public version before unignoring.
+# Original client-laden pipeline doc (internal). Public SOP lives at
+# workflows/PRODUCTION-SOP.md and is tracked normally.
 workflows/studio-production-pipeline.md
 
 # --- Archives & backups -----------------------------------------------------

@@ -4,7 +4,12 @@
 
 <h1 align="center">AI Cinema Studio Engine</h1>
 
-<p align="center"><strong>Self-hosted, RAG-driven cinematic production. Camera presets, lighting simulation, effects chains, and multi-shot sequencing — powered by your own infrastructure.</strong></p>
+<p align="center"><strong>Self-hosted, RAG-driven cinematic production — governed by a 26-step Standard Operating Procedure with three human-in-the-loop phase gates. Camera presets, lighting simulation, effects chains, and multi-shot sequencing powered by your own infrastructure.</strong></p>
+
+<p align="center">
+  <strong>🎬 The governance layer that turns "AI made a video" into "a studio delivered a film."<br>
+  Read the <a href="workflows/PRODUCTION-SOP.md">Production SOP</a> before you run anything.</strong>
+</p>
 
 <p align="center">
   <a href="#quick-start">Quick Start</a> &nbsp;&middot;&nbsp;
@@ -33,9 +38,13 @@ Replace subscription-based platforms like Higgsfield Cinema Studio and Arcads wi
 
 ## What You Get
 
+| Governance | Capability | Artifact |
+|-------|-----------|-------|
+| **Production SOP** | 26-step governance playbook, 3 phase gates, human-in-the-loop at every gate | [`workflows/PRODUCTION-SOP.md`](workflows/PRODUCTION-SOP.md) |
+
 | Layer | Capability | Tools |
 |-------|-----------|-------|
-| **Orchestration** | Workflow automation, cinematography RAG, project management | N8N (5 workflows, 67 nodes), Qdrant (1,645 presets), Notion |
+| **Orchestration** | Workflow automation, cinematography RAG, project management | N8N workflows, Qdrant (1,645 presets), Notion |
 | **Generation** | Multi-model video + image + avatar | fal.ai (Seedance 2.0, Kling 3.0, Veo 3.1), Muapi.ai (200+ models), local ComfyUI |
 | **Virtual Production** | Camera, lighting, effects direction | 1,486 camera presets, 54 lighting setups, 105 effects/styles |
 | **Audio** | Voice, SFX, music, lip-sync | ElevenLabs, 15-model lip-sync pipeline, open-source TTS |
@@ -289,9 +298,13 @@ python tools/check_balances.py --json
 
 ## Production SOP
 
-The engine runs on a **26-step Standard Operating Procedure** organized into three phases with quality gates between each. This is the full production pipeline — from creative brief to published video.
+**The engine is governed by a 26-step Standard Operating Procedure.** This is the rulebook that turns "AI generated a video" into "a studio delivered a commercial-quality film." Without the SOP, the engine still runs — but the quality guarantees and client-delivery workflow fall apart.
 
-See [`workflows/studio-production-pipeline.md`](workflows/studio-production-pipeline.md) for the complete SOP with detailed instructions per step.
+**Three phases. Three human-in-the-loop phase gates. No gate is skippable.**
+
+👉 **Full SOP: [`workflows/PRODUCTION-SOP.md`](workflows/PRODUCTION-SOP.md)** — read this first before running any production.
+
+The SOP covers everything you need for commercial-grade output from A to Z: system readiness, creative brief, research, narrative structure, character development, worldbuilding, shot listing, cinematography assembly, audio direction, look tests, production order serialization, engine selection, IP compliance, video generation, virtual cinematography post, voice/SFX/music, lip-sync, assembly, color grading, enhancement, audio finishing, compositing, platform packaging, and human-gated publishing.
 
 ### Pre-Production (Steps 1-13)
 
@@ -482,7 +495,7 @@ Master directives live in `ops/active/` and govern execution order:
 > "Read ops/active/CTO-DIRECTIVE-BUILD-ORDER.md and BLOCKED.md. What is the next task in the current wave? Are there any blockers?"
 
 **Follow the SOP:**
-> "Read workflows/studio-production-pipeline.md. I am at Step [N]. What are the inputs, process, and outputs for this step? What RAG collections should I query?"
+> "Read workflows/PRODUCTION-SOP.md. I am at Step [N]. What are the inputs, process, and outputs for this step? What RAG collections should I query?"
 
 ---
 
@@ -491,6 +504,7 @@ Master directives live in `ops/active/` and govern execution order:
 All development tasks are tracked in Notion alongside the ops/ file system. The two systems mirror each other.
 
 **Cinema Studio Engine — Task Tracker**
+- Database ID: Set via `$NOTION_DB_ID` environment variable
 
 ### Schema
 
