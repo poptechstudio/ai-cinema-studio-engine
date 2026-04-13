@@ -1,8 +1,8 @@
 <p align="center">
-  <strong>PopTech Cinema Studio Engine</strong>
+  <strong>AI Cinema Studio Prodcution Engine by PopTech Studio</strong>
 </p>
 
-<h1 align="center">AI Cinema Studio Engine</h1>
+<h1 align="center">AI Cinema Studio Prodcution Engine</h1>
 
 <p align="center"><strong>Self-hosted, RAG-driven cinematic production. Camera presets, lighting simulation, effects chains, and multi-shot sequencing — powered by your own infrastructure.</strong></p>
 
