@@ -1,0 +1,22 @@
+{
+  "clips": [
+    {"videoUrl": "renders/raw/s01_sh01_v1.mp4", "duration": 5},
+    {"videoUrl": "renders/raw/s01_sh02_v1.mp4", "duration": 4},
+    {"videoUrl": "renders/raw/s01_sh03_v1.mp4", "duration": 3}
+  ],
+  "audioUrl": "audio/vo/narration_final.mp3",
+  "title": "PopTech Cinema Studio",
+  "description": "Self-hosted AI cinema at API-cost pricing",
+  "ctaButton": {
+    "text": "Start Your Production",
+    "url": "https://poptechstudio.ai"
+  },
+  "logoUrl": "assets/poptech-logo.png",
+  "brandColors": {
+    "primary": "#2792dc",
+    "secondary": "#0a0a0a"
+  },
+  "transitionType": "dissolve",
+  "transitionDuration": 12,
+  "endCardDuration": 3
+}

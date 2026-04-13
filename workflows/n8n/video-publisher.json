@@ -1,0 +1,83 @@
+{
+  "name": "Video Publisher — Multi-Platform Distribution",
+  "nodes": [
+    {
+      "parameters": {"jsCode": "// Input: receives finalized video + metadata from upstream workflows\n// This workflow is CALLED, not triggered independently\nconst input = $input.first().json;\nreturn [{ json: {\n  video_path: input.video_path || '',\n  title: input.title || 'Untitled',\n  description: input.description || '',\n  tags: input.tags || [],\n  hashtags: input.hashtags || [],\n  chapters: input.chapters || '',\n  thumbnail_path: input.thumbnail_path || '',\n  platforms: input.platforms || ['youtube'],\n  aspect_variants: input.aspect_variants || {},\n  client: input.client || 'PopTech Studio',\n  production_order_id: input.production_order_id || '',\n  visibility: input.visibility || 'unlisted',\n  scheduled_time: input.scheduled_time || null,\n}}];"},
+      "id": "receive-input",
+      "name": "Receive Publish Request",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [200, 300]
+    },
+    {
+      "parameters": {"jsCode": "// FFmpeg: Generate aspect ratio variants if not already provided\nconst input = $json;\nconst variants = input.aspect_variants;\nif (!variants['16:9'] && !variants['9:16']) {\n  // Generate all 3 from the source video\n  return [{ json: { ...input, encode_commands: [\n    { aspect: '16:9', res: '1920x1080', platform: 'youtube', command: `ffmpeg -y -i ${input.video_path} -vf \"scale=1920:1080:force_original_aspect_ratio=decrease,pad=1920:1080:(ow-iw)/2:(oh-ih)/2:black\" -c:v libx264 -crf 18 -c:a aac -b:a 192k output_16x9.mp4` },\n    { aspect: '9:16', res: '1080x1920', platform: 'reels_tiktok_shorts', command: `ffmpeg -y -i ${input.video_path} -vf \"scale=1080:1920:force_original_aspect_ratio=decrease,pad=1080:1920:(ow-iw)/2:(oh-ih)/2:black\" -c:v libx264 -crf 18 -c:a aac -b:a 192k output_9x16.mp4` },\n    { aspect: '1:1', res: '1080x1080', platform: 'facebook_feed', command: `ffmpeg -y -i ${input.video_path} -vf \"scale=1080:1080:force_original_aspect_ratio=decrease,pad=1080:1080:(ow-iw)/2:(oh-ih)/2:black\" -c:v libx264 -crf 18 -c:a aac -b:a 128k output_1x1.mp4` },\n  ]}}];\n}\nreturn [{ json: input }];"},
+      "id": "aspect-router",
+      "name": "Aspect Ratio Router",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [420, 300]
+    },
+    {
+      "parameters": {"jsCode": "// Platform-specific metadata generation\nconst input = $json;\nconst metadata = {};\n\n// YouTube: full description, tags, chapters\nmetadata.youtube = {\n  title: input.title,\n  description: `${input.description}\\n\\n${input.chapters || ''}\\n\\n#${(input.tags || []).join(' #')}`,\n  tags: input.tags,\n  category: 'Film & Animation',\n  visibility: input.visibility || 'unlisted',\n  file: 'output_16x9.mp4',\n};\n\n// Instagram Reels: caption with hashtags\nmetadata.instagram_reels = {\n  caption: `${input.description.slice(0, 150)}\\n\\n${(input.hashtags || []).map(h => `#${h}`).join(' ')}`,\n  file: 'output_9x16.mp4',\n};\n\n// TikTok: caption with hashtags (different format)\nmetadata.tiktok = {\n  caption: `${input.title} ${(input.hashtags || []).map(h => `#${h}`).join(' ')}`,\n  file: 'output_9x16.mp4',\n};\n\n// YouTube Shorts: same as YouTube but 9:16\nmetadata.youtube_shorts = {\n  title: `${input.title} #shorts`,\n  description: input.description,\n  tags: [...(input.tags || []), 'shorts'],\n  file: 'output_9x16.mp4',\n};\n\n// LinkedIn: professional, no hashtags\nmetadata.linkedin = {\n  title: input.title,\n  description: input.description,\n  file: 'output_16x9.mp4',\n};\n\n// Facebook: 1:1 with description\nmetadata.facebook = {\n  caption: input.description,\n  file: 'output_1x1.mp4',\n};\n\nreturn [{ json: { ...input, platform_metadata: metadata }}];"},
+      "id": "metadata-gen",
+      "name": "Platform Metadata Generator",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [640, 300]
+    },
+    {
+      "parameters": {"fieldToSplitOut": "platforms"},
+      "id": "split-platforms",
+      "name": "Split By Platform",
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [860, 300]
+    },
+    {
+      "parameters": {"jsCode": "// Platform dispatch — route to Blotato MCP or direct API\nconst platform = $json;\nconst meta = $('Platform Metadata Generator').first().json.platform_metadata;\nconst platformData = meta[platform] || {};\n\nreturn [{ json: {\n  platform: platform,\n  file: platformData.file || 'output_16x9.mp4',\n  metadata: platformData,\n  publish_method: 'blotato_mcp',\n  publish_status: 'stub_queued',\n  timestamp: new Date().toISOString(),\n}}];\n// STUB: Blotato MCP or direct API upload. YouTube uses unlisted-first review gate."},
+      "id": "platform-dispatch",
+      "name": "Platform Dispatch",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1080, 300],
+      "notes": "STUB: Blotato MCP for social, YouTube API for long-form. Unlisted-first for review gate."
+    },
+    {
+      "parameters": {"jsCode": "// Aggregate publish results\nconst results = $input.all().map(i => i.json);\nconst successful = results.filter(r => r.publish_status !== 'failed').length;\nreturn [{ json: {\n  total_platforms: results.length,\n  successful: successful,\n  failed: results.length - successful,\n  results: results,\n  timestamp: new Date().toISOString(),\n}}];"},
+      "id": "aggregate-results",
+      "name": "Aggregate Publish Results",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1300, 300]
+    },
+    {
+      "parameters": {"jsCode": "// Log to MySQL publish_log table\nconst summary = $json;\nreturn [{ json: {\n  log_entry: {\n    production_order_id: $('Receive Publish Request').first().json.production_order_id,\n    client: $('Receive Publish Request').first().json.client,\n    platforms_total: summary.total_platforms,\n    platforms_success: summary.successful,\n    platforms_failed: summary.failed,\n    details: summary.results,\n    timestamp: summary.timestamp,\n  },\n  publish_complete: true,\n}}];\n// STUB: MySQL INSERT into publish_log table on VPS"},
+      "id": "mysql-log",
+      "name": "MySQL: Publish Log",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1520, 300],
+      "notes": "STUB: MySQL publish_log table insert"
+    },
+    {
+      "parameters": {"jsCode": "// Notification\nconst input = $('Receive Publish Request').first().json;\nconst summary = $('Aggregate Publish Results').first().json;\nreturn [{ json: {\n  text: `*Video Published*\\nProject: ${input.title}\\nClient: ${input.client}\\nPlatforms: ${summary.successful}/${summary.total_platforms} successful\\nVisibility: ${input.visibility}`,\n}}];"},
+      "id": "notification",
+      "name": "Publish Notification",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1740, 300],
+      "notes": "STUB: Slack or email notification"
+    }
+  ],
+  "connections": {
+    "Receive Publish Request": {"main": [[{"node": "Aspect Ratio Router", "type": "main", "index": 0}]]},
+    "Aspect Ratio Router": {"main": [[{"node": "Platform Metadata Generator", "type": "main", "index": 0}]]},
+    "Platform Metadata Generator": {"main": [[{"node": "Split By Platform", "type": "main", "index": 0}]]},
+    "Split By Platform": {"main": [[{"node": "Platform Dispatch", "type": "main", "index": 0}]]},
+    "Platform Dispatch": {"main": [[{"node": "Aggregate Publish Results", "type": "main", "index": 0}]]},
+    "Aggregate Publish Results": {"main": [[{"node": "MySQL: Publish Log", "type": "main", "index": 0}]]},
+    "MySQL: Publish Log": {"main": [[{"node": "Publish Notification", "type": "main", "index": 0}]]}
+  },
+  "settings": {"executionOrder": "v1"},
+  "tags": [{"name": "distribution"}, {"name": "publisher"}, {"name": "multi-platform"}]
+}

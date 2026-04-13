@@ -1,0 +1,139 @@
+{
+  "name": "Anime/Stylized Production",
+  "nodes": [
+    {
+      "parameters": {
+        "event": "update",
+        "databaseId": "${NOTION_DB_ID}",
+        "conditions": {"string": [{"key": "Status", "value": "Ready to Produce"}, {"key": "Format", "value": "Anime"}]}
+      },
+      "id": "trigger-notion",
+      "name": "Notion Trigger",
+      "type": "n8n-nodes-base.notionTrigger",
+      "typeVersion": 1,
+      "position": [200, 300]
+    },
+    {
+      "parameters": {"jsCode": "const page = $input.first().json;\nconst props = page.properties || {};\nreturn [{ json: {\n  production_order_id: props['Order ID']?.rich_text?.[0]?.plain_text || `ANI-${Date.now()}`,\n  client: props['Client']?.select?.name || 'Unknown',\n  project_name: props['Project']?.title?.[0]?.plain_text || 'Anime Project',\n  characters: [],\n  scenes: [],\n  style: props['Style']?.select?.name || 'anime_cel_shaded',\n  notion_page_id: page.id,\n}}];"},
+      "id": "parse-order",
+      "name": "Parse Production Order",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [420, 300]
+    },
+    {
+      "parameters": {"jsCode": "// GPU availability check — determines free (local) vs paid (API) path\nconst order = $json;\n// STUB: Check if ComfyUI Desktop is running on localhost:8188\nconst gpuAvailable = false; // Set to true when ComfyUI Desktop is running\nreturn [{ json: { ...order, gpu_available: gpuAvailable, generation_path: gpuAvailable ? 'local_comfyui' : 'fal_api' }}];"},
+      "id": "gpu-check",
+      "name": "GPU Availability Check",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [640, 300]
+    },
+    {
+      "parameters": {"jsCode": "// ComfyUI: Generate character sheets (10-12 poses per character)\n// Uses SDXL + anime LoRA for style consistency\nconst order = $json;\nreturn [{ json: { ...order, character_sheets_status: 'stub', character_count: order.characters.length || 1 }}];\n// STUB: ComfyUI character sheet generation pipeline"},
+      "id": "character-sheets",
+      "name": "ComfyUI: Character Sheets",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [860, 300],
+      "notes": "STUB: ComfyUI SDXL + anime LoRA character sheet generation"
+    },
+    {
+      "parameters": {"jsCode": "// LoRA training check — train if new character, skip if existing\nconst order = $json;\nreturn [{ json: { ...order, lora_status: 'stub_skipped', lora_note: 'LoRA training async — triggered separately if new character' }}];\n// STUB: ComfyUI Expert lora-training sub-skill"},
+      "id": "lora-check",
+      "name": "LoRA Training Check",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1080, 300],
+      "notes": "STUB: LoRA training for character consistency (async, per-character)"
+    },
+    {
+      "parameters": {"fieldToSplitOut": "scenes"},
+      "id": "split-scenes",
+      "name": "Split Into Scenes",
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [1300, 300]
+    },
+    {
+      "parameters": {"jsCode": "// Per-scene generation: AnimateDiff V3 + motion LoRAs or Wan 2.6\n// If GPU available: local ComfyUI (free)\n// If no GPU: fal.ai Wan 2.6 cloud ($0.10/sec)\nconst scene = $json;\nconst isLocal = scene.generation_path === 'local_comfyui';\nreturn [{ json: { ...scene, generation_engine: isLocal ? 'comfyui_animatediff' : 'fal_wan26', generation_cost: isLocal ? 0 : (scene.duration_seconds || 5) * 0.10 }}];\n// STUB: Routes to ComfyUI local or fal.ai cloud"},
+      "id": "generate-scene",
+      "name": "Generate Anime Scene",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1520, 300],
+      "notes": "STUB: AnimateDiff V3 (local) or Wan 2.6 (cloud). FramePack for 60+ sec sequences.",
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 30000
+    },
+    {
+      "parameters": {"jsCode": "// Style transfer + ComfyUI post-processing\n// Apply anime LoRA style, deflicker, face enhance\nconst scene = $json;\nreturn [{ json: { ...scene, style_transfer_status: 'stub', style_applied: scene.style || 'anime_cel_shaded' }}];\n// STUB: ComfyUI style transfer LoRA application"},
+      "id": "style-transfer",
+      "name": "ComfyUI: Style Transfer",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1740, 300],
+      "notes": "STUB: Anime style LoRA + deflicker + face enhance"
+    },
+    {
+      "parameters": {"jsCode": "const allScenes = $input.all().map(i => i.json);\nconst totalCost = allScenes.reduce((s, sc) => s + (sc.generation_cost || 0), 0);\nreturn [{ json: { scenes: allScenes, total_generation_cost: totalCost, scene_count: allScenes.length }}];"},
+      "id": "aggregate",
+      "name": "Aggregate Scenes",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1960, 300]
+    },
+    {
+      "parameters": {"jsCode": "// ElevenLabs: Japanese voice cast + ambient SFX\nconst order = $json;\nreturn [{ json: { ...order, voice_cast_status: 'stub', sfx_status: 'stub', audio_cost: 0.10 }}];\n// STUB: ElevenLabs voice generation for anime characters"},
+      "id": "audio-production",
+      "name": "Audio: Voice Cast + SFX",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2180, 300],
+      "notes": "STUB: ElevenLabs character voices + SFX"
+    },
+    {
+      "parameters": {"jsCode": "// ComfyUI lip-sync: LatentSync 1.6 for dialogue scenes\nconst order = $json;\nreturn [{ json: { ...order, lipsync_status: 'stub', lipsync_method: 'latentsync_1.6' }}];\n// STUB: ComfyUI local LatentSync or Muapi cloud LatentSync"},
+      "id": "lipsync",
+      "name": "Lip-Sync: LatentSync",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2400, 300],
+      "notes": "STUB: LatentSync 1.6 lip-sync for dialogue scenes"
+    },
+    {
+      "parameters": {"jsCode": "// Remotion: Anime composition — opening titles, subtitles, credits\n// Uses high-saturation LUT, anime-specific transitions\nconst order = $json;\nreturn [{ json: { ...order, remotion_template: 'Generic', remotion_note: 'Generic template with anime config: high saturation, bold transitions, opening titles, subtitle track, credits roll' }}];\n// STUB: Remotion CLI with anime-configured Generic template"},
+      "id": "remotion-compose",
+      "name": "Remotion: Anime Compose",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2620, 300],
+      "notes": "STUB: Generic template with anime config"
+    },
+    {
+      "parameters": {"jsCode": "// FFmpeg: encode to broadcast spec\nconst order = $json;\nconst total = (order.total_generation_cost || 0) + (order.audio_cost || 0);\nreturn [{ json: { production_order_id: order.production_order_id, total_cost: total, encode_spec: 'broadcast_1080p_h264', status: 'QC Review' }}];"},
+      "id": "encode-and-cost",
+      "name": "Encode + Cost Reconciliation",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2840, 300]
+    }
+  ],
+  "connections": {
+    "Notion Trigger": {"main": [[{"node": "Parse Production Order", "type": "main", "index": 0}]]},
+    "Parse Production Order": {"main": [[{"node": "GPU Availability Check", "type": "main", "index": 0}]]},
+    "GPU Availability Check": {"main": [[{"node": "ComfyUI: Character Sheets", "type": "main", "index": 0}]]},
+    "ComfyUI: Character Sheets": {"main": [[{"node": "LoRA Training Check", "type": "main", "index": 0}]]},
+    "LoRA Training Check": {"main": [[{"node": "Split Into Scenes", "type": "main", "index": 0}]]},
+    "Split Into Scenes": {"main": [[{"node": "Generate Anime Scene", "type": "main", "index": 0}]]},
+    "Generate Anime Scene": {"main": [[{"node": "ComfyUI: Style Transfer", "type": "main", "index": 0}]]},
+    "ComfyUI: Style Transfer": {"main": [[{"node": "Aggregate Scenes", "type": "main", "index": 0}]]},
+    "Aggregate Scenes": {"main": [[{"node": "Audio: Voice Cast + SFX", "type": "main", "index": 0}]]},
+    "Audio: Voice Cast + SFX": {"main": [[{"node": "Lip-Sync: LatentSync", "type": "main", "index": 0}]]},
+    "Lip-Sync: LatentSync": {"main": [[{"node": "Remotion: Anime Compose", "type": "main", "index": 0}]]},
+    "Remotion: Anime Compose": {"main": [[{"node": "Encode + Cost Reconciliation", "type": "main", "index": 0}]]}
+  },
+  "settings": {"executionOrder": "v1"},
+  "tags": [{"name": "production"}, {"name": "anime"}]
+}

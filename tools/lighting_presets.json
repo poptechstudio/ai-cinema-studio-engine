@@ -1,0 +1,2160 @@
+[
+  {
+    "id": "light_d79de298_three-point_classic_daylight",
+    "setup_type": "Three-Point Classic",
+    "description": "Standard three-point setup with balanced key, fill, and backlight. The workhorse of cinema lighting.",
+    "key_light": {
+      "position": "45 degrees camera-left, above eye level",
+      "type": "large softbox or Fresnel with diffusion",
+      "intensity": "primary (2:1 key-to-fill ratio)",
+      "color_temp_k": 5600
+    },
+    "fill_light": {
+      "position": "camera-right, near lens axis",
+      "type": "bounce board or soft fill",
+      "intensity": "moderate \u2014 preserves shadow shape without going flat",
+      "color_temp_k": 5600
+    },
+    "back_light": {
+      "position": "behind subject, opposite key, elevated",
+      "type": "small Fresnel or dedolight",
+      "intensity": "subtle edge separation",
+      "color_temp_k": 5600
+    },
+    "color_temperature_k": 5600,
+    "variant_note": "daylight-balanced, neutral",
+    "mood_tags": [
+      "balanced",
+      "natural",
+      "professional",
+      "clean"
+    ],
+    "prompt_fragment": "Three-Point Classic lighting, daylight 5600K, key light 45 degrees camera-left, above eye level, balanced, natural, professional, standard three-point setup with balanced key, fill, and backlight",
+    "use_cases": [
+      "interview",
+      "corporate",
+      "dialogue_scene",
+      "general_purpose"
+    ],
+    "post_processing_notes": "Neutral base for any color grade. Works with all film stock emulations."
+  },
+  {
+    "id": "light_2d98b767_three-point_classic_tungsten",
+    "setup_type": "Three-Point Classic",
+    "description": "Standard three-point setup with balanced key, fill, and backlight. The workhorse of cinema lighting.",
+    "key_light": {
+      "position": "45 degrees camera-left, above eye level",
+      "type": "large softbox or Fresnel with diffusion",
+      "intensity": "primary (2:1 key-to-fill ratio)",
+      "color_temp_k": 5600
+    },
+    "fill_light": {
+      "position": "camera-right, near lens axis",
+      "type": "bounce board or soft fill",
+      "intensity": "moderate \u2014 preserves shadow shape without going flat",
+      "color_temp_k": 5600
+    },
+    "back_light": {
+      "position": "behind subject, opposite key, elevated",
+      "type": "small Fresnel or dedolight",
+      "intensity": "subtle edge separation",
+      "color_temp_k": 5600
+    },
+    "color_temperature_k": 3200,
+    "variant_note": "warm tungsten, indoor classic",
+    "mood_tags": [
+      "balanced",
+      "natural",
+      "professional",
+      "clean"
+    ],
+    "prompt_fragment": "Three-Point Classic lighting, warm tungsten 3200K, key light 45 degrees camera-left, above eye level, balanced, natural, professional, standard three-point setup with balanced key, fill, and backlight",
+    "use_cases": [
+      "interview",
+      "corporate",
+      "dialogue_scene",
+      "general_purpose"
+    ],
+    "post_processing_notes": "Neutral base for any color grade. Works with all film stock emulations."
+  },
+  {
+    "id": "light_7d2e734d_three-point_high_contrast_tungsten",
+    "setup_type": "Three-Point High Contrast",
+    "description": "Modified three-point with minimal fill for dramatic contrast. Shadows are allowed to go deep.",
+    "key_light": {
+      "position": "45 degrees camera-left, above eye level",
+      "type": "Fresnel with barndoors, no diffusion",
+      "intensity": "primary (4:1 or higher key-to-fill)",
+      "color_temp_k": 3200
+    },
+    "fill_light": {
+      "position": "camera-right",
+      "type": "neg fill (black flag) \u2014 subtractive",
+      "intensity": "minimal to none",
+      "color_temp_k": 3200
+    },
+    "back_light": {
+      "position": "behind subject, hard edge",
+      "type": "bare Fresnel, tight barndoors",
+      "intensity": "strong rim for separation",
+      "color_temp_k": 3200
+    },
+    "color_temperature_k": 3200,
+    "variant_note": "warm dramatic",
+    "mood_tags": [
+      "dramatic",
+      "intense",
+      "contrasty",
+      "cinematic"
+    ],
+    "prompt_fragment": "Three-Point High Contrast lighting, warm tungsten 3200K, key light 45 degrees camera-left, above eye level, dramatic, intense, contrasty, modified three-point with minimal fill for dramatic contrast",
+    "use_cases": [
+      "drama",
+      "thriller",
+      "emotional_scene",
+      "music_video"
+    ],
+    "post_processing_notes": "Lift shadows slightly in post to retain detail. Pairs with crushed black LUT."
+  },
+  {
+    "id": "light_b91230f4_three-point_high_contrast_cool",
+    "setup_type": "Three-Point High Contrast",
+    "description": "Modified three-point with minimal fill for dramatic contrast. Shadows are allowed to go deep.",
+    "key_light": {
+      "position": "45 degrees camera-left, above eye level",
+      "type": "Fresnel with barndoors, no diffusion",
+      "intensity": "primary (4:1 or higher key-to-fill)",
+      "color_temp_k": 3200
+    },
+    "fill_light": {
+      "position": "camera-right",
+      "type": "neg fill (black flag) \u2014 subtractive",
+      "intensity": "minimal to none",
+      "color_temp_k": 3200
+    },
+    "back_light": {
+      "position": "behind subject, hard edge",
+      "type": "bare Fresnel, tight barndoors",
+      "intensity": "strong rim for separation",
+      "color_temp_k": 3200
+    },
+    "color_temperature_k": 5600,
+    "variant_note": "cold dramatic, clinical",
+    "mood_tags": [
+      "dramatic",
+      "intense",
+      "contrasty",
+      "cinematic"
+    ],
+    "prompt_fragment": "Three-Point High Contrast lighting, daylight 5600K, key light 45 degrees camera-left, above eye level, dramatic, intense, contrasty, modified three-point with minimal fill for dramatic contrast",
+    "use_cases": [
+      "drama",
+      "thriller",
+      "emotional_scene",
+      "music_video"
+    ],
+    "post_processing_notes": "Lift shadows slightly in post to retain detail. Pairs with crushed black LUT."
+  },
+  {
+    "id": "light_626b45b7_rembrandt_tungsten_warm",
+    "setup_type": "Rembrandt",
+    "description": "Classic portrait lighting named after the painter. Defined by triangular highlight on shadow-side cheek.",
+    "key_light": {
+      "position": "45 degrees camera-left, slightly above eye level",
+      "type": "large softbox or book light",
+      "intensity": "primary (3:1 key-to-fill ratio)",
+      "color_temp_k": 3200
+    },
+    "fill_light": {
+      "position": "camera-right, near lens axis",
+      "type": "bounce card or neg fill",
+      "intensity": "subtle \u2014 enough for shadow detail, not enough to flatten",
+      "color_temp_k": 3200
+    },
+    "back_light": {
+      "position": "behind subject, opposite key",
+      "type": "hard source with barndoors",
+      "intensity": "edge separation only",
+      "color_temp_k": 3200
+    },
+    "color_temperature_k": 3200,
+    "variant_note": "warm tungsten, classic feel",
+    "mood_tags": [
+      "dramatic",
+      "portrait",
+      "classic",
+      "warm",
+      "painterly"
+    ],
+    "prompt_fragment": "Rembrandt lighting, warm tungsten 3200K, key light 45 degrees camera-left, slightly above eye level, dramatic, portrait, classic, classic portrait lighting named after the painter",
+    "use_cases": [
+      "interview",
+      "portrait",
+      "dramatic_scene",
+      "product_hero"
+    ],
+    "post_processing_notes": "Pairs well with Kodak Vision3 500T film stock emulation. IC-Light can adjust key angle in post."
+  },
+  {
+    "id": "light_81590cec_rembrandt_daylight",
+    "setup_type": "Rembrandt",
+    "description": "Classic portrait lighting named after the painter. Defined by triangular highlight on shadow-side cheek.",
+    "key_light": {
+      "position": "45 degrees camera-left, slightly above eye level",
+      "type": "large softbox or book light",
+      "intensity": "primary (3:1 key-to-fill ratio)",
+      "color_temp_k": 3200
+    },
+    "fill_light": {
+      "position": "camera-right, near lens axis",
+      "type": "bounce card or neg fill",
+      "intensity": "subtle \u2014 enough for shadow detail, not enough to flatten",
+      "color_temp_k": 3200
+    },
+    "back_light": {
+      "position": "behind subject, opposite key",
+      "type": "hard source with barndoors",
+      "intensity": "edge separation only",
+      "color_temp_k": 3200
+    },
+    "color_temperature_k": 5600,
+    "variant_note": "neutral daylight, modern take",
+    "mood_tags": [
+      "dramatic",
+      "portrait",
+      "classic",
+      "warm",
+      "painterly"
+    ],
+    "prompt_fragment": "Rembrandt lighting, daylight 5600K, key light 45 degrees camera-left, slightly above eye level, dramatic, portrait, classic, classic portrait lighting named after the painter",
+    "use_cases": [
+      "interview",
+      "portrait",
+      "dramatic_scene",
+      "product_hero"
+    ],
+    "post_processing_notes": "Pairs well with Kodak Vision3 500T film stock emulation. IC-Light can adjust key angle in post."
+  },
+  {
+    "id": "light_cf4fdf15_split_lighting_tungsten",
+    "setup_type": "Split Lighting",
+    "description": "Half the face lit, half in complete shadow. Maximum drama, reveals duality or conflict.",
+    "key_light": {
+      "position": "90 degrees to one side, at eye level",
+      "type": "hard source (Fresnel or bare bulb)",
+      "intensity": "strong, no spill to shadow side",
+      "color_temp_k": 3200
+    },
+    "fill_light": {
+      "position": "none",
+      "type": "neg fill on shadow side",
+      "intensity": "zero \u2014 full shadow",
+      "color_temp_k": 0
+    },
+    "back_light": {
+      "position": "behind, opposite key",
+      "type": "optional subtle rim",
+      "intensity": "minimal",
+      "color_temp_k": 3200
+    },
+    "color_temperature_k": 3200,
+    "variant_note": "warm, intimate conflict",
+    "mood_tags": [
+      "extreme_dramatic",
+      "duality",
+      "conflict",
+      "noir_adjacent"
+    ],
+    "prompt_fragment": "Split Lighting lighting, warm tungsten 3200K, key light 90 degrees to one side, at eye level, extreme_dramatic, duality, conflict, half the face lit, half in complete shadow",
+    "use_cases": [
+      "villain_reveal",
+      "internal_conflict",
+      "dramatic_portrait",
+      "thriller"
+    ],
+    "post_processing_notes": "Can push further with crushed blacks in post. ComfyUI IC-Light can add subtle fill if needed."
+  },
+  {
+    "id": "light_55f0e728_split_lighting_cool_blue",
+    "setup_type": "Split Lighting",
+    "description": "Half the face lit, half in complete shadow. Maximum drama, reveals duality or conflict.",
+    "key_light": {
+      "position": "90 degrees to one side, at eye level",
+      "type": "hard source (Fresnel or bare bulb)",
+      "intensity": "strong, no spill to shadow side",
+      "color_temp_k": 3200
+    },
+    "fill_light": {
+      "position": "none",
+      "type": "neg fill on shadow side",
+      "intensity": "zero \u2014 full shadow",
+      "color_temp_k": 0
+    },
+    "back_light": {
+      "position": "behind, opposite key",
+      "type": "optional subtle rim",
+      "intensity": "minimal",
+      "color_temp_k": 3200
+    },
+    "color_temperature_k": 7500,
+    "variant_note": "cold, clinical tension",
+    "mood_tags": [
+      "extreme_dramatic",
+      "duality",
+      "conflict",
+      "noir_adjacent"
+    ],
+    "prompt_fragment": "Split Lighting lighting, cool blue 7500K, key light 90 degrees to one side, at eye level, extreme_dramatic, duality, conflict, half the face lit, half in complete shadow",
+    "use_cases": [
+      "villain_reveal",
+      "internal_conflict",
+      "dramatic_portrait",
+      "thriller"
+    ],
+    "post_processing_notes": "Can push further with crushed blacks in post. ComfyUI IC-Light can add subtle fill if needed."
+  },
+  {
+    "id": "light_15b3972f_loop_lighting_daylight",
+    "setup_type": "Loop Lighting",
+    "description": "Small shadow loop from nose onto cheek. Flattering, slightly more dramatic than flat.",
+    "key_light": {
+      "position": "30-45 degrees camera-left, slightly above",
+      "type": "medium softbox",
+      "intensity": "primary, gentle falloff",
+      "color_temp_k": 5600
+    },
+    "fill_light": {
+      "position": "on-axis, below key",
+      "type": "reflector or soft fill",
+      "intensity": "gentle 2:1 ratio",
+      "color_temp_k": 5600
+    },
+    "back_light": {
+      "position": "behind, above",
+      "type": "hairlight",
+      "intensity": "subtle separation",
+      "color_temp_k": 5600
+    },
+    "color_temperature_k": 5600,
+    "variant_note": "clean daylight",
+    "mood_tags": [
+      "flattering",
+      "natural",
+      "portrait",
+      "gentle"
+    ],
+    "prompt_fragment": "Loop Lighting lighting, daylight 5600K, key light 30-45 degrees camera-left, slightly above, flattering, natural, portrait, small shadow loop from nose onto cheek",
+    "use_cases": [
+      "beauty",
+      "interview",
+      "headshot",
+      "corporate_portrait"
+    ],
+    "post_processing_notes": "Clean base for beauty retouching. Minimal post needed."
+  },
+  {
+    "id": "light_1f85f966_butterfly_paramount_daylight_glamour",
+    "setup_type": "Butterfly Paramount",
+    "description": "Key directly above and in front, creating butterfly shadow under nose. Classic Hollywood glamour.",
+    "key_light": {
+      "position": "directly above camera, elevated 45 degrees",
+      "type": "large soft source (beauty dish or octabox)",
+      "intensity": "primary, even and wrapping",
+      "color_temp_k": 5600
+    },
+    "fill_light": {
+      "position": "below face, reflector on lap or table",
+      "type": "silver or white reflector",
+      "intensity": "fills under-chin shadows",
+      "color_temp_k": 5600
+    },
+    "back_light": {
+      "position": "behind, elevated",
+      "type": "hairlight for glamour halo",
+      "intensity": "accent",
+      "color_temp_k": 5600
+    },
+    "color_temperature_k": 5600,
+    "variant_note": "clean glamour",
+    "mood_tags": [
+      "glamour",
+      "beauty",
+      "classic_hollywood",
+      "elegant"
+    ],
+    "prompt_fragment": "Butterfly Paramount lighting, daylight 5600K, key light directly above camera, elevated 45 degrees, glamour, beauty, classic_hollywood, key directly above and in front, creating butterfly shadow under nose",
+    "use_cases": [
+      "beauty_commercial",
+      "fashion",
+      "portrait",
+      "product_beauty"
+    ],
+    "post_processing_notes": "Skin retouching workflow in ComfyUI. Pairs with soft-focus vintage LUTs."
+  },
+  {
+    "id": "light_3474ee93_butterfly_paramount_warm_golden",
+    "setup_type": "Butterfly Paramount",
+    "description": "Key directly above and in front, creating butterfly shadow under nose. Classic Hollywood glamour.",
+    "key_light": {
+      "position": "directly above camera, elevated 45 degrees",
+      "type": "large soft source (beauty dish or octabox)",
+      "intensity": "primary, even and wrapping",
+      "color_temp_k": 5600
+    },
+    "fill_light": {
+      "position": "below face, reflector on lap or table",
+      "type": "silver or white reflector",
+      "intensity": "fills under-chin shadows",
+      "color_temp_k": 5600
+    },
+    "back_light": {
+      "position": "behind, elevated",
+      "type": "hairlight for glamour halo",
+      "intensity": "accent",
+      "color_temp_k": 5600
+    },
+    "color_temperature_k": 4500,
+    "variant_note": "warm golden glamour",
+    "mood_tags": [
+      "glamour",
+      "beauty",
+      "classic_hollywood",
+      "elegant"
+    ],
+    "prompt_fragment": "Butterfly Paramount lighting, mixed 4500K, key light directly above camera, elevated 45 degrees, glamour, beauty, classic_hollywood, key directly above and in front, creating butterfly shadow under nose",
+    "use_cases": [
+      "beauty_commercial",
+      "fashion",
+      "portrait",
+      "product_beauty"
+    ],
+    "post_processing_notes": "Skin retouching workflow in ComfyUI. Pairs with soft-focus vintage LUTs."
+  },
+  {
+    "id": "light_8eff1492_broad_lighting_daylight",
+    "setup_type": "Broad Lighting",
+    "description": "Lit side of face turned toward camera. Opens up the face, used for thinner appearance.",
+    "key_light": {
+      "position": "on the side of face closest to camera",
+      "type": "medium softbox",
+      "intensity": "primary",
+      "color_temp_k": 5600
+    },
+    "fill_light": {
+      "position": "opposite side, gentle",
+      "type": "bounce",
+      "intensity": "moderate fill",
+      "color_temp_k": 5600
+    },
+    "back_light": {
+      "position": "behind, rim on shadow side",
+      "type": "small Fresnel",
+      "intensity": "separation",
+      "color_temp_k": 5600
+    },
+    "color_temperature_k": 5600,
+    "variant_note": "daylight balanced",
+    "mood_tags": [
+      "open",
+      "friendly",
+      "approachable",
+      "natural"
+    ],
+    "prompt_fragment": "Broad Lighting lighting, daylight 5600K, key light on the side of face closest to camera, open, friendly, approachable, lit side of face turned toward camera",
+    "use_cases": [
+      "interview",
+      "corporate",
+      "vlog",
+      "testimonial"
+    ],
+    "post_processing_notes": "Standard color correction. No special treatment needed."
+  },
+  {
+    "id": "light_8d4a08aa_short_lighting_tungsten",
+    "setup_type": "Short Lighting",
+    "description": "Shadow side of face toward camera. Adds depth and slimming effect, more dramatic than broad.",
+    "key_light": {
+      "position": "on far side of face from camera",
+      "type": "medium softbox or Fresnel with diffusion",
+      "intensity": "primary, sculpting",
+      "color_temp_k": 3200
+    },
+    "fill_light": {
+      "position": "near camera, subtle",
+      "type": "bounce or soft fill",
+      "intensity": "minimal \u2014 maintain shadow depth",
+      "color_temp_k": 3200
+    },
+    "back_light": {
+      "position": "behind subject, camera-side",
+      "type": "rim light",
+      "intensity": "moderate for dimension",
+      "color_temp_k": 3200
+    },
+    "color_temperature_k": 3200,
+    "variant_note": "warm tungsten",
+    "mood_tags": [
+      "sculpted",
+      "dimensional",
+      "dramatic_natural",
+      "slimming"
+    ],
+    "prompt_fragment": "Short Lighting lighting, warm tungsten 3200K, key light on far side of face from camera, sculpted, dimensional, dramatic_natural, shadow side of face toward camera",
+    "use_cases": [
+      "portrait",
+      "drama",
+      "interview_dramatic",
+      "character_intro"
+    ],
+    "post_processing_notes": "Works well with slightly desaturated grades. Film stock emulation adds character."
+  },
+  {
+    "id": "light_0ad97869_short_lighting_daylight",
+    "setup_type": "Short Lighting",
+    "description": "Shadow side of face toward camera. Adds depth and slimming effect, more dramatic than broad.",
+    "key_light": {
+      "position": "on far side of face from camera",
+      "type": "medium softbox or Fresnel with diffusion",
+      "intensity": "primary, sculpting",
+      "color_temp_k": 3200
+    },
+    "fill_light": {
+      "position": "near camera, subtle",
+      "type": "bounce or soft fill",
+      "intensity": "minimal \u2014 maintain shadow depth",
+      "color_temp_k": 3200
+    },
+    "back_light": {
+      "position": "behind subject, camera-side",
+      "type": "rim light",
+      "intensity": "moderate for dimension",
+      "color_temp_k": 3200
+    },
+    "color_temperature_k": 5600,
+    "variant_note": "neutral daylight",
+    "mood_tags": [
+      "sculpted",
+      "dimensional",
+      "dramatic_natural",
+      "slimming"
+    ],
+    "prompt_fragment": "Short Lighting lighting, daylight 5600K, key light on far side of face from camera, sculpted, dimensional, dramatic_natural, shadow side of face toward camera",
+    "use_cases": [
+      "portrait",
+      "drama",
+      "interview_dramatic",
+      "character_intro"
+    ],
+    "post_processing_notes": "Works well with slightly desaturated grades. Film stock emulation adds character."
+  },
+  {
+    "id": "light_c6d38652_rim_edge_lighting_daylight",
+    "setup_type": "Rim Edge Lighting",
+    "description": "Subject mostly in silhouette with strong edge/rim light outlining the form. Mysterious, powerful.",
+    "key_light": {
+      "position": "none from front",
+      "type": "absent \u2014 darkness is the key",
+      "intensity": "zero front light",
+      "color_temp_k": 0
+    },
+    "fill_light": {
+      "position": "none or extremely subtle ambient",
+      "type": "ambient spill only",
+      "intensity": "near zero",
+      "color_temp_k": 0
+    },
+    "back_light": {
+      "position": "behind subject, both sides",
+      "type": "hard sources, barndoors tight",
+      "intensity": "strong rim defining the silhouette",
+      "color_temp_k": 5600
+    },
+    "color_temperature_k": 5600,
+    "variant_note": "white rim",
+    "mood_tags": [
+      "mysterious",
+      "powerful",
+      "silhouette",
+      "epic",
+      "dramatic"
+    ],
+    "prompt_fragment": "Rim Edge Lighting lighting, daylight 5600K, key light none from front, mysterious, powerful, silhouette, subject mostly in silhouette with strong edge/rim light outlining the form",
+    "use_cases": [
+      "hero_reveal",
+      "title_sequence",
+      "villain_entrance",
+      "product_silhouette"
+    ],
+    "post_processing_notes": "Crush blacks in post. Can add subtle front fill with IC-Light if needed for face detail."
+  },
+  {
+    "id": "light_544e9442_rim_edge_lighting_warm_amber",
+    "setup_type": "Rim Edge Lighting",
+    "description": "Subject mostly in silhouette with strong edge/rim light outlining the form. Mysterious, powerful.",
+    "key_light": {
+      "position": "none from front",
+      "type": "absent \u2014 darkness is the key",
+      "intensity": "zero front light",
+      "color_temp_k": 0
+    },
+    "fill_light": {
+      "position": "none or extremely subtle ambient",
+      "type": "ambient spill only",
+      "intensity": "near zero",
+      "color_temp_k": 0
+    },
+    "back_light": {
+      "position": "behind subject, both sides",
+      "type": "hard sources, barndoors tight",
+      "intensity": "strong rim defining the silhouette",
+      "color_temp_k": 5600
+    },
+    "color_temperature_k": 2700,
+    "variant_note": "warm golden rim",
+    "mood_tags": [
+      "mysterious",
+      "powerful",
+      "silhouette",
+      "epic",
+      "dramatic"
+    ],
+    "prompt_fragment": "Rim Edge Lighting lighting, warm tungsten 2700K, key light none from front, mysterious, powerful, silhouette, subject mostly in silhouette with strong edge/rim light outlining the form",
+    "use_cases": [
+      "hero_reveal",
+      "title_sequence",
+      "villain_entrance",
+      "product_silhouette"
+    ],
+    "post_processing_notes": "Crush blacks in post. Can add subtle front fill with IC-Light if needed for face detail."
+  },
+  {
+    "id": "light_c56503bd_rim_edge_lighting_cool_blue",
+    "setup_type": "Rim Edge Lighting",
+    "description": "Subject mostly in silhouette with strong edge/rim light outlining the form. Mysterious, powerful.",
+    "key_light": {
+      "position": "none from front",
+      "type": "absent \u2014 darkness is the key",
+      "intensity": "zero front light",
+      "color_temp_k": 0
+    },
+    "fill_light": {
+      "position": "none or extremely subtle ambient",
+      "type": "ambient spill only",
+      "intensity": "near zero",
+      "color_temp_k": 0
+    },
+    "back_light": {
+      "position": "behind subject, both sides",
+      "type": "hard sources, barndoors tight",
+      "intensity": "strong rim defining the silhouette",
+      "color_temp_k": 5600
+    },
+    "color_temperature_k": 8000,
+    "variant_note": "cold blue rim, sci-fi feel",
+    "mood_tags": [
+      "mysterious",
+      "powerful",
+      "silhouette",
+      "epic",
+      "dramatic"
+    ],
+    "prompt_fragment": "Rim Edge Lighting lighting, cool blue 8000K, key light none from front, mysterious, powerful, silhouette, subject mostly in silhouette with strong edge/rim light outlining the form",
+    "use_cases": [
+      "hero_reveal",
+      "title_sequence",
+      "villain_entrance",
+      "product_silhouette"
+    ],
+    "post_processing_notes": "Crush blacks in post. Can add subtle front fill with IC-Light if needed for face detail."
+  },
+  {
+    "id": "light_b329afd9_practical_motivated_warm_interior",
+    "setup_type": "Practical Motivated",
+    "description": "Lighting motivated by visible in-scene sources \u2014 table lamps, neon signs, TV screens, windows.",
+    "key_light": {
+      "position": "near the practical source in frame",
+      "type": "hidden key matching practical color and direction",
+      "intensity": "matched to practical, natural feeling",
+      "color_temp_k": 2700
+    },
+    "fill_light": {
+      "position": "ambient bounce from scene elements",
+      "type": "bounce from walls/ceiling",
+      "intensity": "natural room ambient",
+      "color_temp_k": 3200
+    },
+    "back_light": {
+      "position": "another practical or window behind",
+      "type": "motivated by scene",
+      "intensity": "varies with scene",
+      "color_temp_k": 3200
+    },
+    "color_temperature_k": 2700,
+    "variant_note": "warm residential interior",
+    "mood_tags": [
+      "natural",
+      "realistic",
+      "immersive",
+      "motivated",
+      "environmental"
+    ],
+    "prompt_fragment": "Practical Motivated lighting, warm tungsten 2700K, key light near the practical source in frame, natural, realistic, immersive, lighting motivated by visible in-scene sources \u2014 table lamps, neon signs, tv screens, windows",
+    "use_cases": [
+      "interior_scene",
+      "restaurant",
+      "home_interior",
+      "naturalistic_drama"
+    ],
+    "post_processing_notes": "Preserve mixed color temps in grade \u2014 they add realism. Don't white-balance to neutral."
+  },
+  {
+    "id": "light_c9169689_practical_motivated_mixed_neon",
+    "setup_type": "Practical Motivated",
+    "description": "Lighting motivated by visible in-scene sources \u2014 table lamps, neon signs, TV screens, windows.",
+    "key_light": {
+      "position": "near the practical source in frame",
+      "type": "hidden key matching practical color and direction",
+      "intensity": "matched to practical, natural feeling",
+      "color_temp_k": 2700
+    },
+    "fill_light": {
+      "position": "ambient bounce from scene elements",
+      "type": "bounce from walls/ceiling",
+      "intensity": "natural room ambient",
+      "color_temp_k": 3200
+    },
+    "back_light": {
+      "position": "another practical or window behind",
+      "type": "motivated by scene",
+      "intensity": "varies with scene",
+      "color_temp_k": 3200
+    },
+    "color_temperature_k": 4000,
+    "variant_note": "mixed sources, urban interior",
+    "mood_tags": [
+      "natural",
+      "realistic",
+      "immersive",
+      "motivated",
+      "environmental"
+    ],
+    "prompt_fragment": "Practical Motivated lighting, mixed 4000K, key light near the practical source in frame, natural, realistic, immersive, lighting motivated by visible in-scene sources \u2014 table lamps, neon signs, tv screens, windows",
+    "use_cases": [
+      "interior_scene",
+      "restaurant",
+      "home_interior",
+      "naturalistic_drama"
+    ],
+    "post_processing_notes": "Preserve mixed color temps in grade \u2014 they add realism. Don't white-balance to neutral."
+  },
+  {
+    "id": "light_f4ea3c57_golden_hour_early",
+    "setup_type": "Golden Hour",
+    "description": "Low-angle warm sunlight with long shadows. The last hour before sunset \u2014 the most cinematic natural light.",
+    "key_light": {
+      "position": "low angle from horizon, warm directional",
+      "type": "natural sun (or large tungsten bounced through silk)",
+      "intensity": "warm and soft but directional",
+      "color_temp_k": 3500
+    },
+    "fill_light": {
+      "position": "open sky ambient",
+      "type": "natural skylight fill from above",
+      "intensity": "gentle ambient",
+      "color_temp_k": 5500
+    },
+    "back_light": {
+      "position": "sun can double as backlight if shooting toward it",
+      "type": "natural flare and rim",
+      "intensity": "varies with angle",
+      "color_temp_k": 3500
+    },
+    "color_temperature_k": 4000,
+    "variant_note": "early golden hour, slightly cooler",
+    "mood_tags": [
+      "warm",
+      "romantic",
+      "nostalgic",
+      "cinematic",
+      "golden"
+    ],
+    "prompt_fragment": "Golden Hour lighting, mixed 4000K, key light low angle from horizon, warm directional, warm, romantic, nostalgic, low-angle warm sunlight with long shadows",
+    "use_cases": [
+      "romantic_scene",
+      "establishing_shot",
+      "portrait_outdoor",
+      "commercial_lifestyle"
+    ],
+    "post_processing_notes": "Enhance warm tones. Kodak Vision3 50D or Fuji Eterna emulation. Push highlights warm."
+  },
+  {
+    "id": "light_12945298_golden_hour_late",
+    "setup_type": "Golden Hour",
+    "description": "Low-angle warm sunlight with long shadows. The last hour before sunset \u2014 the most cinematic natural light.",
+    "key_light": {
+      "position": "low angle from horizon, warm directional",
+      "type": "natural sun (or large tungsten bounced through silk)",
+      "intensity": "warm and soft but directional",
+      "color_temp_k": 3500
+    },
+    "fill_light": {
+      "position": "open sky ambient",
+      "type": "natural skylight fill from above",
+      "intensity": "gentle ambient",
+      "color_temp_k": 5500
+    },
+    "back_light": {
+      "position": "sun can double as backlight if shooting toward it",
+      "type": "natural flare and rim",
+      "intensity": "varies with angle",
+      "color_temp_k": 3500
+    },
+    "color_temperature_k": 2800,
+    "variant_note": "deep golden, moments before sunset",
+    "mood_tags": [
+      "warm",
+      "romantic",
+      "nostalgic",
+      "cinematic",
+      "golden"
+    ],
+    "prompt_fragment": "Golden Hour lighting, warm tungsten 2800K, key light low angle from horizon, warm directional, warm, romantic, nostalgic, low-angle warm sunlight with long shadows",
+    "use_cases": [
+      "romantic_scene",
+      "establishing_shot",
+      "portrait_outdoor",
+      "commercial_lifestyle"
+    ],
+    "post_processing_notes": "Enhance warm tones. Kodak Vision3 50D or Fuji Eterna emulation. Push highlights warm."
+  },
+  {
+    "id": "light_e7505cdf_blue_hour_pure_blue",
+    "setup_type": "Blue Hour",
+    "description": "Cool ambient light after sunset, before full dark. No direct sun, everything bathed in soft blue.",
+    "key_light": {
+      "position": "ambient sky from all directions",
+      "type": "natural diffused skylight",
+      "intensity": "low, even, no hard shadows",
+      "color_temp_k": 7500
+    },
+    "fill_light": {
+      "position": "omnidirectional ambient",
+      "type": "sky",
+      "intensity": "very low",
+      "color_temp_k": 7500
+    },
+    "back_light": {
+      "position": "none natural \u2014 add practical lights for interest",
+      "type": "city lights, car headlights, windows",
+      "intensity": "accent only",
+      "color_temp_k": 3200
+    },
+    "color_temperature_k": 7500,
+    "variant_note": "pure cool blue ambient",
+    "mood_tags": [
+      "melancholy",
+      "quiet",
+      "contemplative",
+      "cool",
+      "twilight"
+    ],
+    "prompt_fragment": "Blue Hour lighting, cool blue 7500K, key light ambient sky from all directions, melancholy, quiet, contemplative, cool ambient light after sunset, before full dark",
+    "use_cases": [
+      "transition_scene",
+      "reflective_moment",
+      "establishing_evening",
+      "documentary_mood"
+    ],
+    "post_processing_notes": "Push blue in shadows, add subtle warm practicals for contrast. Low saturation grade."
+  },
+  {
+    "id": "light_23edd187_moonlight_cool_silver",
+    "setup_type": "Moonlight",
+    "description": "Cool blue toplight simulating moonlight. Deep shadows, minimal fill, night exterior feeling.",
+    "key_light": {
+      "position": "high overhead, slightly behind",
+      "type": "large soft source with blue gel (CTB)",
+      "intensity": "low, cool, toplight",
+      "color_temp_k": 8000
+    },
+    "fill_light": {
+      "position": "ambient bounce from ground",
+      "type": "minimal bounce",
+      "intensity": "very low",
+      "color_temp_k": 8000
+    },
+    "back_light": {
+      "position": "moonlight doubles as backlight",
+      "type": "same source raking across",
+      "intensity": "subtle rim on shoulders and hair",
+      "color_temp_k": 8000
+    },
+    "color_temperature_k": 8000,
+    "variant_note": "silver moonlight",
+    "mood_tags": [
+      "nocturnal",
+      "mysterious",
+      "serene",
+      "ethereal",
+      "cool"
+    ],
+    "prompt_fragment": "Moonlight lighting, cool blue 8000K, key light high overhead, slightly behind, nocturnal, mysterious, serene, cool blue toplight simulating moonlight",
+    "use_cases": [
+      "night_exterior",
+      "romantic_night",
+      "horror_exterior",
+      "establishing_night"
+    ],
+    "post_processing_notes": "Desaturate slightly, push blue channel. Add grain for night film stock feel."
+  },
+  {
+    "id": "light_0dd76513_moonlight_blue_deep",
+    "setup_type": "Moonlight",
+    "description": "Cool blue toplight simulating moonlight. Deep shadows, minimal fill, night exterior feeling.",
+    "key_light": {
+      "position": "high overhead, slightly behind",
+      "type": "large soft source with blue gel (CTB)",
+      "intensity": "low, cool, toplight",
+      "color_temp_k": 8000
+    },
+    "fill_light": {
+      "position": "ambient bounce from ground",
+      "type": "minimal bounce",
+      "intensity": "very low",
+      "color_temp_k": 8000
+    },
+    "back_light": {
+      "position": "moonlight doubles as backlight",
+      "type": "same source raking across",
+      "intensity": "subtle rim on shoulders and hair",
+      "color_temp_k": 8000
+    },
+    "color_temperature_k": 10000,
+    "variant_note": "deep blue-white, full moon",
+    "mood_tags": [
+      "nocturnal",
+      "mysterious",
+      "serene",
+      "ethereal",
+      "cool"
+    ],
+    "prompt_fragment": "Moonlight lighting, cool blue 10000K, key light high overhead, slightly behind, nocturnal, mysterious, serene, cool blue toplight simulating moonlight",
+    "use_cases": [
+      "night_exterior",
+      "romantic_night",
+      "horror_exterior",
+      "establishing_night"
+    ],
+    "post_processing_notes": "Desaturate slightly, push blue channel. Add grain for night film stock feel."
+  },
+  {
+    "id": "light_9c1a5a61_overcast_soft_neutral",
+    "setup_type": "Overcast Soft",
+    "description": "Completely diffused skylight, no hard shadows. The sky is one giant softbox.",
+    "key_light": {
+      "position": "overhead, omnidirectional",
+      "type": "natural overcast sky",
+      "intensity": "even, soft, wrapping",
+      "color_temp_k": 6500
+    },
+    "fill_light": {
+      "position": "ground bounce",
+      "type": "natural ground reflection",
+      "intensity": "gentle",
+      "color_temp_k": 6500
+    },
+    "back_light": {
+      "position": "none \u2014 no directional separation",
+      "type": "none",
+      "intensity": "flat",
+      "color_temp_k": 0
+    },
+    "color_temperature_k": 6500,
+    "variant_note": "neutral overcast",
+    "mood_tags": [
+      "soft",
+      "flat",
+      "gentle",
+      "neutral",
+      "documentary"
+    ],
+    "prompt_fragment": "Overcast Soft lighting, cool blue 6500K, key light overhead, omnidirectional, soft, flat, gentle, completely diffused skylight, no hard shadows",
+    "use_cases": [
+      "documentary",
+      "outdoor_portrait",
+      "product_natural",
+      "lifestyle"
+    ],
+    "post_processing_notes": "Add contrast in post to compensate for flat lighting. Can add directional fill with IC-Light."
+  },
+  {
+    "id": "light_5f0fec0a_hard_noon_sun_harsh_daylight",
+    "setup_type": "Hard Noon Sun",
+    "description": "Harsh overhead midday sun. Deep eye socket shadows, high contrast, unflattering but authentic.",
+    "key_light": {
+      "position": "directly overhead",
+      "type": "hard direct sunlight",
+      "intensity": "maximum, harsh",
+      "color_temp_k": 5600
+    },
+    "fill_light": {
+      "position": "ground bounce from pavement",
+      "type": "harsh bounce",
+      "intensity": "hot spots on ground plane",
+      "color_temp_k": 5600
+    },
+    "back_light": {
+      "position": "none needed \u2014 overhead key provides toplight",
+      "type": "same source",
+      "intensity": "harsh top edge",
+      "color_temp_k": 5600
+    },
+    "color_temperature_k": 5600,
+    "variant_note": "harsh midday sun",
+    "mood_tags": [
+      "harsh",
+      "raw",
+      "authentic",
+      "documentary",
+      "brutal"
+    ],
+    "prompt_fragment": "Hard Noon Sun lighting, daylight 5600K, key light directly overhead, harsh, raw, authentic, harsh overhead midday sun",
+    "use_cases": [
+      "desert_scene",
+      "war_documentary",
+      "verite",
+      "music_video_raw"
+    ],
+    "post_processing_notes": "Bleach bypass or desaturated LUT. 16mm film grain adds texture."
+  },
+  {
+    "id": "light_202f6a0a_neon_urban_night_pink_blue",
+    "setup_type": "Neon Urban Night",
+    "description": "Multiple colored neon and LED sources. Urban nightlife, wet reflections, cyberpunk aesthetic.",
+    "key_light": {
+      "position": "from neon signs at various angles",
+      "type": "colored LED/neon practicals",
+      "intensity": "medium, colored",
+      "color_temp_k": 0
+    },
+    "fill_light": {
+      "position": "reflected from wet surfaces",
+      "type": "colored bounce from environment",
+      "intensity": "ambient neon spill",
+      "color_temp_k": 0
+    },
+    "back_light": {
+      "position": "neon behind subject",
+      "type": "colored rim from environmental sources",
+      "intensity": "strong colored rim",
+      "color_temp_k": 0
+    },
+    "color_temperature_k": 4500,
+    "variant_note": "pink and blue neon, classic cyberpunk",
+    "mood_tags": [
+      "cyberpunk",
+      "urban",
+      "neon",
+      "night",
+      "colorful",
+      "energetic"
+    ],
+    "prompt_fragment": "Neon Urban Night lighting, mixed 4500K, key light from neon signs at various angles, cyberpunk, urban, neon, multiple colored neon and led sources",
+    "use_cases": [
+      "music_video",
+      "urban_night",
+      "cyberpunk_scene",
+      "nightlife_commercial"
+    ],
+    "post_processing_notes": "Preserve neon saturation. Add wet/reflective surfaces in generation prompt. Halation on highlights."
+  },
+  {
+    "id": "light_76747e9d_neon_urban_night_green_red",
+    "setup_type": "Neon Urban Night",
+    "description": "Multiple colored neon and LED sources. Urban nightlife, wet reflections, cyberpunk aesthetic.",
+    "key_light": {
+      "position": "from neon signs at various angles",
+      "type": "colored LED/neon practicals",
+      "intensity": "medium, colored",
+      "color_temp_k": 0
+    },
+    "fill_light": {
+      "position": "reflected from wet surfaces",
+      "type": "colored bounce from environment",
+      "intensity": "ambient neon spill",
+      "color_temp_k": 0
+    },
+    "back_light": {
+      "position": "neon behind subject",
+      "type": "colored rim from environmental sources",
+      "intensity": "strong colored rim",
+      "color_temp_k": 0
+    },
+    "color_temperature_k": 4000,
+    "variant_note": "green and red, Asian market aesthetic",
+    "mood_tags": [
+      "cyberpunk",
+      "urban",
+      "neon",
+      "night",
+      "colorful",
+      "energetic"
+    ],
+    "prompt_fragment": "Neon Urban Night lighting, mixed 4000K, key light from neon signs at various angles, cyberpunk, urban, neon, multiple colored neon and led sources",
+    "use_cases": [
+      "music_video",
+      "urban_night",
+      "cyberpunk_scene",
+      "nightlife_commercial"
+    ],
+    "post_processing_notes": "Preserve neon saturation. Add wet/reflective surfaces in generation prompt. Halation on highlights."
+  },
+  {
+    "id": "light_dcf709b1_candlelight_single_candle",
+    "setup_type": "Candlelight",
+    "description": "Extremely warm, flickering, intimate. Motivated by visible candles in frame.",
+    "key_light": {
+      "position": "below face, from candle level",
+      "type": "candle flame or warm LED flicker",
+      "intensity": "very low, intimate",
+      "color_temp_k": 1800
+    },
+    "fill_light": {
+      "position": "ambient bounce from nearby surfaces",
+      "type": "warm reflected glow",
+      "intensity": "minimal",
+      "color_temp_k": 1800
+    },
+    "back_light": {
+      "position": "none \u2014 darkness surrounds",
+      "type": "darkness",
+      "intensity": "zero",
+      "color_temp_k": 0
+    },
+    "color_temperature_k": 1800,
+    "variant_note": "single candle, maximum intimacy",
+    "mood_tags": [
+      "intimate",
+      "warm",
+      "romantic",
+      "religious",
+      "period"
+    ],
+    "prompt_fragment": "Candlelight lighting, candlelight warm 1800K, key light below face, from candle level, intimate, warm, romantic, extremely warm, flickering, intimate",
+    "use_cases": [
+      "period_drama",
+      "romantic_dinner",
+      "religious_scene",
+      "intimate_confession"
+    ],
+    "post_processing_notes": "Ultra-warm grade, crushed shadows. Barry Lyndon reference. Add flicker in post if static."
+  },
+  {
+    "id": "light_2fc092ad_firelight_campfire",
+    "setup_type": "Firelight",
+    "description": "Warm orange animated light from campfire or fireplace. Dancing shadows on faces.",
+    "key_light": {
+      "position": "low, from fire source position",
+      "type": "warm flickering source (fire or animated warm LED)",
+      "intensity": "medium, animated",
+      "color_temp_k": 2200
+    },
+    "fill_light": {
+      "position": "ambient warm glow on surroundings",
+      "type": "warm bounce from nearby surfaces",
+      "intensity": "low ambient",
+      "color_temp_k": 2200
+    },
+    "back_light": {
+      "position": "darkness behind, stars or moonlight possible",
+      "type": "cool ambient if exterior",
+      "intensity": "subtle contrast to fire warmth",
+      "color_temp_k": 8000
+    },
+    "color_temperature_k": 2200,
+    "variant_note": "outdoor campfire",
+    "mood_tags": [
+      "warm",
+      "primal",
+      "storytelling",
+      "camping",
+      "animated_shadows"
+    ],
+    "prompt_fragment": "Firelight lighting, warm tungsten 2200K, key light low, from fire source position, warm, primal, storytelling, warm orange animated light from campfire or fireplace",
+    "use_cases": [
+      "campfire_scene",
+      "storytelling",
+      "survival",
+      "period_exterior_night"
+    ],
+    "post_processing_notes": "Warm shadows, cool highlights for contrast. Animate shadow flicker in post."
+  },
+  {
+    "id": "light_4c70f6f8_firelight_fireplace_interior",
+    "setup_type": "Firelight",
+    "description": "Warm orange animated light from campfire or fireplace. Dancing shadows on faces.",
+    "key_light": {
+      "position": "low, from fire source position",
+      "type": "warm flickering source (fire or animated warm LED)",
+      "intensity": "medium, animated",
+      "color_temp_k": 2200
+    },
+    "fill_light": {
+      "position": "ambient warm glow on surroundings",
+      "type": "warm bounce from nearby surfaces",
+      "intensity": "low ambient",
+      "color_temp_k": 2200
+    },
+    "back_light": {
+      "position": "darkness behind, stars or moonlight possible",
+      "type": "cool ambient if exterior",
+      "intensity": "subtle contrast to fire warmth",
+      "color_temp_k": 8000
+    },
+    "color_temperature_k": 2500,
+    "variant_note": "indoor fireplace, warmer walls",
+    "mood_tags": [
+      "warm",
+      "primal",
+      "storytelling",
+      "camping",
+      "animated_shadows"
+    ],
+    "prompt_fragment": "Firelight lighting, warm tungsten 2500K, key light low, from fire source position, warm, primal, storytelling, warm orange animated light from campfire or fireplace",
+    "use_cases": [
+      "campfire_scene",
+      "storytelling",
+      "survival",
+      "period_exterior_night"
+    ],
+    "post_processing_notes": "Warm shadows, cool highlights for contrast. Animate shadow flicker in post."
+  },
+  {
+    "id": "light_c8a6ed9f_fluorescent_industrial_green_cast",
+    "setup_type": "Fluorescent Industrial",
+    "description": "Green-tinted overhead fluorescent tubes. Institutional, unsettling, clinical.",
+    "key_light": {
+      "position": "directly overhead, flat",
+      "type": "fluorescent tubes (green spike)",
+      "intensity": "harsh, flat, overhead",
+      "color_temp_k": 4200
+    },
+    "fill_light": {
+      "position": "bounce from institutional walls",
+      "type": "green-tinted bounce",
+      "intensity": "flat, unflattering",
+      "color_temp_k": 4200
+    },
+    "back_light": {
+      "position": "none \u2014 flat industrial lighting",
+      "type": "none",
+      "intensity": "flat",
+      "color_temp_k": 0
+    },
+    "color_temperature_k": 4200,
+    "variant_note": "standard fluorescent green",
+    "mood_tags": [
+      "clinical",
+      "unsettling",
+      "institutional",
+      "green_tint",
+      "horror_adjacent"
+    ],
+    "prompt_fragment": "Fluorescent Industrial lighting, mixed 4200K, key light directly overhead, flat, clinical, unsettling, institutional, green-tinted overhead fluorescent tubes",
+    "use_cases": [
+      "hospital",
+      "prison",
+      "office_horror",
+      "interrogation",
+      "institutional_scene"
+    ],
+    "post_processing_notes": "Leave the green cast \u2014 it's the point. Can push further with green tint LUT."
+  },
+  {
+    "id": "light_32f839f8_mixed_color_temperature_warm_cool",
+    "setup_type": "Mixed Color Temperature",
+    "description": "Deliberate warm/cool contrast. Warm tungsten practicals against cool window daylight.",
+    "key_light": {
+      "position": "from window, cool daylight",
+      "type": "natural daylight through window",
+      "intensity": "medium, directional",
+      "color_temp_k": 5600
+    },
+    "fill_light": {
+      "position": "room interior, warm practicals",
+      "type": "tungsten table lamp, warm bulbs",
+      "intensity": "low ambient warmth",
+      "color_temp_k": 2700
+    },
+    "back_light": {
+      "position": "warm practical behind subject",
+      "type": "tungsten practical",
+      "intensity": "warm rim accent",
+      "color_temp_k": 2700
+    },
+    "color_temperature_k": 4000,
+    "variant_note": "warm interior vs cool window",
+    "mood_tags": [
+      "natural",
+      "realistic",
+      "mixed",
+      "environmental",
+      "textured"
+    ],
+    "prompt_fragment": "Mixed Color Temperature lighting, mixed 4000K, key light from window, cool daylight, natural, realistic, mixed, deliberate warm/cool contrast",
+    "use_cases": [
+      "interior_scene",
+      "naturalistic_drama",
+      "documentary_interior",
+      "real_estate"
+    ],
+    "post_processing_notes": "Do NOT white-balance to one temp. The warm/cool contrast is the aesthetic. Preserve both."
+  },
+  {
+    "id": "light_11360eec_film_noir_classic_bw",
+    "setup_type": "Film Noir",
+    "description": "Single hard source, deep shadows, venetian blind patterns, chiaroscuro. 1940s crime aesthetic.",
+    "key_light": {
+      "position": "high and to side, through venetian blinds or gobo",
+      "type": "hard Fresnel with gobo/cookie patterns",
+      "intensity": "strong, patterned",
+      "color_temp_k": 3200
+    },
+    "fill_light": {
+      "position": "none \u2014 darkness is essential",
+      "type": "neg fill",
+      "intensity": "zero",
+      "color_temp_k": 0
+    },
+    "back_light": {
+      "position": "hard rim from behind, low angle",
+      "type": "bare bulb or small Fresnel",
+      "intensity": "slash of light on shoulder or hat brim",
+      "color_temp_k": 3200
+    },
+    "color_temperature_k": 3200,
+    "variant_note": "classic black and white noir",
+    "mood_tags": [
+      "noir",
+      "mysterious",
+      "dangerous",
+      "chiaroscuro",
+      "crime"
+    ],
+    "prompt_fragment": "Film Noir lighting, warm tungsten 3200K, key light high and to side, through venetian blinds or gobo, noir, mysterious, dangerous, single hard source, deep shadows, venetian blind patterns, chiaroscuro",
+    "use_cases": [
+      "noir_scene",
+      "detective",
+      "crime_drama",
+      "femme_fatale",
+      "thriller"
+    ],
+    "post_processing_notes": "Black and white conversion option. High contrast LUT. Venetian blind gobo patterns."
+  },
+  {
+    "id": "light_e5a37044_film_noir_neo_noir_color",
+    "setup_type": "Film Noir",
+    "description": "Single hard source, deep shadows, venetian blind patterns, chiaroscuro. 1940s crime aesthetic.",
+    "key_light": {
+      "position": "high and to side, through venetian blinds or gobo",
+      "type": "hard Fresnel with gobo/cookie patterns",
+      "intensity": "strong, patterned",
+      "color_temp_k": 3200
+    },
+    "fill_light": {
+      "position": "none \u2014 darkness is essential",
+      "type": "neg fill",
+      "intensity": "zero",
+      "color_temp_k": 0
+    },
+    "back_light": {
+      "position": "hard rim from behind, low angle",
+      "type": "bare bulb or small Fresnel",
+      "intensity": "slash of light on shoulder or hat brim",
+      "color_temp_k": 3200
+    },
+    "color_temperature_k": 4000,
+    "variant_note": "neo-noir with color, Blade Runner-adjacent",
+    "mood_tags": [
+      "noir",
+      "mysterious",
+      "dangerous",
+      "chiaroscuro",
+      "crime"
+    ],
+    "prompt_fragment": "Film Noir lighting, mixed 4000K, key light high and to side, through venetian blinds or gobo, noir, mysterious, dangerous, single hard source, deep shadows, venetian blind patterns, chiaroscuro",
+    "use_cases": [
+      "noir_scene",
+      "detective",
+      "crime_drama",
+      "femme_fatale",
+      "thriller"
+    ],
+    "post_processing_notes": "Black and white conversion option. High contrast LUT. Venetian blind gobo patterns."
+  },
+  {
+    "id": "light_fd37cbd0_horror_underlighting_warm_underlight",
+    "setup_type": "Horror Underlighting",
+    "description": "Light from below the face, unnatural angles. Rim-only with colored gels. Disorienting, threatening.",
+    "key_light": {
+      "position": "below face, looking up",
+      "type": "hard source from ground level",
+      "intensity": "medium-strong, creates inverted shadows",
+      "color_temp_k": 3200
+    },
+    "fill_light": {
+      "position": "none \u2014 let it be unsettling",
+      "type": "darkness",
+      "intensity": "zero",
+      "color_temp_k": 0
+    },
+    "back_light": {
+      "position": "colored rim, red or green gel",
+      "type": "hard source with color gel",
+      "intensity": "colored accent",
+      "color_temp_k": 0
+    },
+    "color_temperature_k": 3200,
+    "variant_note": "warm underlight, torchlight feel",
+    "mood_tags": [
+      "horror",
+      "unsettling",
+      "threatening",
+      "supernatural",
+      "inverted"
+    ],
+    "prompt_fragment": "Horror Underlighting lighting, warm tungsten 3200K, key light below face, looking up, horror, unsettling, threatening, light from below the face, unnatural angles",
+    "use_cases": [
+      "horror_scene",
+      "monster_reveal",
+      "nightmare",
+      "campfire_ghost_story"
+    ],
+    "post_processing_notes": "Desaturate skin tones. Push green or red in shadows. Add grain and slight blur."
+  },
+  {
+    "id": "light_78d43ddf_horror_underlighting_green_sickly",
+    "setup_type": "Horror Underlighting",
+    "description": "Light from below the face, unnatural angles. Rim-only with colored gels. Disorienting, threatening.",
+    "key_light": {
+      "position": "below face, looking up",
+      "type": "hard source from ground level",
+      "intensity": "medium-strong, creates inverted shadows",
+      "color_temp_k": 3200
+    },
+    "fill_light": {
+      "position": "none \u2014 let it be unsettling",
+      "type": "darkness",
+      "intensity": "zero",
+      "color_temp_k": 0
+    },
+    "back_light": {
+      "position": "colored rim, red or green gel",
+      "type": "hard source with color gel",
+      "intensity": "colored accent",
+      "color_temp_k": 0
+    },
+    "color_temperature_k": 4500,
+    "variant_note": "green-tinted, sickly supernatural",
+    "mood_tags": [
+      "horror",
+      "unsettling",
+      "threatening",
+      "supernatural",
+      "inverted"
+    ],
+    "prompt_fragment": "Horror Underlighting lighting, mixed 4500K, key light below face, looking up, horror, unsettling, threatening, light from below the face, unnatural angles",
+    "use_cases": [
+      "horror_scene",
+      "monster_reveal",
+      "nightmare",
+      "campfire_ghost_story"
+    ],
+    "post_processing_notes": "Desaturate skin tones. Push green or red in shadows. Add grain and slight blur."
+  },
+  {
+    "id": "light_77ad94e9_sci-fi_blue_key_blue_warm_accent",
+    "setup_type": "Sci-Fi Blue Key",
+    "description": "Cool blue key light with warm practicals. Lens flare motivated by in-scene tech. Futuristic.",
+    "key_light": {
+      "position": "from screen/tech source, cool blue",
+      "type": "large LED panel with CTB, simulating screen light",
+      "intensity": "medium, cool wash",
+      "color_temp_k": 8000
+    },
+    "fill_light": {
+      "position": "warm practicals from console displays",
+      "type": "small warm LED accents",
+      "intensity": "low, colored",
+      "color_temp_k": 3200
+    },
+    "back_light": {
+      "position": "cool rim from overhead fixtures",
+      "type": "blue-white LED strip",
+      "intensity": "strong rim",
+      "color_temp_k": 7500
+    },
+    "color_temperature_k": 6500,
+    "variant_note": "blue key with warm accents",
+    "mood_tags": [
+      "futuristic",
+      "sci-fi",
+      "tech",
+      "cool",
+      "blue_key"
+    ],
+    "prompt_fragment": "Sci-Fi Blue Key lighting, cool blue 6500K, key light from screen/tech source, cool blue, futuristic, sci-fi, tech, cool blue key light with warm practicals",
+    "use_cases": [
+      "spaceship_interior",
+      "tech_demo",
+      "sci-fi_drama",
+      "cyberpunk_interior"
+    ],
+    "post_processing_notes": "Teal and orange grade. Add lens flare. Anamorphic streaks from highlights."
+  },
+  {
+    "id": "light_f0b6da78_commercial_product_bright_white",
+    "setup_type": "Commercial Product",
+    "description": "Large soft key, white cyclorama, clean and bright. Hero product lighting for advertising.",
+    "key_light": {
+      "position": "large overhead, slight angle",
+      "type": "very large softbox or scrim overhead",
+      "intensity": "bright, even, wrapping",
+      "color_temp_k": 5600
+    },
+    "fill_light": {
+      "position": "white cyc bounce from all sides",
+      "type": "white studio walls and floor",
+      "intensity": "high \u2014 minimal shadows",
+      "color_temp_k": 5600
+    },
+    "back_light": {
+      "position": "behind product, low angle",
+      "type": "strip softbox for edge definition",
+      "intensity": "accent edge",
+      "color_temp_k": 5600
+    },
+    "color_temperature_k": 5600,
+    "variant_note": "standard bright product lighting",
+    "mood_tags": [
+      "clean",
+      "bright",
+      "commercial",
+      "product",
+      "white"
+    ],
+    "prompt_fragment": "Commercial Product lighting, daylight 5600K, key light large overhead, slight angle, clean, bright, commercial, large soft key, white cyclorama, clean and bright",
+    "use_cases": [
+      "product_hero",
+      "e-commerce",
+      "commercial",
+      "packshot",
+      "beauty_product"
+    ],
+    "post_processing_notes": "Clean white point. Minimal grading \u2014 accuracy matters. Product color fidelity."
+  },
+  {
+    "id": "light_552ce8af_commercial_product_warm_luxury",
+    "setup_type": "Commercial Product",
+    "description": "Large soft key, white cyclorama, clean and bright. Hero product lighting for advertising.",
+    "key_light": {
+      "position": "large overhead, slight angle",
+      "type": "very large softbox or scrim overhead",
+      "intensity": "bright, even, wrapping",
+      "color_temp_k": 5600
+    },
+    "fill_light": {
+      "position": "white cyc bounce from all sides",
+      "type": "white studio walls and floor",
+      "intensity": "high \u2014 minimal shadows",
+      "color_temp_k": 5600
+    },
+    "back_light": {
+      "position": "behind product, low angle",
+      "type": "strip softbox for edge definition",
+      "intensity": "accent edge",
+      "color_temp_k": 5600
+    },
+    "color_temperature_k": 4500,
+    "variant_note": "slightly warm for luxury products",
+    "mood_tags": [
+      "clean",
+      "bright",
+      "commercial",
+      "product",
+      "white"
+    ],
+    "prompt_fragment": "Commercial Product lighting, mixed 4500K, key light large overhead, slight angle, clean, bright, commercial, large soft key, white cyclorama, clean and bright",
+    "use_cases": [
+      "product_hero",
+      "e-commerce",
+      "commercial",
+      "packshot",
+      "beauty_product"
+    ],
+    "post_processing_notes": "Clean white point. Minimal grading \u2014 accuracy matters. Product color fidelity."
+  },
+  {
+    "id": "light_c3a0867b_documentary_available_light_natural_mixed",
+    "setup_type": "Documentary Available Light",
+    "description": "Minimal lighting intervention. Work with what's there \u2014 windows, overhead fixtures, natural.",
+    "key_light": {
+      "position": "whatever the environment provides",
+      "type": "natural/existing sources",
+      "intensity": "as-is, supplemented minimally",
+      "color_temp_k": 5000
+    },
+    "fill_light": {
+      "position": "natural ambient",
+      "type": "environment",
+      "intensity": "natural",
+      "color_temp_k": 5000
+    },
+    "back_light": {
+      "position": "environmental",
+      "type": "whatever exists",
+      "intensity": "uncontrolled",
+      "color_temp_k": 5000
+    },
+    "color_temperature_k": 5000,
+    "variant_note": "mixed natural sources",
+    "mood_tags": [
+      "authentic",
+      "raw",
+      "documentary",
+      "verite",
+      "unpolished"
+    ],
+    "prompt_fragment": "Documentary Available Light lighting, mixed 5000K, key light whatever the environment provides, authentic, raw, documentary, minimal lighting intervention",
+    "use_cases": [
+      "documentary",
+      "verite",
+      "news",
+      "behind_the_scenes",
+      "reality"
+    ],
+    "post_processing_notes": "Light normalization in post. Shoot LOG to preserve latitude. Grade for consistency."
+  },
+  {
+    "id": "light_020f7ba1_music_video_dramatic_magenta_blue",
+    "setup_type": "Music Video Dramatic",
+    "description": "Colored gels, haze, strong backlight. Dramatic and stylized for performance energy.",
+    "key_light": {
+      "position": "from side, colored gel",
+      "type": "hard source with colored gel (magenta, blue, amber)",
+      "intensity": "strong, stylized",
+      "color_temp_k": 0
+    },
+    "fill_light": {
+      "position": "contrasting color from opposite side",
+      "type": "hard source with complementary gel",
+      "intensity": "matching key for dual-color look",
+      "color_temp_k": 0
+    },
+    "back_light": {
+      "position": "strong backlight through haze",
+      "type": "large source through atmospheric haze",
+      "intensity": "strong, volumetric",
+      "color_temp_k": 5600
+    },
+    "color_temperature_k": 4500,
+    "variant_note": "magenta key, blue fill",
+    "mood_tags": [
+      "energetic",
+      "stylized",
+      "performance",
+      "colorful",
+      "haze"
+    ],
+    "prompt_fragment": "Music Video Dramatic lighting, mixed 4500K, key light from side, colored gel, energetic, stylized, performance, colored gels, haze, strong backlight",
+    "use_cases": [
+      "music_video",
+      "concert",
+      "performance",
+      "dance_sequence"
+    ],
+    "post_processing_notes": "Push saturation. Add haze/atmospheric in generation prompt. Lens flare from backlight."
+  },
+  {
+    "id": "light_04fe44b7_music_video_dramatic_amber_teal",
+    "setup_type": "Music Video Dramatic",
+    "description": "Colored gels, haze, strong backlight. Dramatic and stylized for performance energy.",
+    "key_light": {
+      "position": "from side, colored gel",
+      "type": "hard source with colored gel (magenta, blue, amber)",
+      "intensity": "strong, stylized",
+      "color_temp_k": 0
+    },
+    "fill_light": {
+      "position": "contrasting color from opposite side",
+      "type": "hard source with complementary gel",
+      "intensity": "matching key for dual-color look",
+      "color_temp_k": 0
+    },
+    "back_light": {
+      "position": "strong backlight through haze",
+      "type": "large source through atmospheric haze",
+      "intensity": "strong, volumetric",
+      "color_temp_k": 5600
+    },
+    "color_temperature_k": 4500,
+    "variant_note": "amber key, teal fill",
+    "mood_tags": [
+      "energetic",
+      "stylized",
+      "performance",
+      "colorful",
+      "haze"
+    ],
+    "prompt_fragment": "Music Video Dramatic lighting, mixed 4500K, key light from side, colored gel, energetic, stylized, performance, colored gels, haze, strong backlight",
+    "use_cases": [
+      "music_video",
+      "concert",
+      "performance",
+      "dance_sequence"
+    ],
+    "post_processing_notes": "Push saturation. Add haze/atmospheric in generation prompt. Lens flare from backlight."
+  },
+  {
+    "id": "light_7c7905df_corporate_clean_neutral_clean",
+    "setup_type": "Corporate Clean",
+    "description": "Soft flattering key, fill for web compression, clean background. Professional and approachable.",
+    "key_light": {
+      "position": "30 degrees off-axis, slightly above",
+      "type": "large softbox, very diffused",
+      "intensity": "gentle, wrapping",
+      "color_temp_k": 5600
+    },
+    "fill_light": {
+      "position": "on-axis, near camera",
+      "type": "ring light or soft panel",
+      "intensity": "moderate \u2014 keeps shadows open for video compression",
+      "color_temp_k": 5600
+    },
+    "back_light": {
+      "position": "behind subject, opposite key",
+      "type": "soft hairlight",
+      "intensity": "gentle separation from background",
+      "color_temp_k": 5600
+    },
+    "color_temperature_k": 5600,
+    "variant_note": "standard corporate neutral",
+    "mood_tags": [
+      "professional",
+      "clean",
+      "approachable",
+      "corporate",
+      "web"
+    ],
+    "prompt_fragment": "Corporate Clean lighting, daylight 5600K, key light 30 degrees off-axis, slightly above, professional, clean, approachable, soft flattering key, fill for web compression, clean background",
+    "use_cases": [
+      "corporate_video",
+      "zoom_call",
+      "linkedin_content",
+      "training_video"
+    ],
+    "post_processing_notes": "Clean, neutral grade. Optimize for web compression \u2014 avoid fine detail in shadows."
+  },
+  {
+    "id": "light_44788feb_anime_stylized_flat_bright_rimmed",
+    "setup_type": "Anime Stylized Flat",
+    "description": "Flat key lighting with strong colored rim. Exaggerated color, minimal shadow. Anime/cartoon aesthetic.",
+    "key_light": {
+      "position": "front, flat, even",
+      "type": "large diffused panel",
+      "intensity": "even, minimal shadow",
+      "color_temp_k": 5600
+    },
+    "fill_light": {
+      "position": "flat fill from all angles",
+      "type": "bounce from all sides",
+      "intensity": "very high \u2014 eliminate shadows",
+      "color_temp_k": 5600
+    },
+    "back_light": {
+      "position": "strong colored rim from behind",
+      "type": "hard colored LED",
+      "intensity": "strong, exaggerated",
+      "color_temp_k": 0
+    },
+    "color_temperature_k": 5600,
+    "variant_note": "flat lit with strong colored rim",
+    "mood_tags": [
+      "anime",
+      "stylized",
+      "colorful",
+      "flat",
+      "graphic"
+    ],
+    "prompt_fragment": "Anime Stylized Flat lighting, daylight 5600K, key light front, flat, even, anime, stylized, colorful, flat key lighting with strong colored rim",
+    "use_cases": [
+      "anime_content",
+      "stylized_commercial",
+      "gaming",
+      "vtuber"
+    ],
+    "post_processing_notes": "Push saturation, reduce micro-contrast. Cel-shading in ComfyUI possible."
+  },
+  {
+    "id": "light_144426b3_haze_backlight_volumetric_daylight_haze",
+    "setup_type": "Haze Backlight Volumetric",
+    "description": "Strong backlight through atmospheric haze creates visible light shafts. God rays, volumetric beams.",
+    "key_light": {
+      "position": "strong backlight, elevated, through haze",
+      "type": "hard source (HMI or Fresnel) through haze",
+      "intensity": "strong, creating visible beams",
+      "color_temp_k": 5600
+    },
+    "fill_light": {
+      "position": "minimal front, mostly silhouette",
+      "type": "ambient scatter from haze",
+      "intensity": "low, haze provides ambient fill",
+      "color_temp_k": 5600
+    },
+    "back_light": {
+      "position": "same as key \u2014 backlight is the key in this setup",
+      "type": "hard source through atmosphere",
+      "intensity": "strong",
+      "color_temp_k": 5600
+    },
+    "color_temperature_k": 5600,
+    "variant_note": "daylight through haze",
+    "mood_tags": [
+      "volumetric",
+      "epic",
+      "godray",
+      "atmospheric",
+      "divine"
+    ],
+    "prompt_fragment": "Haze Backlight Volumetric lighting, daylight 5600K, key light strong backlight, elevated, through haze, volumetric, epic, godray, strong backlight through atmospheric haze creates visible light shafts",
+    "use_cases": [
+      "epic_reveal",
+      "spiritual_scene",
+      "forest_scene",
+      "concert_backlight"
+    ],
+    "post_processing_notes": "Enhance volumetric rays in post. ComfyUI can add atmospheric effects. Push contrast."
+  },
+  {
+    "id": "light_29832de6_haze_backlight_volumetric_warm_shaft",
+    "setup_type": "Haze Backlight Volumetric",
+    "description": "Strong backlight through atmospheric haze creates visible light shafts. God rays, volumetric beams.",
+    "key_light": {
+      "position": "strong backlight, elevated, through haze",
+      "type": "hard source (HMI or Fresnel) through haze",
+      "intensity": "strong, creating visible beams",
+      "color_temp_k": 5600
+    },
+    "fill_light": {
+      "position": "minimal front, mostly silhouette",
+      "type": "ambient scatter from haze",
+      "intensity": "low, haze provides ambient fill",
+      "color_temp_k": 5600
+    },
+    "back_light": {
+      "position": "same as key \u2014 backlight is the key in this setup",
+      "type": "hard source through atmosphere",
+      "intensity": "strong",
+      "color_temp_k": 5600
+    },
+    "color_temperature_k": 3200,
+    "variant_note": "warm tungsten shafts through dust",
+    "mood_tags": [
+      "volumetric",
+      "epic",
+      "godray",
+      "atmospheric",
+      "divine"
+    ],
+    "prompt_fragment": "Haze Backlight Volumetric lighting, warm tungsten 3200K, key light strong backlight, elevated, through haze, volumetric, epic, godray, strong backlight through atmospheric haze creates visible light shafts",
+    "use_cases": [
+      "epic_reveal",
+      "spiritual_scene",
+      "forest_scene",
+      "concert_backlight"
+    ],
+    "post_processing_notes": "Enhance volumetric rays in post. ComfyUI can add atmospheric effects. Push contrast."
+  },
+  {
+    "id": "light_47b4686b_fog_practicals_warm_fog",
+    "setup_type": "Fog Practicals",
+    "description": "Dense fog with visible practical lights creating diffused halos. Eerie, dreamlike.",
+    "key_light": {
+      "position": "practicals visible in fog",
+      "type": "street lamps, car lights, lanterns in fog",
+      "intensity": "medium, heavily diffused by fog",
+      "color_temp_k": 3200
+    },
+    "fill_light": {
+      "position": "fog provides omnidirectional scatter",
+      "type": "fog scatter",
+      "intensity": "ambient glow",
+      "color_temp_k": 3200
+    },
+    "back_light": {
+      "position": "practicals behind subject",
+      "type": "light sources visible in fog creating halos",
+      "intensity": "glow halos around sources",
+      "color_temp_k": 3200
+    },
+    "color_temperature_k": 3200,
+    "variant_note": "warm practicals in fog",
+    "mood_tags": [
+      "eerie",
+      "dreamlike",
+      "mysterious",
+      "foggy",
+      "atmospheric"
+    ],
+    "prompt_fragment": "Fog Practicals lighting, warm tungsten 3200K, key light practicals visible in fog, eerie, dreamlike, mysterious, dense fog with visible practical lights creating diffused halos",
+    "use_cases": [
+      "horror_exterior",
+      "dream_sequence",
+      "thriller",
+      "period_night"
+    ],
+    "post_processing_notes": "Low contrast grade. Lift blacks. Halation effect on practicals. Desaturate slightly."
+  },
+  {
+    "id": "light_fbf99685_fog_practicals_cold_fog",
+    "setup_type": "Fog Practicals",
+    "description": "Dense fog with visible practical lights creating diffused halos. Eerie, dreamlike.",
+    "key_light": {
+      "position": "practicals visible in fog",
+      "type": "street lamps, car lights, lanterns in fog",
+      "intensity": "medium, heavily diffused by fog",
+      "color_temp_k": 3200
+    },
+    "fill_light": {
+      "position": "fog provides omnidirectional scatter",
+      "type": "fog scatter",
+      "intensity": "ambient glow",
+      "color_temp_k": 3200
+    },
+    "back_light": {
+      "position": "practicals behind subject",
+      "type": "light sources visible in fog creating halos",
+      "intensity": "glow halos around sources",
+      "color_temp_k": 3200
+    },
+    "color_temperature_k": 6500,
+    "variant_note": "cool moonlight fog",
+    "mood_tags": [
+      "eerie",
+      "dreamlike",
+      "mysterious",
+      "foggy",
+      "atmospheric"
+    ],
+    "prompt_fragment": "Fog Practicals lighting, cool blue 6500K, key light practicals visible in fog, eerie, dreamlike, mysterious, dense fog with visible practical lights creating diffused halos",
+    "use_cases": [
+      "horror_exterior",
+      "dream_sequence",
+      "thriller",
+      "period_night"
+    ],
+    "post_processing_notes": "Low contrast grade. Lift blacks. Halation effect on practicals. Desaturate slightly."
+  },
+  {
+    "id": "light_0d19a847_dust_beam_shaft_daylight_shaft",
+    "setup_type": "Dust Beam Shaft",
+    "description": "Single shaft of light through dust particles. Visible beam cutting through darkness.",
+    "key_light": {
+      "position": "single shaft from window, ceiling hole, or doorway",
+      "type": "hard narrow beam (Leko or shaft from opening)",
+      "intensity": "focused, isolated beam",
+      "color_temp_k": 5600
+    },
+    "fill_light": {
+      "position": "near zero \u2014 darkness outside the beam",
+      "type": "darkness with dust scatter providing minimal ambient",
+      "intensity": "extremely low",
+      "color_temp_k": 5600
+    },
+    "back_light": {
+      "position": "none needed \u2014 the beam IS the light",
+      "type": "dust particles make the beam visible",
+      "intensity": "beam only",
+      "color_temp_k": 5600
+    },
+    "color_temperature_k": 5600,
+    "variant_note": "daylight shaft through dust",
+    "mood_tags": [
+      "isolated",
+      "divine",
+      "discovery",
+      "decay",
+      "atmospheric"
+    ],
+    "prompt_fragment": "Dust Beam Shaft lighting, daylight 5600K, key light single shaft from window, ceiling hole, or doorway, isolated, divine, discovery, single shaft of light through dust particles",
+    "use_cases": [
+      "abandoned_building",
+      "discovery_moment",
+      "religious_space",
+      "dust_atmosphere"
+    ],
+    "post_processing_notes": "Crush everything outside the beam. Add particle effects in ComfyUI if needed."
+  },
+  {
+    "id": "light_06591acd_dust_beam_shaft_golden_shaft",
+    "setup_type": "Dust Beam Shaft",
+    "description": "Single shaft of light through dust particles. Visible beam cutting through darkness.",
+    "key_light": {
+      "position": "single shaft from window, ceiling hole, or doorway",
+      "type": "hard narrow beam (Leko or shaft from opening)",
+      "intensity": "focused, isolated beam",
+      "color_temp_k": 5600
+    },
+    "fill_light": {
+      "position": "near zero \u2014 darkness outside the beam",
+      "type": "darkness with dust scatter providing minimal ambient",
+      "intensity": "extremely low",
+      "color_temp_k": 5600
+    },
+    "back_light": {
+      "position": "none needed \u2014 the beam IS the light",
+      "type": "dust particles make the beam visible",
+      "intensity": "beam only",
+      "color_temp_k": 5600
+    },
+    "color_temperature_k": 3500,
+    "variant_note": "golden warm shaft, late afternoon",
+    "mood_tags": [
+      "isolated",
+      "divine",
+      "discovery",
+      "decay",
+      "atmospheric"
+    ],
+    "prompt_fragment": "Dust Beam Shaft lighting, warm tungsten 3500K, key light single shaft from window, ceiling hole, or doorway, isolated, divine, discovery, single shaft of light through dust particles",
+    "use_cases": [
+      "abandoned_building",
+      "discovery_moment",
+      "religious_space",
+      "dust_atmosphere"
+    ],
+    "post_processing_notes": "Crush everything outside the beam. Add particle effects in ComfyUI if needed."
+  },
+  {
+    "id": "light_d934b793_window_light_natural_north_light",
+    "setup_type": "Window Light Natural",
+    "description": "Single large soft source from window. Classic portraiture and interior photography lighting.",
+    "key_light": {
+      "position": "large window to one side of subject",
+      "type": "natural window light (diffused or direct)",
+      "intensity": "varies with time of day and weather",
+      "color_temp_k": 5600
+    },
+    "fill_light": {
+      "position": "bounce card opposite window",
+      "type": "white reflector or room bounce",
+      "intensity": "gentle fill to open shadows",
+      "color_temp_k": 5600
+    },
+    "back_light": {
+      "position": "none or second window behind",
+      "type": "natural only",
+      "intensity": "natural ambient",
+      "color_temp_k": 5600
+    },
+    "color_temperature_k": 6500,
+    "variant_note": "cool north-facing window, painter's light",
+    "mood_tags": [
+      "natural",
+      "soft",
+      "portrait",
+      "intimate",
+      "simple"
+    ],
+    "prompt_fragment": "Window Light Natural lighting, cool blue 6500K, key light large window to one side of subject, natural, soft, portrait, single large soft source from window",
+    "use_cases": [
+      "portrait",
+      "interview",
+      "lifestyle",
+      "real_estate_interior",
+      "food_photography"
+    ],
+    "post_processing_notes": "Minimal intervention. Natural and clean. Slight warm push for lifestyle content."
+  },
+  {
+    "id": "light_0dfff8ab_window_light_natural_direct_sun",
+    "setup_type": "Window Light Natural",
+    "description": "Single large soft source from window. Classic portraiture and interior photography lighting.",
+    "key_light": {
+      "position": "large window to one side of subject",
+      "type": "natural window light (diffused or direct)",
+      "intensity": "varies with time of day and weather",
+      "color_temp_k": 5600
+    },
+    "fill_light": {
+      "position": "bounce card opposite window",
+      "type": "white reflector or room bounce",
+      "intensity": "gentle fill to open shadows",
+      "color_temp_k": 5600
+    },
+    "back_light": {
+      "position": "none or second window behind",
+      "type": "natural only",
+      "intensity": "natural ambient",
+      "color_temp_k": 5600
+    },
+    "color_temperature_k": 5600,
+    "variant_note": "direct sun through window, hard shadows",
+    "mood_tags": [
+      "natural",
+      "soft",
+      "portrait",
+      "intimate",
+      "simple"
+    ],
+    "prompt_fragment": "Window Light Natural lighting, daylight 5600K, key light large window to one side of subject, natural, soft, portrait, single large soft source from window",
+    "use_cases": [
+      "portrait",
+      "interview",
+      "lifestyle",
+      "real_estate_interior",
+      "food_photography"
+    ],
+    "post_processing_notes": "Minimal intervention. Natural and clean. Slight warm push for lifestyle content."
+  },
+  {
+    "id": "light_09f867c3_studio_flags_shaped_precision_shaped",
+    "setup_type": "Studio Flags Shaped",
+    "description": "Controlled studio light sculpted with flags, neg fill, and cutters. Precision-shaped light pools.",
+    "key_light": {
+      "position": "shaped by flags to hit only desired area",
+      "type": "Fresnel with barndoors, floppy flags, cutters",
+      "intensity": "strong but tightly controlled",
+      "color_temp_k": 5600
+    },
+    "fill_light": {
+      "position": "neg fill (black cards) to deepen shadows where wanted",
+      "type": "subtractive \u2014 removing light, not adding",
+      "intensity": "controlled absence",
+      "color_temp_k": 0
+    },
+    "back_light": {
+      "position": "precisely shaped rim",
+      "type": "snooted or barndoored spot",
+      "intensity": "accent only, shaped",
+      "color_temp_k": 5600
+    },
+    "color_temperature_k": 5600,
+    "variant_note": "precision-shaped studio lighting",
+    "mood_tags": [
+      "controlled",
+      "precise",
+      "editorial",
+      "sculpted",
+      "intentional"
+    ],
+    "prompt_fragment": "Studio Flags Shaped lighting, daylight 5600K, key light shaped by flags to hit only desired area, controlled, precise, editorial, controlled studio light sculpted with flags, neg fill, and cutters",
+    "use_cases": [
+      "fashion_editorial",
+      "product_hero",
+      "high_end_portrait",
+      "art_direction"
+    ],
+    "post_processing_notes": "Minimal post \u2014 the lighting IS the look. Don't soften what was shaped hard."
+  }
+]

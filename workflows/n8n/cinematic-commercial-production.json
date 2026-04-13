@@ -1,0 +1,292 @@
+{
+  "name": "Cinematic Commercial Production",
+  "nodes": [
+    {
+      "parameters": {
+        "event": "update",
+        "databaseId": "${NOTION_DB_ID}",
+        "simple": true,
+        "conditions": {
+          "string": [{"key": "Status", "value": "Ready to Produce", "operation": "equals"}]
+        }
+      },
+      "id": "trigger-notion",
+      "name": "Notion Trigger",
+      "type": "n8n-nodes-base.notionTrigger",
+      "typeVersion": 1,
+      "position": [200, 300]
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "get",
+        "pageId": "={{ $json.id }}"
+      },
+      "id": "fetch-production-order",
+      "name": "Fetch Production Order",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [420, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse production order from Notion page properties\nconst page = $input.first().json;\nconst props = page.properties || {};\n\n// Extract production order fields\nconst productionOrder = {\n  production_order_id: props['Order ID']?.rich_text?.[0]?.plain_text || `PO-${Date.now()}`,\n  client: props['Client']?.select?.name || 'Unknown',\n  project_name: props['Project']?.title?.[0]?.plain_text || 'Untitled',\n  format: props['Format']?.select?.name || '16:9 cinematic commercial',\n  quality_tier: props['Quality']?.select?.name || 'cinematic',\n  voiceover_script: props['Script']?.rich_text?.[0]?.plain_text || '',\n  brand_profile_id: props['Brand']?.select?.name || 'poptechstudio',\n  notion_page_id: page.id,\n  shots: [],\n  delivery_platforms: ['youtube', 'instagram_reels', 'tiktok'],\n};\n\n// Parse shots from a JSON field or child pages\nconst shotsJson = props['Shots JSON']?.rich_text?.[0]?.plain_text;\nif (shotsJson) {\n  try { productionOrder.shots = JSON.parse(shotsJson); } catch(e) {}\n}\n\nreturn [{ json: productionOrder }];"
+      },
+      "id": "parse-order",
+      "name": "Parse Production Order",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [640, 300]
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "update",
+        "pageId": "={{ $json.notion_page_id }}",
+        "propertiesUi": {
+          "propertyValues": [{"key": "Status", "value": "Producing", "type": "select"}]
+        }
+      },
+      "id": "update-status-producing",
+      "name": "Set Status: Producing",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [860, 300]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "shots",
+        "options": {}
+      },
+      "id": "split-shots",
+      "name": "Split Into Shots",
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [1080, 300]
+    },
+    {
+      "parameters": {
+        "url": "http://localhost:6333/collections/camera_presets/points/search",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {"name": "api-key", "value": "={{ $env.QDRANT_API_KEY }}"},
+            {"name": "Content-Type", "value": "application/json"}
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({vector: $json._embedding || [0], limit: 1, with_payload: true}) }}",
+        "options": {}
+      },
+      "id": "rag-camera",
+      "name": "RAG: Camera Preset",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [1300, 200],
+      "notes": "STUB: In production, query Qdrant with shot description embedding. For dev, returns mock preset."
+    },
+    {
+      "parameters": {
+        "url": "http://localhost:6333/collections/lighting_presets/points/search",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {"name": "api-key", "value": "={{ $env.QDRANT_API_KEY }}"},
+            {"name": "Content-Type", "value": "application/json"}
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({vector: $json._embedding || [0], limit: 1, with_payload: true}) }}",
+        "options": {}
+      },
+      "id": "rag-lighting",
+      "name": "RAG: Lighting Preset",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [1300, 400],
+      "notes": "STUB: Query lighting_presets collection"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Assemble cinematic prompt from RAG results\nconst shot = $('Split Into Shots').first().json;\nconst camera = $('RAG: Camera Preset').first().json?.result?.[0]?.payload || {};\nconst lighting = $('RAG: Lighting Preset').first().json?.result?.[0]?.payload || {};\n\n// Multi-shot cinematic prompt assembly (SOP Step 14A)\nconst cameraFragment = camera.prompt_fragment || `shot on ARRI Alexa 35 with Cooke S7i 50mm at f/1.4`;\nconst lightingFragment = lighting.prompt_fragment || `warm tungsten 3200K, key light 45 degrees`;\n\nconst assembledPrompt = [\n  shot.description,\n  cameraFragment,\n  lightingFragment,\n  'Photo real, natural framing.'\n].join(', ');\n\nreturn [{\n  json: {\n    ...shot,\n    assembled_prompt: assembledPrompt,\n    camera_preset: camera,\n    lighting_preset: lighting,\n  }\n}];"
+      },
+      "id": "assemble-prompt",
+      "name": "Assemble Cinematic Prompt",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1520, 300]
+    },
+    {
+      "parameters": {
+        "url": "https://queue.fal.run/fal-ai/seedance-2/text-to-video",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [{"name": "Authorization", "value": "Key {{ $env.FAL_KEY }}"}]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({prompt: $json.assembled_prompt, duration: String($json.duration_seconds || 5), aspect_ratio: '16:9'}) }}",
+        "options": {"timeout": 300000}
+      },
+      "id": "generate-fal",
+      "name": "fal.ai: Generate Shot",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [1740, 300],
+      "notes": "STUB for dev: Returns mock video URL. Live testing after fal.ai top-up.",
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 30000
+    },
+    {
+      "parameters": {
+        "jsCode": "// Log generation cost\nconst shot = $json;\nconst durationSec = shot.duration_seconds || 5;\nconst costPerSec = 0.10; // Seedance 2.0 estimate\nconst cost = durationSec * costPerSec;\n\nreturn [{\n  json: {\n    ...shot,\n    generation_cost: cost,\n    generation_service: 'fal.ai_seedance2.0',\n    generation_timestamp: new Date().toISOString(),\n  }\n}];"
+      },
+      "id": "log-generation-cost",
+      "name": "Log Generation Cost",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1960, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// QC checkpoint: shot generation complete\nconst shot = $json;\nreturn [{\n  json: {\n    checkpoint: 'generation_complete',\n    shot_id: shot.shot_id,\n    timestamp: new Date().toISOString(),\n    cost: shot.generation_cost,\n    status: 'pass',\n  }\n}];"
+      },
+      "id": "qc-generation",
+      "name": "QC: Generation Complete",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2180, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Aggregate all shots back together\nconst allShots = $input.all().map(item => item.json);\nconst totalCost = allShots.reduce((sum, s) => sum + (s.generation_cost || 0), 0);\n\nreturn [{\n  json: {\n    shots: allShots,\n    total_generation_cost: totalCost,\n    shot_count: allShots.length,\n  }\n}];"
+      },
+      "id": "aggregate-shots",
+      "name": "Aggregate Shots",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2400, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// ElevenLabs voice synthesis stub\n// In production: call ElevenLabs MCP or API\nconst order = $json;\n\nreturn [{\n  json: {\n    ...order,\n    voiceover_path: `/tmp/cinema_studio/${order.production_order_id || 'PO-STUB'}/voiceover.mp3`,\n    voiceover_cost: 0.01,\n    voiceover_service: 'elevenlabs',\n  }\n}];"
+      },
+      "id": "elevenlabs-vo",
+      "name": "ElevenLabs: Voice Synthesis",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2620, 300],
+      "notes": "STUB: In production, calls ElevenLabs API for voiceover generation."
+    },
+    {
+      "parameters": {
+        "jsCode": "// Remotion composition — calls CLI to render\n// Template: PopTech (from Task 4.5) for branded, Generic for client\nconst order = $json;\nconst templateId = order.brand_profile_id === 'poptechstudio' ? 'PopTech' : 'Generic';\n\n// Build props JSON for Remotion\nconst props = {\n  clips: (order.shots || []).map(s => ({\n    videoUrl: s.output_path || '',\n    duration: s.duration_seconds || 5,\n  })),\n  audioUrl: order.voiceover_path || '',\n  title: order.project_name || 'Production',\n  ctaButton: { text: 'Learn More' },\n};\n\nreturn [{\n  json: {\n    ...order,\n    remotion_template: templateId,\n    remotion_props: props,\n    remotion_command: `npx remotion render src/index.ts ${templateId} --props='${JSON.stringify(props)}' --output /tmp/cinema_studio/${order.production_order_id}/composite.mp4`,\n  }\n}];"
+      },
+      "id": "remotion-compose",
+      "name": "Remotion: Compose Video",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2840, 300],
+      "notes": "STUB: Generates Remotion CLI command. In production, executes via SSH or Remotion Cloud MCP."
+    },
+    {
+      "parameters": {
+        "jsCode": "// FFmpeg color grade + LUT pipeline\nconst order = $json;\nconst lut = order.brand_profile_id === 'poptechstudio' ? 'kodak_vision3_500t' : 'neutral_normalize';\n\nreturn [{\n  json: {\n    ...order,\n    color_grade_command: `python tools/color_grade.py /tmp/cinema_studio/${order.production_order_id}/composite.mp4 --chain \"neutral_normalize,${lut}\" --grain 0.12 --vignette 0.25 --output /tmp/cinema_studio/${order.production_order_id}/graded.mp4`,\n    lut_applied: lut,\n  }\n}];"
+      },
+      "id": "ffmpeg-grade",
+      "name": "FFmpeg: Color Grade + LUT",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [3060, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Platform encoding — generate 3 aspect ratio variants\nconst order = $json;\nconst poId = order.production_order_id || 'PO-STUB';\n\nconst encodes = [\n  { platform: 'youtube', aspect: '16:9', res: '1920x1080', file: `final_16x9.mp4` },\n  { platform: 'instagram_reels', aspect: '9:16', res: '1080x1920', file: `final_9x16.mp4` },\n  { platform: 'tiktok', aspect: '1:1', res: '1080x1080', file: `final_1x1.mp4` },\n];\n\nreturn [{\n  json: {\n    ...order,\n    platform_encodes: encodes.map(e => ({\n      ...e,\n      path: `/tmp/cinema_studio/${poId}/${e.file}`,\n      command: `ffmpeg -y -i /tmp/cinema_studio/${poId}/graded.mp4 -vf \"scale=${e.res}:force_original_aspect_ratio=decrease,pad=${e.res}:(ow-iw)/2:(oh-ih)/2:black\" -c:v libx264 -crf 18 -c:a aac -b:a 192k /tmp/cinema_studio/${poId}/${e.file}`,\n    })),\n  }\n}];"
+      },
+      "id": "ffmpeg-encode",
+      "name": "FFmpeg: Platform Encoding",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [3280, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Video publisher dispatch — stub for Task 4.6\nconst order = $json;\nconst encodes = order.platform_encodes || [];\n\nreturn [{\n  json: {\n    ...order,\n    publish_status: 'ready_for_dispatch',\n    publish_targets: encodes.map(e => ({\n      platform: e.platform,\n      file: e.path,\n      status: 'queued',\n    })),\n  }\n}];"
+      },
+      "id": "publisher-dispatch",
+      "name": "Video Publisher Dispatch",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [3500, 300],
+      "notes": "STUB: Task 4.6 builds the actual publisher. This node queues the dispatch."
+    },
+    {
+      "parameters": {
+        "jsCode": "// Cost reconciliation\nconst order = $json;\nconst genCost = order.total_generation_cost || 0;\nconst voCost = order.voiceover_cost || 0;\nconst totalCost = genCost + voCost;\n\nreturn [{\n  json: {\n    production_order_id: order.production_order_id,\n    client: order.client,\n    project_name: order.project_name,\n    total_cost: totalCost,\n    breakdown: {\n      generation: genCost,\n      voiceover: voCost,\n      compositing: 0,\n      color_grading: 0,\n      encoding: 0,\n    },\n    shot_count: order.shot_count || 0,\n    cost_per_shot: order.shot_count ? (totalCost / order.shot_count).toFixed(2) : '0',\n    timestamp: new Date().toISOString(),\n  }\n}];"
+      },
+      "id": "cost-reconciliation",
+      "name": "Cost Reconciliation",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [3720, 300]
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "update",
+        "pageId": "={{ $('Parse Production Order').first().json.notion_page_id }}",
+        "propertiesUi": {
+          "propertyValues": [{"key": "Status", "value": "QC Review", "type": "select"}]
+        }
+      },
+      "id": "update-status-qc",
+      "name": "Set Status: QC Review",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [3940, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Final summary for Slack notification\nconst cost = $json;\nreturn [{\n  json: {\n    text: `*Commercial Production Complete* \\n` +\n      `Order: ${cost.production_order_id}\\n` +\n      `Client: ${cost.client}\\n` +\n      `Project: ${cost.project_name}\\n` +\n      `Shots: ${cost.shot_count}\\n` +\n      `Total Cost: $${cost.total_cost.toFixed(2)}\\n` +\n      `Cost/Shot: $${cost.cost_per_shot}\\n` +\n      `Status: Ready for QC Review`,\n  }\n}];"
+      },
+      "id": "slack-notification",
+      "name": "Slack Notification",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [4160, 300],
+      "notes": "STUB: In production, sends to Slack webhook. For now, logs to output."
+    }
+  ],
+  "connections": {
+    "Notion Trigger": {"main": [[{"node": "Fetch Production Order", "type": "main", "index": 0}]]},
+    "Fetch Production Order": {"main": [[{"node": "Parse Production Order", "type": "main", "index": 0}]]},
+    "Parse Production Order": {"main": [[{"node": "Set Status: Producing", "type": "main", "index": 0}]]},
+    "Set Status: Producing": {"main": [[{"node": "Split Into Shots", "type": "main", "index": 0}]]},
+    "Split Into Shots": {"main": [[{"node": "RAG: Camera Preset", "type": "main", "index": 0}, {"node": "RAG: Lighting Preset", "type": "main", "index": 0}]]},
+    "RAG: Camera Preset": {"main": [[{"node": "Assemble Cinematic Prompt", "type": "main", "index": 0}]]},
+    "RAG: Lighting Preset": {"main": [[{"node": "Assemble Cinematic Prompt", "type": "main", "index": 0}]]},
+    "Assemble Cinematic Prompt": {"main": [[{"node": "fal.ai: Generate Shot", "type": "main", "index": 0}]]},
+    "fal.ai: Generate Shot": {"main": [[{"node": "Log Generation Cost", "type": "main", "index": 0}]]},
+    "Log Generation Cost": {"main": [[{"node": "QC: Generation Complete", "type": "main", "index": 0}]]},
+    "QC: Generation Complete": {"main": [[{"node": "Aggregate Shots", "type": "main", "index": 0}]]},
+    "Aggregate Shots": {"main": [[{"node": "ElevenLabs: Voice Synthesis", "type": "main", "index": 0}]]},
+    "ElevenLabs: Voice Synthesis": {"main": [[{"node": "Remotion: Compose Video", "type": "main", "index": 0}]]},
+    "Remotion: Compose Video": {"main": [[{"node": "FFmpeg: Color Grade + LUT", "type": "main", "index": 0}]]},
+    "FFmpeg: Color Grade + LUT": {"main": [[{"node": "FFmpeg: Platform Encoding", "type": "main", "index": 0}]]},
+    "FFmpeg: Platform Encoding": {"main": [[{"node": "Video Publisher Dispatch", "type": "main", "index": 0}]]},
+    "Video Publisher Dispatch": {"main": [[{"node": "Cost Reconciliation", "type": "main", "index": 0}]]},
+    "Cost Reconciliation": {"main": [[{"node": "Set Status: QC Review", "type": "main", "index": 0}]]},
+    "Set Status: QC Review": {"main": [[{"node": "Slack Notification", "type": "main", "index": 0}]]}
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "tags": [
+    {"name": "production"},
+    {"name": "cinematic"},
+    {"name": "commercial"}
+  ]
+}

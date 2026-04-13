@@ -1,0 +1,1914 @@
+[
+  {
+    "id": "fx_e3b62427_kodak_vision3_500t",
+    "name": "Kodak Vision3 500T",
+    "effect_type": "film_stock_emulation",
+    "category": "color_grade",
+    "description": "Tungsten-balanced cinema negative. Warm highlights, rich shadows, organic grain structure. The cinema standard.",
+    "prompt_fragment": "Kodak Vision3 500T film stock, warm tungsten color balance, organic film grain, rich shadow detail, gentle highlight rolloff",
+    "implementation": {
+      "method": "lut",
+      "lut_file": "kodak_vision3_500t.cube",
+      "alt_method": "prompt_modifier"
+    },
+    "use_cases": [
+      "cinematic",
+      "interior",
+      "dramatic",
+      "narrative"
+    ],
+    "pairs_with": {
+      "camera": [
+        "ARRI Alexa 35",
+        "Panavision DXL2"
+      ],
+      "lighting": [
+        "Rembrandt",
+        "Practical Motivated"
+      ]
+    }
+  },
+  {
+    "id": "fx_2c14f2c9_kodak_vision3_250d",
+    "name": "Kodak Vision3 250D",
+    "effect_type": "film_stock_emulation",
+    "category": "color_grade",
+    "description": "Daylight-balanced cinema negative. Vibrant color, moderate grain, excellent outdoor stock.",
+    "prompt_fragment": "Kodak Vision3 250D film stock, daylight balanced, vibrant saturated color, moderate grain, crisp outdoor image",
+    "implementation": {
+      "method": "lut",
+      "lut_file": "kodak_vision3_250d.cube",
+      "alt_method": "prompt_modifier"
+    },
+    "use_cases": [
+      "exterior",
+      "daylight",
+      "commercial",
+      "vibrant"
+    ],
+    "pairs_with": {
+      "camera": [
+        "ARRI Alexa 35",
+        "Sony VENICE 2"
+      ],
+      "lighting": [
+        "Golden Hour",
+        "Three-Point Classic"
+      ]
+    }
+  },
+  {
+    "id": "fx_366fd931_kodak_vision3_200t",
+    "name": "Kodak Vision3 200T",
+    "effect_type": "film_stock_emulation",
+    "category": "color_grade",
+    "description": "Tungsten low-grain cinema stock. Finer grain than 500T, ideal for close-ups and controlled lighting.",
+    "prompt_fragment": "Kodak Vision3 200T film stock, fine grain, tungsten balanced, smooth highlight rolloff, clean shadow detail",
+    "implementation": {
+      "method": "lut",
+      "lut_file": "kodak_vision3_200t.cube",
+      "alt_method": "prompt_modifier"
+    },
+    "use_cases": [
+      "portrait",
+      "studio",
+      "controlled_lighting",
+      "fine_detail"
+    ],
+    "pairs_with": {
+      "camera": [
+        "ARRI Alexa 35",
+        "RED V-Raptor"
+      ],
+      "lighting": [
+        "Butterfly Paramount",
+        "Three-Point Classic"
+      ]
+    }
+  },
+  {
+    "id": "fx_5d8cc08d_fuji_eterna_vivid_500",
+    "name": "Fuji Eterna Vivid 500",
+    "effect_type": "film_stock_emulation",
+    "category": "color_grade",
+    "description": "Punchy color rendition with strong saturation. Excellent for exteriors and vibrant environments.",
+    "prompt_fragment": "Fuji Eterna Vivid 500 film stock, punchy saturated color, vivid greens and blues, crisp grain, bold image",
+    "implementation": {
+      "method": "lut",
+      "lut_file": "fuji_eterna_vivid_500.cube",
+      "alt_method": "prompt_modifier"
+    },
+    "use_cases": [
+      "exterior",
+      "vibrant",
+      "landscape",
+      "commercial"
+    ],
+    "pairs_with": {
+      "camera": [
+        "Sony VENICE 2",
+        "ARRI Alexa 35"
+      ],
+      "lighting": [
+        "Golden Hour",
+        "Overcast Soft"
+      ]
+    }
+  },
+  {
+    "id": "fx_fc10bf06_fuji_eterna_250d",
+    "name": "Fuji Eterna 250D",
+    "effect_type": "film_stock_emulation",
+    "category": "color_grade",
+    "description": "Neutral daylight cinema stock. Natural skin tones, moderate saturation, professional baseline.",
+    "prompt_fragment": "Fuji Eterna 250D film stock, neutral daylight balanced, natural skin tones, moderate saturation, clean grain",
+    "implementation": {
+      "method": "lut",
+      "lut_file": "fuji_eterna_250d.cube",
+      "alt_method": "prompt_modifier"
+    },
+    "use_cases": [
+      "daylight",
+      "natural",
+      "documentary",
+      "neutral"
+    ],
+    "pairs_with": {
+      "camera": [
+        "Sony VENICE 2",
+        "Blackmagic URSA Mini Pro 12K"
+      ],
+      "lighting": [
+        "Documentary Available Light",
+        "Overcast Soft"
+      ]
+    }
+  },
+  {
+    "id": "fx_769e606c_kodak_ektachrome_100d",
+    "name": "Kodak Ektachrome 100D",
+    "effect_type": "film_stock_emulation",
+    "category": "color_grade",
+    "description": "Reversal film. Saturated, punchy, direct positive. No negative inversion \u2014 what you shoot is what you get.",
+    "prompt_fragment": "Kodak Ektachrome 100D reversal film, highly saturated color, punchy contrast, vivid direct positive image, fine grain",
+    "implementation": {
+      "method": "lut",
+      "lut_file": "kodak_ektachrome_100d.cube",
+      "alt_method": "prompt_modifier"
+    },
+    "use_cases": [
+      "saturated",
+      "vivid",
+      "fashion",
+      "music_video"
+    ],
+    "pairs_with": {
+      "camera": [
+        "ARRI Alexa 35",
+        "Bolex H16"
+      ],
+      "lighting": [
+        "Golden Hour",
+        "Music Video Dramatic"
+      ]
+    }
+  },
+  {
+    "id": "fx_2ccbfb64_kodak_tri_x_400",
+    "name": "Kodak Tri-X 400",
+    "effect_type": "film_stock_emulation",
+    "category": "color_grade",
+    "description": "Classic black and white with visible grain. The photojournalism standard. Gritty, honest, timeless.",
+    "prompt_fragment": "Kodak Tri-X 400 black and white film, visible grain structure, high contrast, classic photojournalism look, gritty texture",
+    "implementation": {
+      "method": "lut",
+      "lut_file": "kodak_trix_400_bw.cube",
+      "alt_method": "prompt_modifier"
+    },
+    "use_cases": [
+      "black_and_white",
+      "documentary",
+      "street",
+      "gritty"
+    ],
+    "pairs_with": {
+      "camera": [
+        "Bolex H16",
+        "ARRI Alexa 35"
+      ],
+      "lighting": [
+        "Documentary Available Light",
+        "Hard Noon Sun"
+      ]
+    }
+  },
+  {
+    "id": "fx_89064353_ilford_hp5_plus",
+    "name": "Ilford HP5 Plus",
+    "effect_type": "film_stock_emulation",
+    "category": "color_grade",
+    "description": "Fine-grain black and white. Smoother than Tri-X, wider tonal range, more forgiving exposure latitude.",
+    "prompt_fragment": "Ilford HP5 Plus black and white film, fine grain, smooth tonal gradation, wide latitude, elegant monochrome",
+    "implementation": {
+      "method": "lut",
+      "lut_file": "ilford_hp5_bw.cube",
+      "alt_method": "prompt_modifier"
+    },
+    "use_cases": [
+      "black_and_white",
+      "portrait",
+      "elegant",
+      "fine_art"
+    ],
+    "pairs_with": {
+      "camera": [
+        "ARRI Alexa 35",
+        "Panavision Millennium XL2"
+      ],
+      "lighting": [
+        "Rembrandt",
+        "Window Light Natural"
+      ]
+    }
+  },
+  {
+    "id": "fx_0084d3e6_kodak_double_x_5222",
+    "name": "Kodak Double-X 5222",
+    "effect_type": "film_stock_emulation",
+    "category": "color_grade",
+    "description": "Cinema black and white. The film noir standard, used in Raging Bull, Schindler's List, The Lighthouse.",
+    "prompt_fragment": "Kodak Double-X 5222 black and white film, cinema noir grain, deep blacks, crisp whites, high contrast negative",
+    "implementation": {
+      "method": "lut",
+      "lut_file": "kodak_doublex_5222_bw.cube",
+      "alt_method": "prompt_modifier"
+    },
+    "use_cases": [
+      "noir",
+      "black_and_white",
+      "cinema",
+      "dramatic"
+    ],
+    "pairs_with": {
+      "camera": [
+        "ARRI Alexa 35",
+        "Panavision Millennium XL2"
+      ],
+      "lighting": [
+        "Film Noir",
+        "Split Lighting"
+      ]
+    }
+  },
+  {
+    "id": "fx_fb9dfd96_16mm_reversal_vintage",
+    "name": "16mm Reversal Vintage",
+    "effect_type": "film_stock_emulation",
+    "category": "color_grade",
+    "description": "16mm reversal film with heavy grain, warm color cast, vintage documentary texture. Home movie feel.",
+    "prompt_fragment": "16mm reversal film, heavy visible grain, warm faded color, vintage documentary texture, gate weave, soft focus edges",
+    "implementation": {
+      "method": "lut",
+      "lut_file": "16mm_reversal_vintage.cube",
+      "alt_method": "prompt_modifier"
+    },
+    "use_cases": [
+      "vintage",
+      "documentary",
+      "archival",
+      "retro"
+    ],
+    "pairs_with": {
+      "camera": [
+        "Bolex H16"
+      ],
+      "lighting": [
+        "Documentary Available Light",
+        "Golden Hour"
+      ]
+    }
+  },
+  {
+    "id": "fx_e88798ea_super_8mm_home_movie",
+    "name": "Super 8mm Home Movie",
+    "effect_type": "film_stock_emulation",
+    "category": "color_grade",
+    "description": "Super 8mm with extreme grain, color shifts, flicker. Nostalgic home movie aesthetic.",
+    "prompt_fragment": "Super 8mm film, extreme heavy grain, warm color shift, light leaks, flicker, nostalgic home movie look, soft resolution",
+    "implementation": {
+      "method": "lut",
+      "lut_file": "super_8mm_home_movie.cube",
+      "alt_method": "prompt_modifier"
+    },
+    "use_cases": [
+      "nostalgic",
+      "home_movie",
+      "vintage",
+      "personal"
+    ],
+    "pairs_with": {
+      "camera": [
+        "Bolex H16"
+      ],
+      "lighting": [
+        "Golden Hour",
+        "Practical Motivated"
+      ]
+    }
+  },
+  {
+    "id": "fx_d0d8cb42_70mm_imax_large_format",
+    "name": "70mm IMAX Large Format",
+    "effect_type": "film_stock_emulation",
+    "category": "color_grade",
+    "description": "70mm IMAX \u2014 massive resolution, negligible grain, epic scale, razor-sharp detail.",
+    "prompt_fragment": "70mm IMAX film, ultra-fine grain, massive resolution, epic scale, crystal-clear detail, wide dynamic range",
+    "implementation": {
+      "method": "lut",
+      "lut_file": "70mm_imax.cube",
+      "alt_method": "prompt_modifier"
+    },
+    "use_cases": [
+      "epic",
+      "landscape",
+      "imax",
+      "large_format"
+    ],
+    "pairs_with": {
+      "camera": [
+        "Panavision DXL2",
+        "RED V-Raptor"
+      ],
+      "lighting": [
+        "Golden Hour",
+        "Haze Backlight Volumetric"
+      ]
+    }
+  },
+  {
+    "id": "fx_bb6c5f64_technicolor_3_strip",
+    "name": "Technicolor 3-Strip",
+    "effect_type": "film_stock_emulation",
+    "category": "color_grade",
+    "description": "Golden age Hollywood saturated color. Three-strip dye transfer \u2014 vivid reds, greens, blues.",
+    "prompt_fragment": "Technicolor 3-strip, golden age Hollywood color, vivid saturated reds and greens, rich dye transfer look, classic cinema",
+    "implementation": {
+      "method": "lut",
+      "lut_file": "technicolor_3strip.cube",
+      "alt_method": "prompt_modifier"
+    },
+    "use_cases": [
+      "classic_hollywood",
+      "saturated",
+      "musical",
+      "golden_age"
+    ],
+    "pairs_with": {
+      "camera": [
+        "Panavision Millennium XL2",
+        "ARRI Alexa 35"
+      ],
+      "lighting": [
+        "Three-Point Classic",
+        "Butterfly Paramount"
+      ]
+    }
+  },
+  {
+    "id": "fx_62290e3a_bleach_bypass",
+    "name": "Bleach Bypass",
+    "effect_type": "film_stock_emulation",
+    "category": "color_grade",
+    "description": "Desaturated, high contrast. Silver retention process \u2014 gritty, metallic, war-movie aesthetic.",
+    "prompt_fragment": "bleach bypass film process, desaturated color, high contrast, silver metallic sheen, gritty texture, war movie look",
+    "implementation": {
+      "method": "lut",
+      "lut_file": "bleach_bypass.cube",
+      "alt_method": "prompt_modifier"
+    },
+    "use_cases": [
+      "gritty",
+      "war",
+      "desaturated",
+      "harsh"
+    ],
+    "pairs_with": {
+      "camera": [
+        "RED V-Raptor",
+        "ARRI Alexa 35"
+      ],
+      "lighting": [
+        "Hard Noon Sun",
+        "Three-Point High Contrast"
+      ]
+    }
+  },
+  {
+    "id": "fx_dbbf323c_cross_processing",
+    "name": "Cross Processing",
+    "effect_type": "film_stock_emulation",
+    "category": "color_grade",
+    "description": "Deliberate wrong-chemistry processing. Extreme color shifts, high saturation, unpredictable palette.",
+    "prompt_fragment": "cross-processed film, extreme color shift, high saturation, green-yellow shadows, magenta highlights, unpredictable color",
+    "implementation": {
+      "method": "lut",
+      "lut_file": "cross_process.cube",
+      "alt_method": "prompt_modifier"
+    },
+    "use_cases": [
+      "experimental",
+      "fashion",
+      "music_video",
+      "retro"
+    ],
+    "pairs_with": {
+      "camera": [
+        "Bolex H16",
+        "ARRI Alexa 35"
+      ],
+      "lighting": [
+        "Music Video Dramatic",
+        "Neon Urban Night"
+      ]
+    }
+  },
+  {
+    "id": "fx_afd0cf5d_faded_film_aged",
+    "name": "Faded Film Aged",
+    "effect_type": "film_stock_emulation",
+    "category": "color_grade",
+    "description": "Lifted blacks, desaturated color, faded look. Aged film stock or deliberate vintage processing.",
+    "prompt_fragment": "faded vintage film, lifted blacks, desaturated muted color, aged film stock look, soft contrast, nostalgic patina",
+    "implementation": {
+      "method": "lut",
+      "lut_file": "faded_film_aged.cube",
+      "alt_method": "prompt_modifier"
+    },
+    "use_cases": [
+      "vintage",
+      "nostalgic",
+      "indie",
+      "faded"
+    ],
+    "pairs_with": {
+      "camera": [
+        "Bolex H16",
+        "Panavision Millennium XL2"
+      ],
+      "lighting": [
+        "Golden Hour",
+        "Overcast Soft"
+      ]
+    }
+  },
+  {
+    "id": "fx_7e179dec_polaroid_instant",
+    "name": "Polaroid Instant",
+    "effect_type": "film_stock_emulation",
+    "category": "color_grade",
+    "description": "Instant film color science. Shifted greens, warm shadows, characteristic color cast, white border feel.",
+    "prompt_fragment": "Polaroid instant film, warm shifted color, faded greens, soft contrast, vintage instant camera aesthetic",
+    "implementation": {
+      "method": "lut",
+      "lut_file": "polaroid_instant.cube",
+      "alt_method": "prompt_modifier"
+    },
+    "use_cases": [
+      "nostalgic",
+      "casual",
+      "personal",
+      "vintage"
+    ],
+    "pairs_with": {
+      "camera": [
+        "Bolex H16"
+      ],
+      "lighting": [
+        "Overcast Soft",
+        "Golden Hour"
+      ]
+    }
+  },
+  {
+    "id": "fx_5139452c_technicolor_2_strip",
+    "name": "Technicolor 2-Strip",
+    "effect_type": "film_stock_emulation",
+    "category": "color_grade",
+    "description": "Early color process with only red and cyan channels. Distinctive limited palette, 1920s-30s look.",
+    "prompt_fragment": "Technicolor 2-strip, red and cyan bias only, limited color palette, early cinema color, 1920s-1930s vintage look",
+    "implementation": {
+      "method": "lut",
+      "lut_file": "technicolor_2strip.cube",
+      "alt_method": "prompt_modifier"
+    },
+    "use_cases": [
+      "period",
+      "vintage",
+      "early_cinema",
+      "limited_palette"
+    ],
+    "pairs_with": {
+      "camera": [
+        "Panavision Millennium XL2",
+        "Bolex H16"
+      ],
+      "lighting": [
+        "Three-Point Classic",
+        "Practical Motivated"
+      ]
+    }
+  },
+  {
+    "id": "fx_1705ce20_kodak_5222_lighthouse",
+    "name": "Kodak 5222 Lighthouse",
+    "effect_type": "film_stock_emulation",
+    "category": "color_grade",
+    "description": "The Lighthouse (2019) look \u2014 extreme contrast B&W, crushed blacks, blown highlights, 1.19:1 aspect.",
+    "prompt_fragment": "Kodak 5222 extreme contrast black and white, crushed deep blacks, blown white highlights, harsh vintage grain, gothic mood",
+    "implementation": {
+      "method": "lut",
+      "lut_file": "kodak_5222_lighthouse.cube",
+      "alt_method": "prompt_modifier"
+    },
+    "use_cases": [
+      "gothic",
+      "horror",
+      "extreme_contrast",
+      "art_house"
+    ],
+    "pairs_with": {
+      "camera": [
+        "Panavision Millennium XL2",
+        "Bolex H16"
+      ],
+      "lighting": [
+        "Film Noir",
+        "Practical Motivated"
+      ]
+    }
+  },
+  {
+    "id": "fx_4d7f17fb_35mm_negative_standard",
+    "name": "35mm Negative Standard",
+    "effect_type": "film_stock_emulation",
+    "category": "color_grade",
+    "description": "Standard 35mm color negative. The baseline cinema look \u2014 moderate grain, natural color, wide latitude.",
+    "prompt_fragment": "35mm color negative film, standard cinema grain, natural color rendition, wide exposure latitude, theater projection look",
+    "implementation": {
+      "method": "lut",
+      "lut_file": "35mm_negative_standard.cube",
+      "alt_method": "prompt_modifier"
+    },
+    "use_cases": [
+      "standard",
+      "cinema",
+      "theatrical",
+      "baseline"
+    ],
+    "pairs_with": {
+      "camera": [
+        "Panavision Millennium XL2",
+        "ARRI Alexa 35"
+      ],
+      "lighting": [
+        "Three-Point Classic",
+        "Rembrandt"
+      ]
+    }
+  },
+  {
+    "id": "fx_3a907206_film_noir_style",
+    "name": "Film Noir Style",
+    "effect_type": "artistic_style",
+    "category": "visual_style",
+    "description": "High contrast black and white, hard shadows, chiaroscuro. 1940s crime cinema aesthetic.",
+    "prompt_fragment": "film noir style, high contrast black and white, deep hard shadows, chiaroscuro lighting, 1940s crime cinema, venetian blind shadow patterns",
+    "implementation": {
+      "method": "prompt_modifier",
+      "alt_method": "lora",
+      "comfyui_workflow": "noir_style_transfer"
+    },
+    "use_cases": [
+      "noir",
+      "crime",
+      "dramatic",
+      "black_and_white"
+    ],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_08728862_pencil_sketch",
+    "name": "Pencil Sketch",
+    "effect_type": "artistic_style",
+    "category": "visual_style",
+    "description": "Line drawing with cross-hatching. Graphite on paper, architectural or editorial illustration feel.",
+    "prompt_fragment": "pencil sketch drawing, graphite on paper, cross-hatching shading, line art, architectural illustration style",
+    "implementation": {
+      "method": "prompt_modifier",
+      "alt_method": "lora",
+      "comfyui_workflow": "sketch_style_transfer"
+    },
+    "use_cases": [
+      "editorial",
+      "storyboard",
+      "illustration",
+      "minimal"
+    ],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_adebca96_watercolor_painting",
+    "name": "Watercolor Painting",
+    "effect_type": "artistic_style",
+    "category": "visual_style",
+    "description": "Soft bleeding edges, translucent color washes, wet-on-wet technique, visible paper texture.",
+    "prompt_fragment": "watercolor painting, soft bleeding edges, translucent color washes, wet-on-wet technique, visible paper texture, gentle brush strokes",
+    "implementation": {
+      "method": "prompt_modifier",
+      "alt_method": "lora"
+    },
+    "use_cases": [
+      "artistic",
+      "gentle",
+      "pastoral",
+      "illustration"
+    ],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_f3004deb_oil_painting_impasto",
+    "name": "Oil Painting Impasto",
+    "effect_type": "artistic_style",
+    "category": "visual_style",
+    "description": "Thick textured brushstrokes, rich color, visible canvas texture. Dutch masters to impressionism.",
+    "prompt_fragment": "oil painting, thick impasto brushstrokes, rich pigment color, visible canvas texture, classical painting technique",
+    "implementation": {
+      "method": "prompt_modifier",
+      "alt_method": "lora"
+    },
+    "use_cases": [
+      "artistic",
+      "classical",
+      "textured",
+      "rich"
+    ],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_9e5c0bac_anime_cel_shaded",
+    "name": "Anime Cel-Shaded",
+    "effect_type": "artistic_style",
+    "category": "visual_style",
+    "description": "Flat color fills with bold outlines, limited shadow gradation, bright palette. Japanese animation aesthetic.",
+    "prompt_fragment": "anime cel-shaded style, flat color fills, bold black outlines, limited shadow gradation, bright vibrant palette, Japanese animation",
+    "implementation": {
+      "method": "prompt_modifier",
+      "alt_method": "lora",
+      "comfyui_workflow": "anime_style_transfer"
+    },
+    "use_cases": [
+      "anime",
+      "stylized",
+      "colorful",
+      "youth"
+    ],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_f5f1b46b_studio_ghibli",
+    "name": "Studio Ghibli",
+    "effect_type": "artistic_style",
+    "category": "visual_style",
+    "description": "Soft watercolor anime, pastoral landscapes, warm colors, gentle environmental storytelling. Miyazaki aesthetic.",
+    "prompt_fragment": "Studio Ghibli style, soft watercolor anime, pastoral landscape, warm gentle colors, hand-painted backgrounds, Miyazaki aesthetic",
+    "implementation": {
+      "method": "prompt_modifier",
+      "alt_method": "lora"
+    },
+    "use_cases": [
+      "anime",
+      "pastoral",
+      "gentle",
+      "environmental"
+    ],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_d2176bff_cyberpunk_neon",
+    "name": "Cyberpunk Neon",
+    "effect_type": "artistic_style",
+    "category": "visual_style",
+    "description": "Neon-soaked urban nightscape, rain-slicked streets, chromatic aberration, holographic displays.",
+    "prompt_fragment": "cyberpunk aesthetic, neon lights in rain, wet reflective streets, chromatic aberration, holographic displays, dystopian urban night",
+    "implementation": {
+      "method": "prompt_modifier",
+      "alt_method": "lora"
+    },
+    "use_cases": [
+      "cyberpunk",
+      "sci-fi",
+      "urban",
+      "neon"
+    ],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_102a2b39_vaporwave",
+    "name": "Vaporwave",
+    "effect_type": "artistic_style",
+    "category": "visual_style",
+    "description": "Pink/cyan gradient palette, retro 80s/90s digital aesthetic, Greek statues, grid backgrounds.",
+    "prompt_fragment": "vaporwave aesthetic, pink and cyan gradient, retro 80s digital, Greek statue elements, sunset grid background, nostalgic digital",
+    "implementation": {
+      "method": "prompt_modifier",
+      "alt_method": "lora"
+    },
+    "use_cases": [
+      "retro",
+      "digital",
+      "nostalgic",
+      "aesthetic"
+    ],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_6f21ed8d_comic_book_pop_art",
+    "name": "Comic Book Pop Art",
+    "effect_type": "artistic_style",
+    "category": "visual_style",
+    "description": "Bold halftone dots, thick outlines, limited flat color palette, speech bubbles. Lichtenstein meets Marvel.",
+    "prompt_fragment": "comic book style, halftone dot pattern, thick bold outlines, flat limited color palette, pop art, graphic novel aesthetic",
+    "implementation": {
+      "method": "prompt_modifier",
+      "alt_method": "lora"
+    },
+    "use_cases": [
+      "graphic",
+      "bold",
+      "commercial",
+      "youth"
+    ],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_fc887d21_renaissance_painting",
+    "name": "Renaissance Painting",
+    "effect_type": "artistic_style",
+    "category": "visual_style",
+    "description": "Classical composition, chiaroscuro, sfumato technique, religious/mythological grandeur, oil on canvas.",
+    "prompt_fragment": "Renaissance painting style, classical composition, chiaroscuro lighting, sfumato soft edges, oil on canvas, Caravaggio influence",
+    "implementation": {
+      "method": "prompt_modifier",
+      "alt_method": "lora"
+    },
+    "use_cases": [
+      "classical",
+      "dramatic",
+      "artistic",
+      "grand"
+    ],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_c3d9e755_pixel_art_retro",
+    "name": "Pixel Art Retro",
+    "effect_type": "artistic_style",
+    "category": "visual_style",
+    "description": "8-bit/16-bit limited palette, visible square pixels, retro gaming aesthetic, dithering patterns.",
+    "prompt_fragment": "pixel art style, 8-bit retro aesthetic, limited color palette, visible square pixels, dithering patterns, retro gaming look",
+    "implementation": {
+      "method": "prompt_modifier",
+      "alt_method": "comfyui_workflow"
+    },
+    "use_cases": [
+      "retro",
+      "gaming",
+      "minimal",
+      "nostalgic"
+    ],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_86879b66_paper_cutout_stop_motion",
+    "name": "Paper Cutout Stop Motion",
+    "effect_type": "artistic_style",
+    "category": "visual_style",
+    "description": "Textured paper layers, visible cut edges, stop-motion jitter, handmade feel. South Park to Wes Anderson.",
+    "prompt_fragment": "paper cutout stop motion style, textured layered paper, visible cut edges, slight stop-motion jitter, handmade craft aesthetic",
+    "implementation": {
+      "method": "prompt_modifier",
+      "alt_method": "lora"
+    },
+    "use_cases": [
+      "handmade",
+      "quirky",
+      "indie",
+      "textured"
+    ],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_c9d0c6dc_double_exposure",
+    "name": "Double Exposure",
+    "effect_type": "artistic_style",
+    "category": "visual_style",
+    "description": "Two overlapping images blended together. Ghostly transparency, silhouette filled with landscape or texture.",
+    "prompt_fragment": "double exposure effect, two overlapping transparent images, ghostly silhouette filled with landscape, ethereal blended imagery",
+    "implementation": {
+      "method": "comfyui_workflow",
+      "alt_method": "prompt_modifier"
+    },
+    "use_cases": [
+      "artistic",
+      "ethereal",
+      "portrait",
+      "abstract"
+    ],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_801126af_infrared_photography",
+    "name": "Infrared Photography",
+    "effect_type": "artistic_style",
+    "category": "visual_style",
+    "description": "False color infrared. White foliage, dark skies, surreal color mapping. Invisible spectrum rendered visible.",
+    "prompt_fragment": "infrared photography, false color, white foliage and grass, dark sky, surreal color mapping, ethereal alien landscape",
+    "implementation": {
+      "method": "prompt_modifier",
+      "alt_method": "lut"
+    },
+    "use_cases": [
+      "surreal",
+      "landscape",
+      "artistic",
+      "otherworldly"
+    ],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_ad0a19e7_glitch_art_digital",
+    "name": "Glitch Art Digital",
+    "effect_type": "artistic_style",
+    "category": "visual_style",
+    "description": "Deliberate data corruption aesthetic. RGB channel splitting, pixel sorting, compression artifacts as art.",
+    "prompt_fragment": "glitch art, data corruption aesthetic, RGB channel shift, pixel sorting, compression artifacts, digital noise, broken digital image",
+    "implementation": {
+      "method": "comfyui_workflow",
+      "alt_method": "ffmpeg_filter"
+    },
+    "use_cases": [
+      "experimental",
+      "digital",
+      "avant-garde",
+      "music_video"
+    ],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_812fb90e_tilt_shift_miniature",
+    "name": "Tilt-Shift Miniature",
+    "effect_type": "artistic_style",
+    "category": "visual_style",
+    "description": "Selective focus blur making real scenes look like miniature models. Toy-like, whimsical scale shift.",
+    "prompt_fragment": "tilt-shift miniature effect, selective narrow focus band, extreme blur top and bottom, toy-like miniature world, saturated color",
+    "implementation": {
+      "method": "ffmpeg_filter",
+      "alt_method": "comfyui_workflow",
+      "ffmpeg_cmd": "lenscorrection + tiltandshift"
+    },
+    "use_cases": [
+      "whimsical",
+      "aerial",
+      "architectural",
+      "creative"
+    ],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_1ca458b5_lomography_vintage",
+    "name": "Lomography Vintage",
+    "effect_type": "artistic_style",
+    "category": "visual_style",
+    "description": "Heavy vignette, color shifts, light leaks, saturated cross-processed look. Analog imperfection as aesthetic.",
+    "prompt_fragment": "lomography style, heavy dark vignette, color shift, light leaks, saturated cross-processed look, analog camera imperfections",
+    "implementation": {
+      "method": "lut",
+      "lut_file": "lomo_vintage.cube",
+      "alt_method": "prompt_modifier"
+    },
+    "use_cases": [
+      "vintage",
+      "casual",
+      "lo-fi",
+      "artistic"
+    ],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_deb36fa6_vintage_vhs_analog",
+    "name": "Vintage VHS Analog",
+    "effect_type": "artistic_style",
+    "category": "visual_style",
+    "description": "VHS scan lines, tracking artifacts, color bleed, tape noise. 1980s-90s home recording aesthetic.",
+    "prompt_fragment": "VHS tape aesthetic, scan lines, tracking artifacts, color bleed, tape noise, 1980s home video look, analog degradation",
+    "implementation": {
+      "method": "ffmpeg_filter",
+      "alt_method": "comfyui_workflow",
+      "ffmpeg_cmd": "noise+scanline overlay"
+    },
+    "use_cases": [
+      "retro",
+      "nostalgic",
+      "lo-fi",
+      "found_footage"
+    ],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_082df0e0_90s_camcorder",
+    "name": "90s Camcorder",
+    "effect_type": "artistic_style",
+    "category": "visual_style",
+    "description": "Handheld camcorder with date stamp, auto-focus hunting, interlaced video, consumer DV compression.",
+    "prompt_fragment": "90s camcorder footage, date stamp overlay, auto-focus hunting, interlaced video, consumer DV quality, home video aesthetic",
+    "implementation": {
+      "method": "ffmpeg_filter",
+      "alt_method": "comfyui_workflow"
+    },
+    "use_cases": [
+      "nostalgic",
+      "documentary",
+      "found_footage",
+      "personal"
+    ],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_ab91fbd3_underwater_caustics",
+    "name": "Underwater Caustics",
+    "effect_type": "artistic_style",
+    "category": "visual_style",
+    "description": "Underwater light patterns, blue-green color cast, caustic light dancing on surfaces, floating particles.",
+    "prompt_fragment": "underwater scene, blue-green water color cast, caustic light patterns dancing on surfaces, floating particles, aquatic atmosphere",
+    "implementation": {
+      "method": "prompt_modifier",
+      "alt_method": "comfyui_workflow"
+    },
+    "use_cases": [
+      "aquatic",
+      "dreamy",
+      "environmental",
+      "fantasy"
+    ],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_ac8e8b99_holographic_iridescent",
+    "name": "Holographic Iridescent",
+    "effect_type": "artistic_style",
+    "category": "visual_style",
+    "description": "Rainbow light diffraction, prismatic color shifts, chrome reflections. Futuristic material aesthetic.",
+    "prompt_fragment": "holographic iridescent effect, rainbow light diffraction, prismatic color shift, chrome reflections, futuristic material surface",
+    "implementation": {
+      "method": "prompt_modifier",
+      "alt_method": "comfyui_workflow"
+    },
+    "use_cases": [
+      "futuristic",
+      "fashion",
+      "product",
+      "experimental"
+    ],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_b0c481c2_daguerreotype_early_photo",
+    "name": "Daguerreotype Early Photo",
+    "effect_type": "artistic_style",
+    "category": "visual_style",
+    "description": "First photographic process. Metallic silver image on polished plate, monochrome, long exposure softness.",
+    "prompt_fragment": "daguerreotype early photography, metallic silver on polished plate, monochrome sepia, long exposure softness, antique photograph",
+    "implementation": {
+      "method": "prompt_modifier",
+      "alt_method": "lut"
+    },
+    "use_cases": [
+      "antique",
+      "historical",
+      "monochrome",
+      "period"
+    ],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_963e4ceb_thermal_heat_vision",
+    "name": "Thermal Heat Vision",
+    "effect_type": "artistic_style",
+    "category": "visual_style",
+    "description": "False-color temperature mapping. Hot objects in red/yellow, cold in blue/purple. Surveillance/sci-fi aesthetic.",
+    "prompt_fragment": "thermal heat vision, false-color temperature map, hot areas red and yellow, cold areas blue and purple, infrared surveillance look",
+    "implementation": {
+      "method": "comfyui_workflow",
+      "alt_method": "lut"
+    },
+    "use_cases": [
+      "sci-fi",
+      "surveillance",
+      "technical",
+      "military"
+    ],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_aee5ad8c_cinemagraph_living_photo",
+    "name": "Cinemagraph Living Photo",
+    "effect_type": "artistic_style",
+    "category": "visual_style",
+    "description": "Mostly frozen still image with one isolated element in seamless motion loop. Mesmerizing subtlety.",
+    "prompt_fragment": "cinemagraph effect, frozen still photograph with one isolated element in seamless motion loop, subtle mesmerizing movement",
+    "implementation": {
+      "method": "comfyui_workflow",
+      "alt_method": "remotion_component"
+    },
+    "use_cases": [
+      "social_media",
+      "editorial",
+      "subtle",
+      "artistic"
+    ],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_d6f7db8d_wes_anderson_symmetry",
+    "name": "Wes Anderson Symmetry",
+    "effect_type": "artistic_style",
+    "category": "visual_style",
+    "description": "Perfect centered symmetry, pastel color palette, whimsical production design, deadpan framing.",
+    "prompt_fragment": "Wes Anderson style, perfect centered symmetry, pastel color palette, whimsical design, deadpan framing, dollhouse aesthetic",
+    "implementation": {
+      "method": "prompt_modifier",
+      "alt_method": "lora"
+    },
+    "use_cases": [
+      "whimsical",
+      "symmetrical",
+      "pastel",
+      "editorial"
+    ],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_05b305d1_dolly_zoom_vertigo",
+    "name": "Dolly Zoom Vertigo",
+    "effect_type": "motion_fx",
+    "category": "in_clip",
+    "description": "Simultaneous dolly + counter-zoom. Background warps while subject stays same size. Hitchcock/Spielberg.",
+    "prompt_fragment": "dolly zoom vertigo effect, background warps and shifts while subject remains same size, Hitchcock vertigo, disorienting perspective shift",
+    "implementation": {
+      "method": "comfyui_workflow",
+      "alt_method": "prompt_modifier"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_52808f2b_whip_pan_blur",
+    "name": "Whip Pan Blur",
+    "effect_type": "motion_fx",
+    "category": "in_clip",
+    "description": "Extremely fast horizontal pan creating full-frame motion blur. Scene-to-scene transition or energy burst.",
+    "prompt_fragment": "whip pan effect, extremely fast horizontal camera pan, full-frame horizontal motion blur, energetic camera movement",
+    "implementation": {
+      "method": "ffmpeg_filter",
+      "alt_method": "prompt_modifier",
+      "ffmpeg_cmd": "minterpolate+motion blur"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_1eefca2c_rack_focus_shift",
+    "name": "Rack Focus Shift",
+    "effect_type": "motion_fx",
+    "category": "in_clip",
+    "description": "Smooth focus transition from foreground to background or vice versa. Reveals relationships, directs attention.",
+    "prompt_fragment": "rack focus shift, smooth focus transition from foreground to background, selective focus pull, depth attention redirect",
+    "implementation": {
+      "method": "prompt_modifier",
+      "alt_method": "comfyui_workflow"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_f7433cb2_zoom_burst_radial",
+    "name": "Zoom Burst Radial",
+    "effect_type": "motion_fx",
+    "category": "in_clip",
+    "description": "Radial zoom blur emanating from center. Impact emphasis, psychedelic energy, action emphasis.",
+    "prompt_fragment": "zoom burst effect, radial zoom blur from center, impact emphasis, streaking light lines from center, dramatic zoom energy",
+    "implementation": {
+      "method": "ffmpeg_filter",
+      "alt_method": "comfyui_workflow",
+      "ffmpeg_cmd": "zoompan+radial blur"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_976ab707_speed_ramp_dramatic",
+    "name": "Speed Ramp Dramatic",
+    "effect_type": "motion_fx",
+    "category": "in_clip",
+    "description": "Variable speed within a single clip. Slow motion for emphasis, speed up for action. Snyder/Bay style.",
+    "prompt_fragment": "speed ramp, variable speed slow to fast to slow within single shot, dramatic slow motion emphasis then accelerate, Snyder style",
+    "implementation": {
+      "method": "ffmpeg_filter",
+      "alt_method": "remotion_component",
+      "ffmpeg_cmd": "setpts for speed ramp"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_30a41b26_reverse_motion",
+    "name": "Reverse Motion",
+    "effect_type": "motion_fx",
+    "category": "in_clip",
+    "description": "Time reversal. Objects un-break, water flows upward, people walk backward. Surreal, music video staple.",
+    "prompt_fragment": "reverse motion, time reversal effect, objects reassembling, liquid flowing upward, surreal backward movement",
+    "implementation": {
+      "method": "ffmpeg_filter",
+      "ffmpeg_cmd": "reverse"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_0d863d3c_time_lapse_accelerated",
+    "name": "Time-Lapse Accelerated",
+    "effect_type": "motion_fx",
+    "category": "in_clip",
+    "description": "Dramatically accelerated time. Clouds racing, crowds flowing, day-to-night. Temporal compression.",
+    "prompt_fragment": "time-lapse, dramatically accelerated time, clouds racing across sky, crowds flowing, day to night transition, compressed time",
+    "implementation": {
+      "method": "ffmpeg_filter",
+      "alt_method": "prompt_modifier",
+      "ffmpeg_cmd": "setpts=PTS/30"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_4eef2de2_hyperlapse_moving",
+    "name": "Hyperlapse Moving",
+    "effect_type": "motion_fx",
+    "category": "in_clip",
+    "description": "Stabilized moving time-lapse. Camera travels through space while time accelerates. Google Earth style.",
+    "prompt_fragment": "hyperlapse, stabilized moving time-lapse, camera traveling through space, time accelerating, smooth aerial movement through time",
+    "implementation": {
+      "method": "comfyui_workflow",
+      "alt_method": "prompt_modifier"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_568e113c_freeze_frame_hold",
+    "name": "Freeze Frame Hold",
+    "effect_type": "motion_fx",
+    "category": "in_clip",
+    "description": "Motion freezes to still image. Record scratch moment, dramatic pause, ending card. Goodfellas style.",
+    "prompt_fragment": "freeze frame, motion suddenly stops, held still frame, dramatic pause, voiceover moment, record scratch freeze",
+    "implementation": {
+      "method": "ffmpeg_filter",
+      "alt_method": "remotion_component",
+      "ffmpeg_cmd": "select frame + loop"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_73e420b6_slow_motion_overcrank",
+    "name": "Slow Motion Overcrank",
+    "effect_type": "motion_fx",
+    "category": "in_clip",
+    "description": "120fps+ playback at 24/30fps. Smooth slow motion, detail emphasis, emotional weight, impact stretch.",
+    "prompt_fragment": "slow motion, overcranked high frame rate, smooth slowed movement, every detail emphasized, emotional weight, impact stretching",
+    "implementation": {
+      "method": "comfyui_workflow",
+      "alt_method": "ffmpeg_filter"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_7c2cf3d4_dutch_angle_tilt",
+    "name": "Dutch Angle Tilt",
+    "effect_type": "motion_fx",
+    "category": "in_clip",
+    "description": "Tilted horizon creating diagonal framing. Disorientation, unease, comic book energy. Batman Returns style.",
+    "prompt_fragment": "Dutch angle tilted horizon, diagonal framing, disorienting perspective, unease and tension, comic book dynamic angle",
+    "implementation": {
+      "method": "prompt_modifier",
+      "alt_method": "ffmpeg_filter"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_e859f3f9_parallax_2.5d_depth",
+    "name": "Parallax 2.5D Depth",
+    "effect_type": "motion_fx",
+    "category": "in_clip",
+    "description": "Depth layers moving at different rates creating 3D feel from 2D. Photo animation, Ken Burns evolution.",
+    "prompt_fragment": "parallax 2.5D depth effect, foreground and background layers moving at different speeds, 3D depth from 2D image, layered movement",
+    "implementation": {
+      "method": "comfyui_workflow",
+      "alt_method": "remotion_component"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_d86bac96_ken_burns_pan_zoom",
+    "name": "Ken Burns Pan Zoom",
+    "effect_type": "motion_fx",
+    "category": "in_clip",
+    "description": "Slow pan and zoom on still image. Documentary standard for photo animation. Subtle, reveals detail.",
+    "prompt_fragment": "Ken Burns effect, slow smooth pan and zoom on still photograph, gradual reveal of image detail, documentary photo animation",
+    "implementation": {
+      "method": "remotion_component",
+      "alt_method": "ffmpeg_filter",
+      "ffmpeg_cmd": "zoompan"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_690a0eb1_particle_snow_fall",
+    "name": "Particle Snow Fall",
+    "effect_type": "motion_fx",
+    "category": "in_clip",
+    "description": "Gentle falling snow particles overlaid on scene. Seasonal, atmospheric, dreamy. Adjustable density.",
+    "prompt_fragment": "falling snow particles, gentle snowfall overlay, atmospheric winter particles, adjustable density, seasonal mood",
+    "implementation": {
+      "method": "comfyui_workflow",
+      "alt_method": "remotion_component"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_37d63437_particle_rain_storm",
+    "name": "Particle Rain Storm",
+    "effect_type": "motion_fx",
+    "category": "in_clip",
+    "description": "Rain streaks overlaid with appropriate splashes, wet surfaces. Atmospheric, moody, dramatic tension.",
+    "prompt_fragment": "rain particles, visible rain streaks, wet reflective surfaces, rain splashes, atmospheric storm, moody tension",
+    "implementation": {
+      "method": "comfyui_workflow",
+      "alt_method": "prompt_modifier"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_e879d435_particle_ember_float",
+    "name": "Particle Ember Float",
+    "effect_type": "motion_fx",
+    "category": "in_clip",
+    "description": "Floating embers, sparks, or firefly particles. Warm, atmospheric, magical. Campfire to battle scene.",
+    "prompt_fragment": "floating ember particles, warm sparks rising, firefly glow, atmospheric warm particles, magical floating lights",
+    "implementation": {
+      "method": "comfyui_workflow",
+      "alt_method": "remotion_component"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_69f05752_lens_flare_anamorphic",
+    "name": "Lens Flare Anamorphic",
+    "effect_type": "motion_fx",
+    "category": "in_clip",
+    "description": "Horizontal blue streak flares from bright light sources. Anamorphic lens signature. Abrams style.",
+    "prompt_fragment": "anamorphic lens flare, horizontal blue streak from bright light source, cinematic flare, J.J. Abrams style, light artifact",
+    "implementation": {
+      "method": "comfyui_workflow",
+      "alt_method": "prompt_modifier"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_3ce2be7a_chromatic_aberration_rgb",
+    "name": "Chromatic Aberration RGB",
+    "effect_type": "motion_fx",
+    "category": "in_clip",
+    "description": "RGB color fringe at frame edges. Distressed lens or deliberate stylistic choice. Subtle to extreme.",
+    "prompt_fragment": "chromatic aberration, RGB color fringe splitting at edges, distressed lens effect, red and blue color separation",
+    "implementation": {
+      "method": "ffmpeg_filter",
+      "alt_method": "comfyui_workflow"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_4b608c66_film_gate_weave",
+    "name": "Film Gate Weave",
+    "effect_type": "motion_fx",
+    "category": "in_clip",
+    "description": "Subtle vertical frame instability mimicking film running through a projector gate. Organic imperfection.",
+    "prompt_fragment": "film gate weave, subtle vertical frame instability, organic projector movement, film running through gate, analog imperfection",
+    "implementation": {
+      "method": "ffmpeg_filter",
+      "alt_method": "comfyui_workflow"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_38ea2a27_infinite_zoom_fractal",
+    "name": "Infinite Zoom Fractal",
+    "effect_type": "motion_fx",
+    "category": "in_clip",
+    "description": "Continuous zoom into image that reveals new scene inside, recursively. Hypnotic, infinite, psychedelic.",
+    "prompt_fragment": "infinite fractal zoom, continuous zooming into image revealing new scene inside, recursive zoom, hypnotic endless depth",
+    "implementation": {
+      "method": "comfyui_workflow",
+      "alt_method": "remotion_component"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_f4a42721_cross_dissolve",
+    "name": "Cross Dissolve",
+    "effect_type": "transition",
+    "category": "shot_transition",
+    "description": "Standard fade between two shots. Gradual opacity blend. Time passage or gentle scene change.",
+    "prompt_fragment": "cross dissolve transition, gradual opacity blend between two shots, gentle scene change, time passage",
+    "implementation": {
+      "method": "ffmpeg_filter",
+      "ffmpeg_cmd": "xfade=transition=fade:duration=1"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_80be1d8e_hard_cut_direct",
+    "name": "Hard Cut Direct",
+    "effect_type": "transition",
+    "category": "shot_transition",
+    "description": "Direct cut with no transition. Most common edit. Purposeful, clean, editorial.",
+    "prompt_fragment": "hard cut, direct edit between shots, no transition effect, clean purposeful cut",
+    "implementation": {
+      "method": "ffmpeg_filter",
+      "ffmpeg_cmd": "concat"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_ae1e685f_j_cut_audio_lead",
+    "name": "J-Cut Audio Lead",
+    "effect_type": "transition",
+    "category": "shot_transition",
+    "description": "Audio from next scene begins before video cuts. Pulls viewer into upcoming scene. Conversational flow.",
+    "prompt_fragment": "J-cut transition, audio from next scene heard before video transition, sound leads picture, conversational editing flow",
+    "implementation": {
+      "method": "remotion_component",
+      "alt_method": "ffmpeg_filter"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_5a6c78c2_l_cut_video_lead",
+    "name": "L-Cut Video Lead",
+    "effect_type": "transition",
+    "category": "shot_transition",
+    "description": "Video cuts to new scene while previous audio continues. Reaction shots, dialogue overlap.",
+    "prompt_fragment": "L-cut transition, video shows new scene while previous audio continues, reaction shot editing, dialogue overlap",
+    "implementation": {
+      "method": "remotion_component",
+      "alt_method": "ffmpeg_filter"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_e6c1d024_match_cut_visual",
+    "name": "Match Cut Visual",
+    "effect_type": "transition",
+    "category": "shot_transition",
+    "description": "Cut between two shots sharing visual similarity \u2014 shape, movement, or color. 2001 bone-to-satellite.",
+    "prompt_fragment": "match cut transition, visual similarity between shots, matching shape or movement, seamless visual connection, 2001 style",
+    "implementation": {
+      "method": "remotion_component",
+      "alt_method": "prompt_modifier"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_92c10197_iris_wipe_circular",
+    "name": "Iris Wipe Circular",
+    "effect_type": "transition",
+    "category": "shot_transition",
+    "description": "Circular reveal expanding or contracting. Classic silent film era, now used for retro or playful feel.",
+    "prompt_fragment": "iris wipe transition, circular reveal expanding from center, classic film transition, retro playful wipe",
+    "implementation": {
+      "method": "ffmpeg_filter",
+      "ffmpeg_cmd": "xfade=transition=circlecrop:duration=1"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_6bf5df4e_light_leak_warm",
+    "name": "Light Leak Warm",
+    "effect_type": "transition",
+    "category": "shot_transition",
+    "description": "Warm orange/amber light bleed between shots. Film changeover aesthetic, nostalgic, organic.",
+    "prompt_fragment": "light leak transition, warm orange amber light bleed between shots, film changeover aesthetic, nostalgic organic glow",
+    "implementation": {
+      "method": "ffmpeg_filter",
+      "alt_method": "remotion_component"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_0ac6a3af_film_burn_overexpose",
+    "name": "Film Burn Overexpose",
+    "effect_type": "transition",
+    "category": "shot_transition",
+    "description": "Overexposed celluloid burn effect. White-hot center spreading, film damage aesthetic, dramatic ending.",
+    "prompt_fragment": "film burn transition, overexposed celluloid burn spreading from edge, white-hot center, film damage aesthetic, dramatic",
+    "implementation": {
+      "method": "ffmpeg_filter",
+      "alt_method": "comfyui_workflow"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_55c1db67_glitch_digital_corrupt",
+    "name": "Glitch Digital Corrupt",
+    "effect_type": "transition",
+    "category": "shot_transition",
+    "description": "Digital corruption between shots. Data moshing, pixel sorting, codec artifact transition.",
+    "prompt_fragment": "glitch transition, digital corruption between shots, data moshing, pixel sorting, codec artifacts, broken digital signal",
+    "implementation": {
+      "method": "ffmpeg_filter",
+      "alt_method": "comfyui_workflow"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_f4b21531_whip_pan_blur_transition",
+    "name": "Whip Pan Blur Transition",
+    "effect_type": "transition",
+    "category": "shot_transition",
+    "description": "Fast horizontal blur connecting two shots. Both shots end/begin with motion blur that matches.",
+    "prompt_fragment": "whip pan blur transition, horizontal motion blur connecting two shots, matching blur on both ends, energetic scene change",
+    "implementation": {
+      "method": "ffmpeg_filter",
+      "ffmpeg_cmd": "xfade with motion blur overlay"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_949a6848_zoom_punch_through",
+    "name": "Zoom Punch Through",
+    "effect_type": "transition",
+    "category": "shot_transition",
+    "description": "Rapid zoom into element in shot A, emerge from element in shot B. Dynamic, social media popular.",
+    "prompt_fragment": "zoom transition, rapid zoom into detail then emerge in new scene, dynamic punch-through zoom, social media style transition",
+    "implementation": {
+      "method": "ffmpeg_filter",
+      "alt_method": "remotion_component"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_1efdf949_fade_to_black",
+    "name": "Fade to Black",
+    "effect_type": "transition",
+    "category": "shot_transition",
+    "description": "Image fades to solid black. Scene ending, time passage, chapter break. The most final transition.",
+    "prompt_fragment": "fade to black, image gradually darkens to solid black, scene ending, chapter break, definitive closure",
+    "implementation": {
+      "method": "ffmpeg_filter",
+      "ffmpeg_cmd": "fade=out:st=0:d=1"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_bf76f681_fade_to_white_flash",
+    "name": "Fade to White Flash",
+    "effect_type": "transition",
+    "category": "shot_transition",
+    "description": "Image blows out to pure white. Impact, revelation, flashback entry, transcendence.",
+    "prompt_fragment": "fade to white, image blows out to pure white, impact flash, revelation moment, flashback entry, transcendent brightness",
+    "implementation": {
+      "method": "ffmpeg_filter",
+      "ffmpeg_cmd": "fade=out:st=0:d=0.5:color=white"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_afb19145_split_screen_dual",
+    "name": "Split Screen Dual",
+    "effect_type": "transition",
+    "category": "shot_transition",
+    "description": "Show two shots simultaneously side by side. Comparison, parallel action, phone conversations.",
+    "prompt_fragment": "split screen, two shots displayed simultaneously side by side, parallel action, comparison, phone conversation framing",
+    "implementation": {
+      "method": "remotion_component",
+      "alt_method": "ffmpeg_filter"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_74472466_push_slide_wipe",
+    "name": "Push Slide Wipe",
+    "effect_type": "transition",
+    "category": "shot_transition",
+    "description": "One shot physically pushes another off screen. Directional, editorial, clean motion.",
+    "prompt_fragment": "push slide transition, one shot pushes another off screen, directional sliding wipe, clean editorial motion",
+    "implementation": {
+      "method": "ffmpeg_filter",
+      "ffmpeg_cmd": "xfade=transition=slideleft:duration=0.5"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_14c84ee4_ink_bleed_reveal",
+    "name": "Ink Bleed Reveal",
+    "effect_type": "transition",
+    "category": "shot_transition",
+    "description": "Ink or paint bleeding across frame to reveal new shot underneath. Artistic, editorial, dramatic.",
+    "prompt_fragment": "ink bleed transition, dark ink spreading across frame revealing new shot underneath, artistic paint reveal, editorial dramatic",
+    "implementation": {
+      "method": "comfyui_workflow",
+      "alt_method": "remotion_component"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_0130853f_smoke_fog_reveal",
+    "name": "Smoke Fog Reveal",
+    "effect_type": "transition",
+    "category": "shot_transition",
+    "description": "Smoke or fog fills frame, clears to reveal new scene. Atmospheric, mysterious, theatrical.",
+    "prompt_fragment": "smoke fog transition, atmospheric smoke filling frame then clearing to reveal new scene, mysterious theatrical reveal",
+    "implementation": {
+      "method": "comfyui_workflow",
+      "alt_method": "prompt_modifier"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_417de5fe_clock_wipe",
+    "name": "Clock Wipe",
+    "effect_type": "transition",
+    "category": "shot_transition",
+    "description": "Radial wipe like clock hand sweeping. Retro, time-related, Star Wars homage.",
+    "prompt_fragment": "clock wipe transition, radial sweeping wipe like clock hand, retro star wars style, time passage indication",
+    "implementation": {
+      "method": "ffmpeg_filter",
+      "ffmpeg_cmd": "xfade=transition=radial:duration=1"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_1a818406_morph_shape_blend",
+    "name": "Morph Shape Blend",
+    "effect_type": "transition",
+    "category": "shot_transition",
+    "description": "One image morphs into another via shape interpolation. Faces morphing, objects transforming.",
+    "prompt_fragment": "morph transition, one image shape-blending into another, face morphing, object transformation, smooth shape interpolation",
+    "implementation": {
+      "method": "comfyui_workflow",
+      "alt_method": "remotion_component"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_1b1fedf7_page_turn",
+    "name": "Page Turn",
+    "effect_type": "transition",
+    "category": "shot_transition",
+    "description": "Page turning to reveal next shot. Book/magazine feel, presentation style, storybook narrative.",
+    "prompt_fragment": "page turn transition, turning page to reveal next scene, book magazine aesthetic, storybook narrative feel",
+    "implementation": {
+      "method": "remotion_component",
+      "alt_method": "ffmpeg_filter"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_b2d96530_film_grain_light_35mm",
+    "name": "Film Grain Light 35mm",
+    "effect_type": "film_stock_emulation",
+    "category": "texture_overlay",
+    "description": "Light 35mm film grain overlay. Adds organic texture without overwhelming the image.",
+    "prompt_fragment": "light 35mm film grain overlay, subtle organic texture, barely visible grain pattern, adds analog warmth without dominating",
+    "implementation": {
+      "method": "ffmpeg_filter",
+      "alt_method": "comfyui_workflow",
+      "ffmpeg_cmd": "noise=c0s=8:allf=t"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_63c58284_film_grain_heavy_16mm",
+    "name": "Film Grain Heavy 16mm",
+    "effect_type": "film_stock_emulation",
+    "category": "texture_overlay",
+    "description": "Heavy 16mm grain overlay. Visible, textured, documentary feel. Bolex/Eclair aesthetic.",
+    "prompt_fragment": "heavy 16mm film grain, visible coarse grain texture, documentary analog feel, Bolex camera aesthetic, rough organic texture",
+    "implementation": {
+      "method": "ffmpeg_filter",
+      "alt_method": "comfyui_workflow",
+      "ffmpeg_cmd": "noise=c0s=20:allf=t"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_6d828b21_vignette_dark_edges",
+    "name": "Vignette Dark Edges",
+    "effect_type": "artistic_style",
+    "category": "lens_effect",
+    "description": "Darkened frame edges drawing attention to center. Classic lens falloff, dramatic focus.",
+    "prompt_fragment": "dark vignette, darkened frame edges, light falloff toward corners, attention drawn to center, classic lens vignetting",
+    "implementation": {
+      "method": "ffmpeg_filter",
+      "ffmpeg_cmd": "vignette=PI/4"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_532ee29d_lens_distortion_barrel",
+    "name": "Lens Distortion Barrel",
+    "effect_type": "artistic_style",
+    "category": "lens_effect",
+    "description": "Barrel distortion mimicking wide-angle lens. Edges curve outward, center magnified slightly.",
+    "prompt_fragment": "barrel lens distortion, wide-angle edge curvature, edges bowing outward, fisheye-adjacent, immersive wide perspective",
+    "implementation": {
+      "method": "ffmpeg_filter",
+      "alt_method": "comfyui_workflow",
+      "ffmpeg_cmd": "lenscorrection"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_9b4aca9f_color_grade_teal_orange",
+    "name": "Color Grade Teal Orange",
+    "effect_type": "artistic_style",
+    "category": "color_grade",
+    "description": "Hollywood blockbuster teal/orange complementary grade. Warm skin tones against cool shadows.",
+    "prompt_fragment": "teal and orange color grade, warm orange skin tones, cool teal shadows and backgrounds, Hollywood blockbuster complementary palette",
+    "implementation": {
+      "method": "lut",
+      "lut_file": "teal_orange_blockbuster.cube",
+      "alt_method": "ffmpeg_filter"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_964c5e52_color_grade_desaturated_moody",
+    "name": "Color Grade Desaturated Moody",
+    "effect_type": "artistic_style",
+    "category": "color_grade",
+    "description": "Pulled-back saturation with lifted blacks. Moody, contemplative, indie film aesthetic.",
+    "prompt_fragment": "desaturated moody color grade, pulled-back muted saturation, lifted blacks, contemplative indie film look, muted palette",
+    "implementation": {
+      "method": "lut",
+      "lut_file": "desaturated_moody.cube",
+      "alt_method": "ffmpeg_filter"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_7993b5c3_color_grade_high_contrast_bw",
+    "name": "Color Grade High Contrast BW",
+    "effect_type": "artistic_style",
+    "category": "color_grade",
+    "description": "Aggressive black and white conversion with crushed blacks and blown highlights. Maximum drama.",
+    "prompt_fragment": "high contrast black and white, crushed deep blacks, blown bright whites, maximum tonal drama, stark monochrome",
+    "implementation": {
+      "method": "lut",
+      "lut_file": "high_contrast_bw.cube",
+      "alt_method": "ffmpeg_filter"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_8ee2f73b_letterbox_cinematic_2.39",
+    "name": "Letterbox Cinematic 2.39",
+    "effect_type": "artistic_style",
+    "category": "framing",
+    "description": "Anamorphic widescreen letterbox bars. 2.39:1 aspect ratio, the cinema standard for scope films.",
+    "prompt_fragment": "2.39:1 anamorphic widescreen letterbox, black bars top and bottom, cinematic scope framing, epic widescreen",
+    "implementation": {
+      "method": "ffmpeg_filter",
+      "alt_method": "remotion_component",
+      "ffmpeg_cmd": "crop=iw:iw/2.39"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_564c6042_letterbox_ultra_wide_2.76",
+    "name": "Letterbox Ultra-Wide 2.76",
+    "effect_type": "artistic_style",
+    "category": "framing",
+    "description": "Ultra-wide letterbox for epic scope. Ben-Hur, Hateful Eight territory. Maximum panoramic framing.",
+    "prompt_fragment": "2.76:1 ultra-wide letterbox, extreme panoramic framing, epic scope, maximum horizontal field of view",
+    "implementation": {
+      "method": "ffmpeg_filter",
+      "ffmpeg_cmd": "crop=iw:iw/2.76"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_7d9935e1_light_leak_red_warm",
+    "name": "Light Leak Red Warm",
+    "effect_type": "artistic_style",
+    "category": "lens_effect",
+    "description": "Warm red/orange light leak from film edge exposure. Nostalgic, analog imperfection, accidental beauty.",
+    "prompt_fragment": "warm red orange light leak, film edge exposure, nostalgic analog imperfection, warm light bleeding into frame",
+    "implementation": {
+      "method": "comfyui_workflow",
+      "alt_method": "remotion_component"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_04bb6827_halation_highlight_bloom",
+    "name": "Halation Highlight Bloom",
+    "effect_type": "artistic_style",
+    "category": "lens_effect",
+    "description": "Soft glow bleeding from bright highlights into surrounding areas. Vintage lens or film halation effect.",
+    "prompt_fragment": "halation effect, soft warm glow bleeding from bright highlights, vintage lens bloom, diffused highlight edges, dreamy softness",
+    "implementation": {
+      "method": "comfyui_workflow",
+      "alt_method": "ffmpeg_filter"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_b07de310_film_scratch_damage",
+    "name": "Film Scratch Damage",
+    "effect_type": "film_stock_emulation",
+    "category": "texture_overlay",
+    "description": "Visible film scratches, dust, and hair. Aged projector print aesthetic. Grindhouse to art house.",
+    "prompt_fragment": "film scratch damage overlay, visible scratches dust and hair, aged projector print, worn celluloid, grindhouse aesthetic",
+    "implementation": {
+      "method": "ffmpeg_filter",
+      "alt_method": "comfyui_workflow"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_f3d00e64_flicker_projector",
+    "name": "Flicker Projector",
+    "effect_type": "film_stock_emulation",
+    "category": "texture_overlay",
+    "description": "Subtle exposure flicker mimicking old projector or early cinema. Adds organic temporal variation.",
+    "prompt_fragment": "projector flicker, subtle exposure variation, old cinema projection artifact, organic brightness oscillation, vintage screening",
+    "implementation": {
+      "method": "ffmpeg_filter",
+      "alt_method": "comfyui_workflow"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_059ae088_stabilization_smooth",
+    "name": "Stabilization Smooth",
+    "effect_type": "motion_fx",
+    "category": "post_processing",
+    "description": "Digital stabilization removing camera shake. Smooth gliding result from handheld footage.",
+    "prompt_fragment": "digital stabilization, smooth camera movement, removed camera shake, gliding stabilized footage, steady image",
+    "implementation": {
+      "method": "ffmpeg_filter",
+      "ffmpeg_cmd": "vidstabdetect + vidstabtransform"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_5934f72c_defocus_soft_glow",
+    "name": "Defocus Soft Glow",
+    "effect_type": "artistic_style",
+    "category": "lens_effect",
+    "description": "Gentle overall soft focus with glowing highlights. Pro-Mist filter equivalent, beauty/dream look.",
+    "prompt_fragment": "soft focus glow, gentle defocus, glowing highlights, Pro-Mist filter effect, dreamy beauty softness, romantic diffusion",
+    "implementation": {
+      "method": "comfyui_workflow",
+      "alt_method": "ffmpeg_filter"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_0a3e58e4_day_for_night",
+    "name": "Day for Night",
+    "effect_type": "artistic_style",
+    "category": "color_grade",
+    "description": "Color treatment making daylight footage appear as nighttime. Blue push, lowered exposure, moon-motivated.",
+    "prompt_fragment": "day for night color grade, blue color push, lowered exposure, daylight made to appear nighttime, moon-motivated lighting feel",
+    "implementation": {
+      "method": "lut",
+      "lut_file": "day_for_night.cube",
+      "alt_method": "ffmpeg_filter"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_caaea37d_split_tone_warm_shadows",
+    "name": "Split Tone Warm Shadows",
+    "effect_type": "artistic_style",
+    "category": "color_grade",
+    "description": "Warm-toned shadows with cool highlights. Vintage faded aesthetic, Instagram-era editorial look.",
+    "prompt_fragment": "split tone grade, warm orange shadows, cool blue highlights, vintage faded aesthetic, editorial color split",
+    "implementation": {
+      "method": "lut",
+      "lut_file": "split_tone_warm_shadows.cube",
+      "alt_method": "ffmpeg_filter"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_5b11fea4_text_lower_third",
+    "name": "Text Lower Third",
+    "effect_type": "motion_fx",
+    "category": "overlay",
+    "description": "Animated lower third text overlay for names, titles, locations. Broadcast standard identification.",
+    "prompt_fragment": "lower third text overlay, animated name title graphic, broadcast identification bar, clean professional text placement",
+    "implementation": {
+      "method": "remotion_component",
+      "alt_method": "ffmpeg_filter"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_a18191ea_data_visualization_overlay",
+    "name": "Data Visualization Overlay",
+    "effect_type": "motion_fx",
+    "category": "overlay",
+    "description": "Animated charts, graphs, statistics overlaid on footage. Documentary data storytelling.",
+    "prompt_fragment": "data visualization overlay, animated charts and graphs, statistics on screen, documentary data storytelling, infographic animation",
+    "implementation": {
+      "method": "remotion_component"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  },
+  {
+    "id": "fx_b4c6a67e_countdown_leader",
+    "name": "Countdown Leader",
+    "effect_type": "transition",
+    "category": "shot_transition",
+    "description": "Classic film countdown leader (5-4-3-2-1). Retro, theatrical, nostalgic opening device.",
+    "prompt_fragment": "film countdown leader, classic 5 4 3 2 1 countdown, retro theatrical opening, vintage film leader with circles and numbers",
+    "implementation": {
+      "method": "remotion_component",
+      "alt_method": "ffmpeg_filter"
+    },
+    "use_cases": [],
+    "pairs_with": {}
+  }
+]

@@ -1,0 +1,146 @@
+{
+  "brand_name": "PopTech Studio",
+  "tagline": "AI Cinema Production Engine",
+  "domain": "poptechstudio.ai",
+  "type": "agency",
+  "description": "Self-hosted AI cinema production studio replacing $400+/mo SaaS platforms with a node-based pipeline at API-cost-only pricing. The value layer is virtual cinematography — camera presets, lighting simulation, effects chains — not the models themselves.",
+
+  "voice": {
+    "tone": "confident, technical-but-accessible, cinematic",
+    "personality_traits": [
+      "technically precise without being cold",
+      "creative director energy — decisive, visual-first",
+      "cost-conscious and pragmatic",
+      "builder mentality — infrastructure over hype",
+      "cinematic vocabulary — speaks the language of film production"
+    ],
+    "vocabulary_preferences": [
+      "production pipeline (not workflow)",
+      "virtual cinematography (not AI video)",
+      "cinema engine (not video tool)",
+      "shot, sequence, scene (not clip, content, post)",
+      "render, composite, grade (not make, create, edit)",
+      "direct, frank language — no filler"
+    ],
+    "prohibited_terms": [
+      "game-changing",
+      "revolutionary",
+      "democratize",
+      "leverage",
+      "synergy",
+      "disrupt",
+      "10x",
+      "vibe",
+      "magic",
+      "automagically"
+    ],
+    "example_phrases": [
+      "Cinema-grade output at API-cost pricing.",
+      "The models are commodities. The cinematography intelligence is the product.",
+      "Every production flows through five layers — generation, virtual production, audio, post, distribution.",
+      "RAG-driven camera presets, not prompt guessing."
+    ]
+  },
+
+  "visual": {
+    "primary_colors": [
+      {"name": "Void Black", "hex": "#0a0a0a", "usage": "Primary backgrounds, dark mode base"},
+      {"name": "Deep Navy", "hex": "#1a1a2e", "usage": "Gradient midpoint, panel backgrounds"},
+      {"name": "Midnight Blue", "hex": "#16213e", "usage": "Gradient endpoint, accent backgrounds"}
+    ],
+    "secondary_colors": [
+      {"name": "Studio White", "hex": "#ffffff", "usage": "Primary text, headings, high-contrast elements"},
+      {"name": "Silver", "hex": "#888888", "usage": "Secondary text, subtitles, metadata"},
+      {"name": "Accent Blue", "hex": "#2792dc", "usage": "Interactive elements, links, highlights"},
+      {"name": "Accent Teal", "hex": "#9ce6e6", "usage": "Secondary accent, data visualizations"}
+    ],
+    "typography": {
+      "heading_font": "system-ui, -apple-system, sans-serif",
+      "body_font": "system-ui, -apple-system, sans-serif",
+      "accent_font": "monospace (for technical/code contexts)",
+      "heading_weight": 800,
+      "body_weight": 400,
+      "letter_spacing": "-0.02em"
+    },
+    "logo_usage": "CTO to provide — logo files go in brand/assets/",
+    "photography_style": "Dark, cinematic, high-contrast. Shallow depth of field. Anamorphic lens character preferred. Noir and moody over bright and corporate.",
+    "video_style": "Cinematic color grading (LOG-to-Rec.709 or film stock emulation). Deliberate camera movement over static shots. Every frame should feel intentional — no generic stock footage aesthetic."
+  },
+
+  "target_audience": {
+    "primary_icp": "Small-to-mid creative agencies and independent filmmakers who need cinema-quality AI video production without $200+/mo platform subscriptions",
+    "secondary_icp": "DTC brands and e-commerce businesses needing high-volume video content (product demos, avatar content, social shorts) at scale",
+    "pain_points": [
+      "Platform subscriptions stack up ($400+/mo for Higgsfield + Arcads alone)",
+      "Credit-limited generation — pay per video, costs spike with volume",
+      "No real cinematography control — generic AI video output",
+      "Locked into platform UIs — can't customize or automate pipelines",
+      "Multi-platform publishing is manual and fragmented"
+    ],
+    "desired_outcomes": [
+      "Cinema-quality video at API-cost-only pricing (~$100-200/mo total)",
+      "Full cinematography control — camera, lighting, effects via RAG presets",
+      "Automated multi-platform publishing pipeline",
+      "Consistent brand identity across all video content",
+      "Scalable — 10 videos/mo or 100, same infrastructure"
+    ]
+  },
+
+  "content_guidelines": {
+    "formats": [
+      "cinematic commercial",
+      "documentary",
+      "anime series",
+      "avatar/talking head content",
+      "social short (Reels/TikTok/Shorts)",
+      "product demo",
+      "motion graphics"
+    ],
+    "platforms": [
+      "YouTube (long-form)",
+      "YouTube Shorts",
+      "Instagram Reels",
+      "TikTok",
+      "LinkedIn",
+      "X/Twitter"
+    ],
+    "aspect_ratios": {
+      "landscape": "16:9 (1920x1080)",
+      "portrait": "9:16 (1080x1920)",
+      "square": "1:1 (1080x1080)"
+    },
+    "encoding_defaults": {
+      "codec": "H.264",
+      "fps": 30,
+      "audio_normalization": "-16 LUFS",
+      "color_space": "Rec.709",
+      "bitrate_1080p": "8-12 Mbps",
+      "audio_codec": "AAC",
+      "audio_bitrate": "192 kbps"
+    }
+  },
+
+  "cinema_defaults": {
+    "_note": "Populated in Phase 2 as RAG presets are built. These are starting-point defaults.",
+    "color_grading": "Film stock emulation — warm highlights, lifted shadows. Avoid flat or oversaturated looks.",
+    "preferred_film_stock_emulation": "Kodak Vision3 500T (tungsten, cinematic warmth) for interiors; Fuji Eterna Vivid 500 for exteriors",
+    "default_camera_style": "ARRI Alexa 35 body + Cooke S7i prime lens set (characterful, organic rendering)",
+    "default_lighting_setup": "Modified three-point: soft key at 45 degrees, minimal fill for contrast, subtle edge/backlight for separation"
+  },
+
+  "metadata": {
+    "version": "1.0.0",
+    "created": "2026-04-12",
+    "created_by": "VS Code Lead Engineer (Claude Opus 4.6)",
+    "last_updated": "2026-04-12",
+    "status": "draft — awaiting CTO review of brand voice and visual identity",
+    "cto_review_needed": [
+      "tagline — is 'AI Cinema Production Engine' the final tagline?",
+      "logo files — need to be added to brand/assets/",
+      "brand voice tone — confirm personality traits match Rob's vision",
+      "primary/secondary ICP — validate target audience descriptions",
+      "photography_style — confirm dark/cinematic direction",
+      "film stock defaults — confirm Kodak Vision3/Fuji Eterna preference"
+    ]
+  }
+}

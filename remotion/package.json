@@ -1,0 +1,23 @@
+{
+  "name": "poptech-cinema-remotion",
+  "version": "1.0.0",
+  "description": "PopTech Cinema Studio — Remotion video rendering engine (Layer 4)",
+  "scripts": {
+    "dev": "npx remotion studio",
+    "build": "npx remotion bundle",
+    "render": "npx remotion render",
+    "upgrade": "npx remotion upgrade"
+  },
+  "dependencies": {
+    "@remotion/cli": "latest",
+    "@remotion/player": "latest",
+    "react": "^19",
+    "react-dom": "^19",
+    "remotion": "latest",
+    "typescript": "^5"
+  },
+  "devDependencies": {
+    "@types/react": "^19",
+    "@types/react-dom": "^19"
+  }
+}

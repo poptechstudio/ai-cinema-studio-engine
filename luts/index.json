@@ -1,0 +1,166 @@
+{
+  "version": "1.0.0",
+  "lut_size": 17,
+  "format": ".cube (3D LUT, industry standard)",
+  "generated_by": "tools/generate_luts.py",
+
+  "base": {
+    "log_to_rec709": {
+      "file": "base/log_to_rec709.cube",
+      "name": "LOG to Rec.709",
+      "description": "Expands LOG gamma to Rec.709 display standard. Use as first step in chain for LOG-encoded footage.",
+      "use_cases": ["log_footage", "base_conversion", "chain_first_step"]
+    }
+  },
+
+  "corrections": {
+    "neutral_normalize": {
+      "file": "corrections/neutral_normalize.cube",
+      "name": "AI Footage Normalize",
+      "description": "Subtle normalization for AI-generated footage. Evens out banding, slight level balance. Apply before creative grade.",
+      "use_cases": ["ai_footage", "debanding", "pre_grade", "normalization"]
+    }
+  },
+
+  "film_stocks": {
+    "kodak_vision3_500t": {
+      "file": "film_stocks/kodak_vision3_500t.cube",
+      "name": "Kodak Vision3 500T",
+      "description": "Tungsten cinema standard. Warm highlights, rich shadows, organic feel. The most-used cinema negative stock.",
+      "color_temp": "tungsten (3200K)",
+      "use_cases": ["cinematic", "interior", "dramatic", "narrative"],
+      "pairs_with_lighting": ["Rembrandt", "Practical Motivated", "Three-Point High Contrast"]
+    },
+    "kodak_vision3_250d": {
+      "file": "film_stocks/kodak_vision3_250d.cube",
+      "name": "Kodak Vision3 250D",
+      "description": "Daylight cinema negative. Vibrant color, moderate grain, excellent for outdoor scenes.",
+      "color_temp": "daylight (5600K)",
+      "use_cases": ["exterior", "daylight", "commercial", "vibrant"],
+      "pairs_with_lighting": ["Golden Hour", "Three-Point Classic", "Overcast Soft"]
+    },
+    "fuji_eterna_vivid_500": {
+      "file": "film_stocks/fuji_eterna_vivid_500.cube",
+      "name": "Fuji Eterna Vivid 500",
+      "description": "Punchy color rendition. Strong saturation, vivid greens and blues. Great for exteriors.",
+      "color_temp": "daylight (5500K)",
+      "use_cases": ["exterior", "vibrant", "landscape", "commercial"],
+      "pairs_with_lighting": ["Golden Hour", "Overcast Soft"]
+    },
+    "fuji_eterna_250d": {
+      "file": "film_stocks/fuji_eterna_250d.cube",
+      "name": "Fuji Eterna 250D",
+      "description": "Neutral daylight stock. Natural skin tones, moderate saturation. Professional baseline.",
+      "color_temp": "daylight (5600K)",
+      "use_cases": ["neutral", "documentary", "natural", "daylight"],
+      "pairs_with_lighting": ["Documentary Available Light", "Overcast Soft"]
+    },
+    "kodak_ektachrome_100d": {
+      "file": "film_stocks/kodak_ektachrome_100d.cube",
+      "name": "Kodak Ektachrome 100D",
+      "description": "Reversal film. Highly saturated, punchy contrast. Direct positive look.",
+      "color_temp": "daylight (5600K)",
+      "use_cases": ["saturated", "vivid", "fashion", "music_video"],
+      "pairs_with_lighting": ["Golden Hour", "Music Video Dramatic"]
+    },
+    "kodak_trix_400_bw": {
+      "file": "film_stocks/kodak_trix_400_bw.cube",
+      "name": "Kodak Tri-X 400 B&W",
+      "description": "Classic black and white. Visible grain, high contrast. Photojournalism standard.",
+      "color_temp": "N/A (monochrome)",
+      "use_cases": ["black_and_white", "documentary", "street", "gritty"],
+      "pairs_with_lighting": ["Documentary Available Light", "Hard Noon Sun"]
+    },
+    "ilford_hp5_bw": {
+      "file": "film_stocks/ilford_hp5_bw.cube",
+      "name": "Ilford HP5 Plus B&W",
+      "description": "Fine-grain B&W. Smoother tonal range, wider latitude. Elegant monochrome.",
+      "color_temp": "N/A (monochrome)",
+      "use_cases": ["black_and_white", "portrait", "elegant", "fine_art"],
+      "pairs_with_lighting": ["Rembrandt", "Window Light Natural"]
+    },
+    "kodak_doublex_5222_bw": {
+      "file": "film_stocks/kodak_doublex_5222_bw.cube",
+      "name": "Kodak Double-X 5222 B&W",
+      "description": "Cinema B&W. Deep blacks, crisp whites, high contrast. The Lighthouse, Raging Bull.",
+      "color_temp": "N/A (monochrome)",
+      "use_cases": ["noir", "cinema", "dramatic", "art_house"],
+      "pairs_with_lighting": ["Film Noir", "Split Lighting"]
+    },
+    "16mm_reversal_vintage": {
+      "file": "film_stocks/16mm_reversal_vintage.cube",
+      "name": "16mm Reversal Vintage",
+      "description": "16mm reversal with warm fade, heavy grain character. Vintage documentary texture.",
+      "color_temp": "warm (shifted)",
+      "use_cases": ["vintage", "documentary", "archival", "retro"],
+      "pairs_with_lighting": ["Documentary Available Light", "Golden Hour"]
+    },
+    "super_8mm_home_movie": {
+      "file": "film_stocks/super_8mm_home_movie.cube",
+      "name": "Super 8mm Home Movie",
+      "description": "Extreme warmth, heavy fade, low contrast. Nostalgic home movie aesthetic.",
+      "color_temp": "very warm (heavily shifted)",
+      "use_cases": ["nostalgic", "home_movie", "vintage", "personal"],
+      "pairs_with_lighting": ["Golden Hour", "Practical Motivated"]
+    },
+    "technicolor_3strip": {
+      "file": "film_stocks/technicolor_3strip.cube",
+      "name": "Technicolor 3-Strip",
+      "description": "Golden age Hollywood. Vivid saturated dye transfer color. Wizard of Oz, Singin' in the Rain.",
+      "color_temp": "neutral (vivid)",
+      "use_cases": ["classic_hollywood", "musical", "saturated", "golden_age"],
+      "pairs_with_lighting": ["Three-Point Classic", "Butterfly Paramount"]
+    }
+  },
+
+  "creative": {
+    "bleach_bypass": {
+      "file": "creative/bleach_bypass.cube",
+      "name": "Bleach Bypass",
+      "description": "Desaturated, high contrast. Silver retention. War/thriller aesthetic.",
+      "use_cases": ["gritty", "war", "thriller", "desaturated"]
+    },
+    "cross_process": {
+      "file": "creative/cross_process.cube",
+      "name": "Cross Processing",
+      "description": "Extreme color shifts, high saturation. Experimental, fashion, music video.",
+      "use_cases": ["experimental", "fashion", "music_video", "retro"]
+    },
+    "faded_film_aged": {
+      "file": "creative/faded_film_aged.cube",
+      "name": "Faded Film Aged",
+      "description": "Lifted blacks, desaturated. Aged vintage stock look.",
+      "use_cases": ["vintage", "nostalgic", "indie", "faded"]
+    },
+    "teal_orange_blockbuster": {
+      "file": "creative/teal_orange_blockbuster.cube",
+      "name": "Teal Orange Blockbuster",
+      "description": "Hollywood complementary grade. Warm skin tones, cool shadows.",
+      "use_cases": ["blockbuster", "commercial", "action", "drama"]
+    },
+    "desaturated_moody": {
+      "file": "creative/desaturated_moody.cube",
+      "name": "Desaturated Moody",
+      "description": "Pulled-back saturation, lifted blacks. Contemplative indie look.",
+      "use_cases": ["indie", "moody", "contemplative", "drama"]
+    },
+    "high_contrast_bw": {
+      "file": "creative/high_contrast_bw.cube",
+      "name": "High Contrast B&W",
+      "description": "Aggressive black and white. Crushed blacks, blown highlights.",
+      "use_cases": ["dramatic", "editorial", "art_house", "stark"]
+    },
+    "day_for_night": {
+      "file": "creative/day_for_night.cube",
+      "name": "Day for Night",
+      "description": "Makes daylight footage appear nighttime. Blue push, lowered exposure.",
+      "use_cases": ["night_simulation", "low_budget", "creative", "fantasy"]
+    },
+    "split_tone_warm_shadows": {
+      "file": "creative/split_tone_warm_shadows.cube",
+      "name": "Split Tone Warm Shadows",
+      "description": "Warm orange shadows, cool blue highlights. Editorial split tone.",
+      "use_cases": ["editorial", "portrait", "vintage", "fashion"]
+    }
+  }
+}

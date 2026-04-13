@@ -1,0 +1,147 @@
+{
+  "name": "Documentary Production",
+  "nodes": [
+    {
+      "parameters": {
+        "event": "update",
+        "databaseId": "${NOTION_DB_ID}",
+        "conditions": {"string": [{"key": "Status", "value": "Ready to Produce"}, {"key": "Format", "value": "Documentary"}]}
+      },
+      "id": "trigger-notion",
+      "name": "Notion Trigger",
+      "type": "n8n-nodes-base.notionTrigger",
+      "typeVersion": 1,
+      "position": [200, 300]
+    },
+    {
+      "parameters": {"jsCode": "// Fetch and parse production order from Notion\nconst page = $input.first().json;\nconst props = page.properties || {};\nreturn [{ json: {\n  production_order_id: props['Order ID']?.rich_text?.[0]?.plain_text || `DOC-${Date.now()}`,\n  client: props['Client']?.select?.name || 'Unknown',\n  project_name: props['Project']?.title?.[0]?.plain_text || 'Documentary',\n  topic: props['Topic']?.rich_text?.[0]?.plain_text || '',\n  narrator_script: props['Script']?.rich_text?.[0]?.plain_text || '',\n  research_urls: (props['Research URLs']?.rich_text?.[0]?.plain_text || '').split(',').map(u => u.trim()),\n  shots: [],\n  notion_page_id: page.id,\n}}];"},
+      "id": "parse-order",
+      "name": "Parse Production Order",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [420, 300]
+    },
+    {
+      "parameters": {"jsCode": "// Firecrawl MCP: Research topic — scrape URLs and ingest context\nconst order = $json;\nreturn [{ json: { ...order, research_status: 'stub_complete', research_sources: order.research_urls.length }}];\n// STUB: In production, calls Firecrawl MCP to scrape URLs, then ingests into Qdrant shot_library"},
+      "id": "firecrawl-research",
+      "name": "Firecrawl: Topic Research",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [640, 300],
+      "notes": "STUB: Firecrawl MCP scrapes research URLs, ingests into Qdrant"
+    },
+    {
+      "parameters": {"jsCode": "// Claude: Generate narrator script + B-roll shot descriptions from research\nconst order = $json;\nreturn [{ json: { ...order, script_generated: true, broll_descriptions: ['Environment establishing', 'Historical archive', 'Expert interview', 'Data visualization'] }}];\n// STUB: Claude generates script from research + topic"},
+      "id": "script-generation",
+      "name": "Claude: Script + B-Roll Descriptions",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [860, 300],
+      "notes": "STUB: Claude generates narrator script and B-roll descriptions"
+    },
+    {
+      "parameters": {"jsCode": "// Multi-model B-roll generation\n// Veo 3.1 for environments, Kling 3.0 for humans, Wan 2.6 for archival\nconst order = $json;\nconst shots = (order.broll_descriptions || []).map((desc, i) => ({\n  shot_id: `DOC_SH${String(i+1).padStart(2,'0')}`,\n  description: desc,\n  model: desc.includes('archive') ? 'wan26_archival' : desc.includes('interview') ? 'kling_3.0' : 'veo_3.1',\n  duration_seconds: desc.includes('interview') ? 8 : 5,\n}));\nreturn [{ json: { ...order, shots }}];"},
+      "id": "model-selection",
+      "name": "Multi-Model Shot Selection",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1080, 300]
+    },
+    {
+      "parameters": {"fieldToSplitOut": "shots"},
+      "id": "split-shots",
+      "name": "Split Into Shots",
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [1300, 300]
+    },
+    {
+      "parameters": {"jsCode": "// RAG query for camera + lighting presets\nconst shot = $json;\nreturn [{ json: { ...shot, camera_preset: 'documentary_handheld_35mm', lighting_preset: 'available_light_natural', assembled_prompt: `${shot.description}, documentary style, natural lighting, handheld camera, 35mm lens, Photo real, natural framing.` }}];"},
+      "id": "rag-query",
+      "name": "RAG: Camera + Lighting",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1520, 300],
+      "notes": "STUB: Queries Qdrant camera_presets + lighting_presets"
+    },
+    {
+      "parameters": {"jsCode": "// Generation per model type\nconst shot = $json;\nreturn [{ json: { ...shot, generation_status: 'stub', generation_cost: shot.duration_seconds * 0.15, output_path: `/tmp/cinema_studio/doc/${shot.shot_id}.mp4` }}];\n// STUB: Routes to Veo/Kling/Wan based on shot.model"},
+      "id": "generate-shot",
+      "name": "Generate B-Roll Shot",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1740, 300],
+      "notes": "STUB: Multi-model generation (Veo 3.1 / Kling 3.0 / Wan 2.6)",
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 30000
+    },
+    {
+      "parameters": {"jsCode": "// Aggregate shots + Ken Burns on archive stills\nconst allShots = $input.all().map(i => i.json);\nconst totalCost = allShots.reduce((s, sh) => s + (sh.generation_cost || 0), 0);\nreturn [{ json: { shots: allShots, total_generation_cost: totalCost, shot_count: allShots.length }}];"},
+      "id": "aggregate",
+      "name": "Aggregate + Ken Burns Stills",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1960, 300]
+    },
+    {
+      "parameters": {"jsCode": "// ElevenLabs narrator voice\nconst order = $json;\nreturn [{ json: { ...order, voiceover_path: '/tmp/cinema_studio/doc/narrator.mp3', voiceover_cost: 0.05 }}];\n// STUB: ElevenLabs narration with documentary voice"},
+      "id": "elevenlabs-narrator",
+      "name": "ElevenLabs: Narrator Voice",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2180, 300],
+      "notes": "STUB: ElevenLabs narration"
+    },
+    {
+      "parameters": {"jsCode": "// Remotion composition using Generic template (documentary config)\n// Ken Burns on stills, lower thirds with expert names, chapter markers\nconst order = $json;\nreturn [{ json: { ...order, remotion_template: 'Generic', remotion_command: `npx remotion render src/index.ts Generic --props=doc_props.json --output /tmp/cinema_studio/doc/composite.mp4` }}];"},
+      "id": "remotion-compose",
+      "name": "Remotion: Documentary Compose",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2400, 300],
+      "notes": "STUB: Uses Generic template from 4.5 with documentary config. Ken Burns on stills, lower thirds."
+    },
+    {
+      "parameters": {"jsCode": "// FFmpeg: documentary color grade + audio normalization\nconst order = $json;\nreturn [{ json: { ...order, grade_command: `python tools/color_grade.py composite.mp4 --chain \"neutral_normalize,fuji_eterna_250d\" --grain 0.10 --output graded.mp4`, audio_normalization: '-16 LUFS' }}];"},
+      "id": "ffmpeg-grade",
+      "name": "FFmpeg: Grade + Normalize",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2620, 300]
+    },
+    {
+      "parameters": {"jsCode": "// YouTube chapter generation from script\nconst order = $json;\nreturn [{ json: { ...order, youtube_chapters: '0:00 Introduction\\n0:30 Background\\n1:15 Analysis\\n2:00 Conclusion', platform_encodes: [{platform: 'youtube', aspect: '16:9'}] }}];"},
+      "id": "youtube-chapters",
+      "name": "Generate YouTube Chapters",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2840, 300]
+    },
+    {
+      "parameters": {"jsCode": "// Cost reconciliation + Notion update\nconst order = $json;\nconst total = (order.total_generation_cost || 0) + (order.voiceover_cost || 0);\nreturn [{ json: { production_order_id: order.production_order_id, total_cost: total, status: 'QC Review' }}];"},
+      "id": "cost-and-status",
+      "name": "Cost Reconciliation + Status Update",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [3060, 300]
+    }
+  ],
+  "connections": {
+    "Notion Trigger": {"main": [[{"node": "Parse Production Order", "type": "main", "index": 0}]]},
+    "Parse Production Order": {"main": [[{"node": "Firecrawl: Topic Research", "type": "main", "index": 0}]]},
+    "Firecrawl: Topic Research": {"main": [[{"node": "Claude: Script + B-Roll Descriptions", "type": "main", "index": 0}]]},
+    "Claude: Script + B-Roll Descriptions": {"main": [[{"node": "Multi-Model Shot Selection", "type": "main", "index": 0}]]},
+    "Multi-Model Shot Selection": {"main": [[{"node": "Split Into Shots", "type": "main", "index": 0}]]},
+    "Split Into Shots": {"main": [[{"node": "RAG: Camera + Lighting", "type": "main", "index": 0}]]},
+    "RAG: Camera + Lighting": {"main": [[{"node": "Generate B-Roll Shot", "type": "main", "index": 0}]]},
+    "Generate B-Roll Shot": {"main": [[{"node": "Aggregate + Ken Burns Stills", "type": "main", "index": 0}]]},
+    "Aggregate + Ken Burns Stills": {"main": [[{"node": "ElevenLabs: Narrator Voice", "type": "main", "index": 0}]]},
+    "ElevenLabs: Narrator Voice": {"main": [[{"node": "Remotion: Documentary Compose", "type": "main", "index": 0}]]},
+    "Remotion: Documentary Compose": {"main": [[{"node": "FFmpeg: Grade + Normalize", "type": "main", "index": 0}]]},
+    "FFmpeg: Grade + Normalize": {"main": [[{"node": "Generate YouTube Chapters", "type": "main", "index": 0}]]},
+    "Generate YouTube Chapters": {"main": [[{"node": "Cost Reconciliation + Status Update", "type": "main", "index": 0}]]}
+  },
+  "settings": {"executionOrder": "v1"},
+  "tags": [{"name": "production"}, {"name": "documentary"}]
+}

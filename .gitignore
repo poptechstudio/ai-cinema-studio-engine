@@ -1,0 +1,97 @@
+# =============================================================================
+# PopTech Cinema Studio — Public Repository .gitignore
+# =============================================================================
+# Hardened for public MIT distribution. Excludes all secrets, internal
+# dev communications, client-specific assets, and build artifacts.
+# =============================================================================
+
+# --- Secrets & credentials (NEVER commit) -----------------------------------
+.env
+.env.*
+!.env.example
+.mcp.json
+credentials.json
+token.json
+*.pem
+*.key
+id_rsa*
+id_github_*
+secrets/
+.secrets/
+
+# --- Internal dev communications (CTO ↔ Engineer loop) ----------------------
+ops/
+.agents/
+.claude/
+CLAUDE.md
+skills-lock.json
+
+# --- Internal architecture / planning docs (not public) ---------------------
+PopTech_AI_Cinema_Studio_Architecture.md
+*INTERNAL*.md
+*-INTERNAL.md
+
+# --- Client-specific assets (trademark / IP not owned by engine) ------------
+charcters/
+characters/
+brand/kit_profile.json
+brand/clients/
+workflows/n8n/kit-daily-content.json
+workflows/clients/
+remotion/templates/BsideVinyl.tsx
+remotion/examples/bsidevinyl-daily.json
+# Current production SOP contains client-specific references; engineer must
+# create a generic public version before unignoring.
+workflows/studio-production-pipeline.md
+
+# --- Archives & backups -----------------------------------------------------
+*.zip
+*.tar.gz
+*.rar
+Cinema Studio PopTech Studio/
+Cinema Studio PopTech Studio.zip
+
+# --- Temporary / runtime ----------------------------------------------------
+.tmp/
+tmp/
+*.log
+tools/cost_log.csv
+tools/*.cache
+*.sqlite
+*.db
+
+# --- Rendered outputs (regenerable) -----------------------------------------
+remotion/out/
+remotion/build/
+**/renders/
+**/out/
+
+# --- Internal test fixtures & benchmark data (client assets) ----------------
+tests/
+!tests/README.md
+!tests/.gitkeep
+
+# --- Dependencies -----------------------------------------------------------
+node_modules/
+.pnp
+.pnp.js
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.venv/
+venv/
+env/
+
+# --- OS / IDE ---------------------------------------------------------------
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# --- Notion / Schedule task state -------------------------------------------
+.notion-cache/
+.schedule-state/

@@ -1,0 +1,31 @@
+{
+  "clips": [
+    {"videoUrl": "renders/raw/doc_s01_sh01.mp4", "duration": 8},
+    {"imageUrl": "references/archive_photo_01.jpg", "duration": 5},
+    {"videoUrl": "renders/raw/doc_s01_sh02.mp4", "duration": 6},
+    {"imageUrl": "references/archive_photo_02.jpg", "duration": 4},
+    {"videoUrl": "renders/raw/doc_s02_sh01.mp4", "duration": 10}
+  ],
+  "audioUrl": "audio/vo/narrator_final.mp3",
+  "branding": {
+    "logoUrl": "assets/client-logo.png",
+    "logoPosition": "top-right",
+    "primaryColor": "#c19a6b",
+    "secondaryColor": "#1c1c1c",
+    "fontFamily": "Georgia, serif"
+  },
+  "metadata": {
+    "title": "The Sound of Vinyl",
+    "clientName": "Documentary Channel",
+    "episodeTitle": "Episode 1: Origins",
+    "airDate": "2026-05-01",
+    "credits": ["Directed by PopTech Studio", "Narrated by Rob Williams", "Music by ElevenLabs AI"],
+    "contactEmail": "info@documentarychannel.com",
+    "website": "documentarychannel.com"
+  },
+  "transitionType": "dissolve",
+  "transitionDuration": 20,
+  "endCardDuration": 5,
+  "lowerThirdStart": 60,
+  "lowerThirdDuration": 150
+}
